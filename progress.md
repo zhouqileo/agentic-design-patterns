@@ -11,11 +11,11 @@
 
 | 内容 | 标题 | 翻译者 | 状态 | 更新日期 |
 |------|------|--------|------|----------|
-| 主文档 | Agentic Design Patterns | - | 待审核 | - |
-| 结论 | Conclusion | - | 待审核 | - |
-| 术语表 | Glossary | - | 待审核 | - |
-| 索引 | Index of Terms | - | 待审核 | - |
-| FAQ | Frequently Asked Questions | - | 待审核 | - |
+| 主文档 | Agentic Design Patterns | - | 已完成 | 2025-12-20 |
+| 结论 | Conclusion | - | 已完成 | 2025-12-20 |
+| 术语表 | Glossary | - | 已完成 | 2025-12-20 |
+| 索引 | Index of Terms | - | 已完成 | 2025-12-20 |
+| FAQ | Frequently Asked Questions | - | 已完成 | 2025-12-20 |
 
 ## 章节详情
 
