@@ -45,7 +45,7 @@
 24. [Agent 框架概览](Appendix%20C%20-%20Quick%20overview%20of%20Agentic%20Frameworks.md)（8页）
 25. [使用AgentSpace构建 Agent](Appendix%20D%20-%20Building%20an%20Agent%20with%20AgentSpace%20(on-line%20only).md)（6页）
 26. [命令行AI Agent](Appendix%20E%20-%20AI%20Agents%20on%20the%20CLI.md)（5页）
-27. [Agent 推理引擎剖析](Appendix%20F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents'%20Reasoning%20Engines.md)（14页）
+27. [Agent 推理引擎剖析](Appendix%20F%20%20-%20Under%20the%20Hood_%20An%20Inside%20Look%20at%20the%20Agents'%20Reasoning%20Engines.md)（14页） 
 28. [编程实现 Agent](Appendix%20G%20-%20%20Coding%20agents.md)（7页）
 
 ## 参考资料

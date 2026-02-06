@@ -103,6 +103,7 @@ jobs:
           -V geometry:margin=1in \
           -V hyperrefoptions:linktoc=all \
           --listings \
+          -H .github/scripts/pandoc-listings.tex \
           --metadata title="智能体设计模式" \
           --metadata author="Antonio Gulli" \
           --metadata translator="xindoo" \
@@ -206,6 +207,7 @@ jobs:
           -V geometry:margin=1in \
           -V hyperrefoptions:linktoc=all \
           --listings \
+          -H .github/scripts/pandoc-listings.tex \
           --metadata title="Agentic Design Patterns" \
           --metadata author="Antonio Gulli" \
           --metadata publisher="GitHub: https://github.com/xindoo/agentic-design-patterns" \
