@@ -513,7 +513,7 @@ session = await session_service.get_session(
 await memory_service.add_session_to_memory(session)
 ```
 
-Memory Bank 提供与 Google ADK 的无缝集成，提供即开即用体验。对于使用其他 Agent 框架（如 LangGraph 和 CrewAI）的用户，Memory Bank 还通过直接 API 调用提供支持。演示这些集成的在线代码示例可供感兴趣读者使用
+Memory Bank 提供与 Google ADK 的无缝集成，提供即开即用体验。对于使用其他 智能体框架（如 LangGraph 和 CrewAI）的用户，Memory Bank 还通过直接 API 调用提供支持。演示这些集成的在线代码示例可供感兴趣读者使用
 
 ## 模式概览
 

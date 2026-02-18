@@ -160,7 +160,7 @@ if __name__ == "__main__":
 
 核心组件是 coordinator_router_chain，它利用 ChatPromptTemplate 指示语言模型将传入的用户请求分类为三个类别之一：'booker'、'info' 或 'unclear'。然后路由链的输出由 RunnableBranch 使用，将原始请求委托给相应的处理函数。RunnableBranch 检查来自语言模型的决策，并将请求数据定向到 booking_handler、info_handler 或 unclear_handler。coordinator_agent 结合了这些组件，首先路由请求以做出决策，然后将请求传递给选定的处理程序。最终输出从处理程序的响应中提取。
 
-main 函数通过三个示例请求演示了系统的用法，展示了不同的输入如何被路由并由模拟 Agent 处理。包含了语言模型初始化的错误处理以确保健壮性。代码结构模仿了基本的多 Agent 框架，其中中央协调器根据意图将任务委托给专门的 Agent。
+main 函数通过三个示例请求演示了系统的用法，展示了不同的输入如何被路由并由模拟 Agent 处理。包含了语言模型初始化的错误处理以确保健壮性。代码结构模仿了基本的多 智能体框架，其中中央协调器根据意图将任务委托给专门的 Agent。
 
 ## 实操代码示例（Google ADK）
 

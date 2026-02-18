@@ -1,4 +1,4 @@
-# 附录 D - 使用 AgentSpace 构建 Agent
+# 附录 D - 使用 AgentSpace 构建智能体
 
 ## 概述
 
