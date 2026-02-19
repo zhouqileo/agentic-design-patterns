@@ -48,24 +48,24 @@
 
 ### 对齐和安全技术：对齐是确保 AI 模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的"奖励模型"指导 AI 的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及 Kahneman-Tversky 优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。
 
-## 增强 AI Agent 能力
+## 增强 AI智能体
 
-### AI Agent 是能够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。
+### AI智能体够感知其环境并采取自主行动以实现目标的系统。它们的有效性通过强大的推理框架得到增强。
 
 
 ### 思维链（Chain of Thought, CoT）：这种提示技术鼓励模型在给出最终答案之前逐步解释其推理。这种"大声思考"的过程通常会在复杂推理任务上产生更准确的结果。
 
 
-### 思维树（Tree of Thoughts, ToT）：思维树是一种高级推理框架，其中 Agent 同时探索多个推理路径，就像树上的分支一样。它允许 Agent 自我评估不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。
+### 思维树（Tree of Thoughts, ToT）：思维树是一种高级推理框架，其中智能体探索多个推理路径，就像树上的分支一样。它允许智能智能体不同的思路并选择最有希望的路径，使其在复杂问题解决方面更有效。
 
 
-### ReAct（推理与行动，Reason and Act）：ReAct 是一个 Agent 框架，在循环中结合推理和行动。Agent 首先"思考"要做什么，然后使用工具采取"行动"，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。
+### ReAct（推理与行动，Reason and Act）：ReAct 是一个智能体，在循环中结合推理和行动。Agent 首先"思考"要做什么，然后使用工具采取"行动"，并使用结果观察来通知其下一个想法，使其在解决复杂任务方面非常有效。
 
 
-### 规划（Planning）：这是 Agent 将高级目标分解为一系列较小的、可管理的子任务的能力。然后 Agent 创建一个计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。
+### 规划（Planning）：这是智能体级目标分解为一系列较小的、可管理的子任务的能力。然后智能智能体计划来按顺序执行这些步骤，使其能够处理复杂的多步骤任务。
 
 
-### 深度研究（Deep Research）：深度研究是指 Agent 通过迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许 Agent 建立对主题的全面理解，远超单个搜索查询。
+### 深度研究（Deep Research）：深度研究是指智能体迭代搜索信息、综合发现和识别新问题来自主深入探索主题的能力。这允许智能智能体题的全面理解，远超单个搜索查询。
 
 
 ### 批评模型（Critique Model）：批评模型是一种专门的 AI 模型，经过训练可以审查、评估和提供关于另一个 AI 模型输出的反馈。它充当自动批评者，有助于识别错误、改进推理并确保最终输出符合期望的质量标准。
@@ -81,15 +81,15 @@
 * Adaptation(适应) - 第 9 章：学习与适应
 * Adaptive Task Allocation(自适应任务分配) - 第 16 章：资源感知优化
 * Adaptive Tool Use & Selection(自适应工具使用与选择) - 第 16 章：资源感知优化
-* Agent - 什么使 AI 系统成为 Agent？
+*智能体什么使 AI 系统成为 Agent？
 * Agent-Computer Interfaces (ACIs)(计算机接口（）) - 附录 B
 * Agent-Driven Economy(Agent 驱动型经济) - 什么使 AI 系统成为 Agent？
-* Agent as a Tool(Agent 作为工具) - 第 7 章：多 Agent 协作
-* Agent Cards(Agent 卡片) - 第 15 章：Agent 间通信（A2A）
-* Agent Development Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多 Agent 协作，第 8 章：记忆管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C
-* Agent Development Kit (ADK)(Agent 发现) - 第 15 章：Agent 间通信（A2A）
-* Agent Discovery(Agent 轨迹) - 第 19 章：评估与监控
-* Agent Trajectories(Agentic 设计模式) - 引言
+*智能体 a Tool(Agent 作为工具) - 第 7 章：多智能智能体
+*智能体rds(Agent 卡片) - 第 15 章：Agent 间通信（A2A）
+*智能体velopment Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多智能智能体 8 章：记忆管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C
+*智能体velopment Kit (ADK)(Agent 发现) - 第 15 章：Agent 间通信（A2A）
+*智能体scovery(Agent 轨迹) - 第 19 章：评估与监控
+*智能体ajectories(Agentic 设计模式) - 引言
 * Agentic Design Patterns - 第 14 章：知识检索（RAG）
 * Agentic RAG(Agentic 系统) - 引言
 * Agentic Systems(AI 联合科学家) - 第 21 章：探索与发现
@@ -129,7 +129,7 @@
 * Clarity and Specificity(代码提示) - 附录 A
 * CoD（辩论链）- 第 17 章：推理技术
 * CoT（思维链）- 第 17 章：推理技术，附录 A
-* Client Agent(协作) - 第 7 章：多 Agent 协作
+* Client Agent(协作) - 第 7 章：多智能体
 * Code Generation(合规性) - 第 19 章：评估与监控
 * Code Prompting(简洁性) - 附录 A
 * CoD (Chain of Debates)(内容生成) - 第 1 章：提示链，第 4 章：反思
@@ -141,7 +141,7 @@
 * Context Engineering - 第 8 章：记忆管理
 * Context Window(对话式 Agent) - 第 1 章：提示链，第 4 章：反思
 * Contextual Pruning & Summarization(成本敏感探索) - 第 16 章：资源感知优化
-* Contextual Prompting - 第 3 章：并行化，第 5 章：工具使用，第 6 章：规划，第 7 章：多 Agent 协作，第 18 章：护栏/安全模式，附录 C
+* Contextual Prompting - 第 3 章：并行化，第 5 章：工具使用，第 6 章：规划，第 7 章：多智能体，第 18 章：护栏/安全模式，附录 C
 * Contractor Model(批评 Agent) - 第 16 章：资源感知优化
 * ConversationBufferMemory(批评模型) - 术语表
 * Conversational Agents(客户支持) - 第 13 章：人机协同
@@ -152,7 +152,7 @@
 * Data Labeling(数据标注) - 第 13 章：人机协同
 * Database Integration(数据库集成) - 第 10 章：模型上下文协议（MCP）
 * DatabaseSessionService - 第 8 章：记忆管理
-* Debate and Consensus(辩论与共识) - 第 7 章：多 Agent 协作
+* Debate and Consensus(辩论与共识) - 第 7 章：多智能体
 * Decision Augmentation(决策增强) - 第 13 章：人机协同
 * Decomposition(分解) - 附录 A
 * Deep Research(深度研究) - 第 6 章：规划，第 17 章：推理技术，术语表
@@ -177,7 +177,7 @@
 * Escalation Policies(升级策略) - 第 13 章：人机协同
 * Evaluation(评估) - 第 19 章：评估与监控
 * Exception Handling(异常处理) - 第 12 章：异常处理与恢复
-* Expert Teams(专家团队) - 第 7 章：多 Agent 协作
+* Expert Teams(专家团队) - 第 7 章：多智能体
 * Exploration and Discovery(探索与发现) - 第 21 章：探索与发现
 * External Moderation APIs(外部审核 API) - 第 18 章：护栏/安全模式
 
@@ -199,9 +199,9 @@
 * Generative Media Orchestration(生成媒体编排) - 第 10 章：模型上下文协议（MCP）
 * Goal Setting(目标设定) - 第 11 章：目标设定与监控
 * GoD（辩论图）- 第 17 章：推理技术
-* Google Agent Development Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多 Agent 协作，第 8 章：内存管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C
+* Google智能体velopment Kit（ADK）- 第 2 章：路由，第 3 章：并行化，第 4 章：反思，第 5 章：工具使用，第 7 章：多智能智能体 8 章：内存管理，第 12 章：异常处理与恢复，第 13 章：人机协同，第 15 章：Agent 间通信（A2A），第 16 章：资源感知优化，第 19 章：评估与监控，附录 C
 * GoD (Graph of Debates)(Google 联合科学家) - 第 21 章：探索与发现
-* Google Agent Development Kit (ADK) - 第 6 章：规划
+* Google智能体velopment Kit (ADK) - 第 6 章：规划
 * Google Co-Scientist - 附录 B
 * Google DeepResearch(优雅降级) - 第 12 章：异常处理与恢复，第 16 章：资源感知优化
 * 辩论图（GoD）- 第 17 章：推理技术
@@ -212,7 +212,7 @@
 
 * Haystack - 附录 C
 * Hierarchical Decomposition(层次化分解) - 第 19 章：评估与监控
-* Hierarchical Structures(层次化结构) - 第 7 章：多 Agent 协作
+* Hierarchical Structures(层次化结构) - 第 7 章：多智能体
 * HITL（人机协同）- 第 13 章：人机协同
 * 人机协同（HITL）- 第 13 章：人机协同
 * HITL (Human-in-the-Loop)(人在环路上) - 第 13 章：人机协同
@@ -225,7 +225,7 @@
 * InMemorySessionService - 第 8 章：记忆管理
 * Input Validation/Sanitization(输入验证/清理) - 第 18 章：护栏/安全模式
 * Instructions Over Constraints(指令优先于约束) - 附录 A
-* Agent 间通信（A2A）- 第 15 章：Agent 间通信（A2A）
+*智能体信（A2A）- 第 15 章：Agent 间通信（A2A）
 * Inter-Agent Communication (A2A)(干预与纠正) - 第 13 章：人机协同
 * Intervention and Correction(IoT 设备控制) - 第 10 章：模型上下文协议（MCP）
 * IoT Device Control(迭代提示/细化) - 附录 A
@@ -255,7 +255,7 @@
 
 * Mamba - 术语表
 * 掩码语言建模（MLM）- 术语表
-* MASS（多 Agent 系统搜索）- 第 17 章：推理技术
+* MASS（多智能体搜索）- 第 17 章：推理技术
 * MCP（模型上下文协议）- 第 10 章：模型上下文协议（MCP）
 * Masked Language Modeling (MLM)(记忆管理) - 第 8 章：记忆管理
 * MASS (Multi-Agent System Search)(基于内存的学习) - 第 9 章：学习与适应
@@ -265,8 +265,8 @@
 * 模型上下文协议（MCP）- 第 10 章：模型上下文协议（MCP）
 * Memory-Based Learning(模块化) - 第 18 章：护栏/安全模式
 * MetaGPT(监控) - 第 11 章：目标设定与监控，第 19 章：评估与监控
-* Microsoft AutoGen(多 Agent 协作) - 第 7 章：多 Agent 协作
-* 多 Agent 系统搜索（MASS）- 第 17 章：推理技术
+* Microsoft AutoGen(多智能体) - 第 7 章：多智能智能体
+* 多智能体搜索（MASS）- 第 17 章：推理技术
 * Mixture of Experts (MoE)(多模态性) - 术语表
 * Model Context Protocol (MCP)(多模态提示) - 附录 A
 
@@ -344,12 +344,12 @@
 * Self-Consistency(自一致性) - 附录 A
 * Self-Correction(自我纠正) - 第 4 章：反思，第 17 章：推理技术
 * 自我改进编码 Agent（SICA）- 第 9 章：学习与适应
-* Self-Improving Coding Agent (SICA)(自我细化) - 第 17 章：推理技术
+* Self-Improving Coding智能体ICA)(自我细化) - 第 17 章：推理技术
 * Self-Refinement - 附录 C
 * Semantic Kernel(语义记忆) - 第 8 章：记忆管理
 * Semantic Memory(语义相似性) - 第 14 章：知识检索（RAG）
 * Semantic Similarity(关注点分离) - 第 18 章：护栏/安全模式
-* Separation of Concerns(顺序交接) - 第 7 章：多 Agent 协作
+* Separation of Concerns(顺序交接) - 第 7 章：多智能体
 * 服务器发送事件（SSE）- 第 15 章：Agent 间通信（A2A）
 * Sequential Handoffs(会话) - 第 8 章：内存管理
 * SICA（自我改进编码 Agent）- 第 9 章：学习与适应

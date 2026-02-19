@@ -1,4 +1,4 @@
-# Agent 设计模式
+#智能体模式
 
 *构建智能系统的实战指南[^1]，作者：[Antonio Gulli](https://www.linkedin.com/in/searchguy/)*  
 
