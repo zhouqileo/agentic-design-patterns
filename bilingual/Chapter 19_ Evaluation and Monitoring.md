@@ -73,19 +73,6 @@ score = evaluate_response_accuracy(agent_response, ground_truth)
 print(f"Response accuracy: {score}")
 ```
 
-```python
-def evaluate_response_accuracy(agent_output: str, expected_output: str) -> float:
-    """计算智能体响应的简单准确度分数。"""
-    # 这是一个非常基本的精确匹配；现实世界会使用更复杂的指标
-    return 1.0 if agent_output.strip().lower() == expected_output.strip().lower() else 0.0
-
-## 示例使用
-agent_response = "The capital of France is Paris."
-ground_truth = "Paris is the capital of France."
-score = evaluate_response_accuracy(agent_response, ground_truth)
-print(f"Response accuracy: {score}")
-```
-
 The Python function `evaluate_response_accuracy` calculates a basic accuracy score for an AI agent's response by performing an exact, case-insensitive comparison between the agent's output and the expected output, after removing leading or trailing whitespace. It returns a score of 1.0 for an exact match and 0.0 otherwise, representing a binary correct or incorrect evaluation. This method, while straightforward for simple checks, does not account for variations like paraphrasing or semantic equivalence.
 
 Python 函数 `evaluate_response_accuracy` 通过对智能体输出和期望输出进行精确的、不区分大小写的比较（在去除前导和尾随空格后），计算 AI 智能体响应的基本准确度分数。对于精确匹配，它返回 1.0 分，否则返回 0.0，表示二元的正确或不正确评估。这种方法虽然适合简单检查，但不考虑释义或语义等价性等变化。
@@ -140,32 +127,6 @@ monitor.record_interaction("What is the capital of France?", "The capital of Fra
 monitor.record_interaction("Tell me a joke.", "Why don't scientists trust atoms? Because they make up everything!")
 input_t, output_t = monitor.get_total_tokens()
 print(f"Total input tokens: {input_t}, Total output tokens: {output_t}")
-```
-
-```python
-## 这是概念性的，因为实际的 token 计数取决于 LLM API
-class LLMInteractionMonitor:
-    def __init__(self):
-        self.total_input_tokens = 0
-        self.total_output_tokens = 0
-
-    def record_interaction(self, prompt: str, response: str):
-        # 在真实场景中，使用 LLM API 的 token 计数器或 tokenizer
-        input_tokens = len(prompt.split())  # 占位符
-        output_tokens = len(response.split())  # 占位符
-        self.total_input_tokens += input_tokens
-        self.total_output_tokens += output_tokens
-        print(f"已记录交互：输入 tokens={input_tokens}，输出 tokens={output_tokens}")
-
-    def get_total_tokens(self):
-        return self.total_input_tokens, self.total_output_tokens
-
-## 示例使用
-monitor = LLMInteractionMonitor()
-monitor.record_interaction("What is the capital of France?", "The capital of France is Paris.")
-monitor.record_interaction("Tell me a joke.", "Why don't scientists trust atoms? Because they make up everything!")
-input_t, output_t = monitor.get_total_tokens()
-print(f"总输入 tokens：{input_t}，总输出 tokens：{output_t}")
 ```
 
 This section introduces a conceptual Python class, `LLMInteractionMonitor`, developed to track token usage in large language model interactions. The class incorporates counters for both input and output tokens. Its `record_interaction` method simulates token counting by splitting the prompt and response strings. In a practical implementation, specific LLM API tokenizers would be employed for precise token counts. As interactions occur, the monitor accumulates the total input and output token counts. The `get_total_tokens` method provides access to these cumulative totals, essential for cost management and optimization of LLM usage.
@@ -312,144 +273,6 @@ if __name__ == "__main__":
     What are your thoughts on legal tech?
     """
     print("\n--- Evaluating Vague Legal Survey Question ---")
-    judgment_vague = judge.judge_survey_question(vague_legal_survey_question)
-    if judgment_vague:
-        print(json.dumps(judgment_vague, indent=2))
-```
-
-```python
-import google.generativeai as genai
-import os
-import json
-import logging
-from typing import Optional
-
-## --- 配置 ---
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-## 将您的 API 密钥设置为环境变量以运行此脚本
-## 例如，在您的终端中：export GOOGLE_API_KEY='your_key_here'
-try:
-    genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
-except KeyError:
-    logging.error("错误：GOOGLE_API_KEY 环境变量未设置。")
-    exit(1)
-
-## --- 法律调查质量的 LLM-as-a-Judge 评分标准 ---
-LEGAL_SURVEY_RUBRIC = """
-您是一位专家法律调查方法学家和严格的法律审查员。您的任务是评估给定法律调查问题的质量。为整体质量提供 1 到 5 的分数，以及详细的理由和具体反馈。重点关注以下标准：
-
-1.  **清晰性和精确性（分数 1-5）：**
-    * 1：极度模糊、高度歧义或令人困惑。
-    * 3：中等清晰，但可以更精确。
-    * 5：完全清晰、无歧义，在法律术语（如适用）和意图上精确。
-2.  **中立性和偏见（分数 1-5）：**
-    * 1：高度引导性或有偏见，明确影响受访者偏向特定答案。
-    * 3：略微暗示性或可能被解释为引导性。
-    * 5：完全中立、客观，没有任何引导性语言或带有倾向性的术语。
-3.  **相关性和焦点（分数 1-5）：**
-    * 1：与声明的调查主题无关或超出范围。
-    * 3：松散相关，但可以更集中。
-    * 5：与调查目标直接相关，并且集中于单一概念。
-4.  **完整性（分数 1-5）：**
-    * 1：遗漏了准确回答所需的关键信息或提供的上下文不足。
-    * 3：基本完整，但缺少次要细节。
-    * 5：提供受访者彻底回答所需的所有必要上下文和信息。
-5.  **受众适当性（分数 1-5）：**
-    * 1：使用目标受众无法理解的术语或对专家来说过于简单。
-    * 3：通常适当，但某些术语可能具有挑战性或过于简化。
-    * 5：完全适合目标调查受众的假定法律知识和背景。
-
-**输出格式：** 您的响应必须是具有以下键的 JSON 对象：
-* `overall_score`：一个从 1 到 5 的整数（标准分数的平均值或您的整体判断）。
-* `rationale`：给出此分数原因的简明摘要，突出主要优势和劣势。
-* `detailed_feedback`：详细说明每个标准（清晰性、中立性、相关性、完整性、受众适当性）反馈的要点列表。建议具体改进。
-* `concerns`：任何具体的法律、道德或方法学问题的列表。
-* `recommended_action`：简短的建议（例如"修改以保持中立"，"按原样批准"，"明确范围"）。
-"""
-
-class LLMJudgeForLegalSurvey:
-    """使用生成式 AI 模型评估法律调查问题的类。"""
-    def __init__(self, model_name: str = 'gemini-1.5-flash-latest', temperature: float = 0.2):
-        """
-        初始化 LLM Judge。
-
-        Args:
-            model_name (str)：要使用的 Gemini 模型名称。
-                               推荐使用 'gemini-1.5-flash-latest' 以获得速度和成本效益。
-                               'gemini-1.5-pro-latest' 提供最高质量。
-            temperature (float)：生成温度。较低的温度更适合确定性评估。
-        """
-        self.model = genai.GenerativeModel(model_name)
-        self.temperature = temperature
-
-    def _generate_prompt(self, survey_question: str) -> str:
-        """为 LLM judge 构建完整提示词。"""
-        return f"{LEGAL_SURVEY_RUBRIC}\n\n---\n**要评估的法律调查问题：**\n{survey_question}\n---"
-
-    def judge_survey_question(self, survey_question: str) -> Optional[dict]:
-        """
-        使用 LLM 判断单个法律调查问题的质量。
-
-        Args:
-            survey_question (str)：要评估的法律调查问题。
-        Returns:
-            Optional[dict]：包含 LLM 判断的字典，如果发生错误则返回 None。
-        """
-        full_prompt = self._generate_prompt(survey_question)
-
-        try:
-            logging.info(f"向 '{self.model.model_name}' 发送判断请求...")
-            response = self.model.generate_content(
-                full_prompt,
-                generation_config=genai.types.GenerationConfig(
-                    temperature=self.temperature,
-                    response_mime_type="application/json"
-                )
-            )
-            # 检查内容审核或其他导致响应为空的原因。
-            if not response.parts:
-                safety_ratings = response.prompt_feedback.safety_ratings
-                logging.error(f"LLM 响应为空或被阻止。安全评级：{safety_ratings}")
-                return None
-
-            return json.loads(response.text)
-        except json.JSONDecodeError:
-            logging.error(f"无法将 LLM 响应解码为 JSON。原始响应：{response.text}")
-            return None
-        except Exception as e:
-            logging.error(f"LLM 判断期间发生意外错误：{e}")
-            return None
-
-## --- 示例使用 ---
-if __name__ == "__main__":
-    judge = LLMJudgeForLegalSurvey()
-
-    # --- 好的示例 ---
-    good_legal_survey_question = """
-    在多大程度上您同意或不同意瑞士当前的知识产权法充分保护新兴的 AI 生成内容，假设该内容满足联邦最高法院确立的原创性标准？
-    （选择一项：强烈不同意、不同意、中立、同意、强烈同意）
-    """
-    print("\n--- 评估好的法律调查问题 ---")
-    judgment_good = judge.judge_survey_question(good_legal_survey_question)
-    if judgment_good:
-        print(json.dumps(judgment_good, indent=2))
-
-    # --- 有偏见/差的示例 ---
-    biased_legal_survey_question = """
-    难道您不同意像 FADP 这样过度限制性的数据隐私法正在阻碍瑞士的基本技术创新和经济增长吗？
-    （选择一项：是、否）
-    """
-    print("\n--- 评估有偏见的法律调查问题 ---")
-    judgment_biased = judge.judge_survey_question(biased_legal_survey_question)
-    if judgment_biased:
-        print(json.dumps(judgment_biased, indent=2))
-
-    # --- 模糊/含糊的示例 ---
-    vague_legal_survey_question = """
-    您对法律科技有什么想法？
-    """
-    print("\n--- 评估含糊的法律调查问题 ---")
     judgment_vague = judge.judge_survey_question(vague_legal_survey_question)
     if judgment_vague:
         print(json.dumps(judgment_vague, indent=2))
@@ -647,7 +470,7 @@ Fig.4: Evaluation and Monitoring design pattern
 
 In conclusion, effectively evaluating AI agents requires moving beyond simple accuracy checks to a continuous, multi-faceted assessment of their performance in dynamic environments. This involves practical monitoring of metrics like latency and resource consumption, as well as sophisticated analysis of an agent's decision-making process through its trajectory. For nuanced qualities like helpfulness, innovative methods such as the LLM-as-a-Judge are becoming essential, while frameworks like Google's ADK provide structured tools for both unit and integration testing. The challenge intensifies with multi-agent systems, where the focus shifts to evaluating collaborative success and effective cooperation.
 
-总之，有效评估 AI 智能体需要超越简单的准确性检查，对其在动态环境中的性能进行持续的、多方面的评估。这涉及实际监控延迟和资源消耗等指标，以及通过其轨迹对智能体决策过程进行复杂分析。对于有用性等细微品质，诸如 LLM-as-a-Judge 之类的创新方法变得必不可少，而像 Google 的 ADK 这样的框架为单元和集成测试提供了结构化工具。对于多智能体系统，挑战加剧，重点转向评估协作成功和有效合作。
+总之，有效评估 AI 智能体需要超越简单的准确性检查，对其在动态环境中的性能进行持续的、多方面的评估。这涉及实际监控延迟和资源消耗等指标，以及通过其轨迹对智能体决策过程进行复杂分析。对于有用性等细微品质，诸如 LLM-as-a-Judge 之类的创新方法变得必不可少，而像 Google 的 ADK 这样的框架为单元和集成测试提供了结构化的工具。对于多智能体系统，挑战加剧，重点转向评估协作成功和有效合作。
 
 To ensure reliability in critical applications, the paradigm is shifting from simple, prompt-driven agents to advanced "contractors" bound by formal agreements. These contractor agents operate on explicit, verifiable terms, allowing them to negotiate, decompose tasks, and self-validate their work to meet rigorous quality standards. This structured approach transforms agents from unpredictable tools into accountable systems capable of handling complex, high-stakes tasks. Ultimately, this evolution is crucial for building the trust required to deploy sophisticated agentic AI in mission-critical domains.
 

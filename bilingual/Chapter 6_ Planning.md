@@ -166,7 +166,7 @@ The efficiency of this approach stems from the automation of the iterative searc
 
 ## OpenAI Deep Research API
 
-The OpenAI Deep Research API is a specialized tool designed to automate complex research tasks. It utilizes an advanced, agentic model that can independently reason, plan, and synthesize information from real-world sources. Unlike a simple Q&A model, it takes a high-level query and autonomously breaks it down into sub-questions, performs web searches using its built-in tools, and delivers a structured, citation-rich final report. The API provides direct programmatic access to this entire process, using  at the time of writing models like o3-deep-research-2025-06-26 for high-quality synthesis and the faster o4-mini-deep-research-2025-06-26 for latency-sensitive application
+The OpenAI Deep Research API is a specialized tool designed to automate complex research tasks. It utilizes an advanced, agentic model that can independently reason, plan, and synthesize information from real-world sources. Unlike a simple Q&amp;A model, it takes a high-level query and autonomously breaks it down into sub-questions, performs web searches using its built-in tools, and delivers a structured, citation-rich final report. The API provides direct programmatic access to this entire process, using  at the time of writing models like o3-deep-research-2025-06-26 for high-quality synthesis and the faster o4-mini-deep-research-2025-06-26 for latency-sensitive application
 
 OpenAI DeepResearch API 是专为自动化复杂研究任务设计的工具。它采用先进智能体，能够独立推理、规划并综合现实世界信息。不同于简单问答模型，它接受高级查询后自主分解为子问题，利用内置工具执行网络搜索，最终生成带引用的结构化报告。该 API 提供全流程程序化访问，支持高质量综合模型（如 o3-deep-research-2025-06-26）和低延迟模型（如 o4-mini-deep-research-2025-06-26）。
 
@@ -251,7 +251,7 @@ except StopIteration:
 try:
    search_step = next(item for item in response.output if item.type == "web_search_call")
    print("\n[Found a Web Search Call]")
-   print(f"  Query Executed: '{search_step.action['query']}'")
+   print(f"  Query Executed: '{search_step.action['query']}")
    print(f"  Status: {search_step.status}")
 except StopIteration:
    print("\nNo web search steps found.")
@@ -268,7 +268,7 @@ except StopIteration:
    print("\nNo code execution steps found.")
 ```
 
-This code snippet utilizes the OpenAI API to perform a "Deep Research" task. It starts by initializing the OpenAI client with your API key, which is crucial for authentication. Then, it defines the role of the AI agent as a professional researcher and sets the user's research question about the economic impact of semaglutide. The code constructs an API call to the o3-deep-research-2025-06-26 model, providing the defined system message and user query as input. It also requests an automatic summary of the reasoning and enables web search capabilities. After making the API call, it extracts and prints the final generated report.
+This code snippet utilizes the OpenAI API to perform a "Deep Research" task. It starts by initializing the OpenAI client with your API key, which is crucial for authentication. Then, it defines the role of the AI agent as a professional researcher and sets the user's research question about the economic impact of semaglutide. The code constructs an API call to the o3-deep-research-2025-06-26 model, providing the defined system message and user query as input. It also requests an automatic summary of the reasoning and enables web search capabilities. After making the API call, it extracts and prints the final generated report. 
 
 此代码片段利用 OpenAI API 执行"DeepResearch"任务。它首先使用您的 API 密钥初始化 OpenAI 客户端，这对于身份验证至关重要。然后，它将 AI智能体角色定义为专业研究员，并设置用户关于司美格鲁肽经济影响的研究问题。代码构造对 o3-deep-research-2025-06-26 模型的 API 调用，提供定义的系统消息和用户查询作为输入。它还请求推理的自动摘要并启用网络搜索功能。进行 API 调用后，它提取并打印最终生成的报告。
 
@@ -316,7 +316,7 @@ Fig.4; Planning design pattern
 * Explicitly prompting or designing tasks to require planning steps encourages this behavior in agent frameworks.  
 * 明确提示或设计任务以要求规划步骤会在智能体框架中鼓励这种行为。
 
-* Google Deep Research is an agent analyzing on our behalf sources obtained using Google Search as a tool. It reflects, plans, and executes
+* Google Deep Research is an agent analyzing on our behalf sources obtained using Google Search as a tool. It reflects, plans, and executes.
 
 * Google Deep Research 是一个代表我们分析使用 Google 搜索作为工具获得的来源的智能体。它进行反思、规划并执行。
 

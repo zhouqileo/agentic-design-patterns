@@ -1,4 +1,4 @@
-# Appendix F - Under the Hood: An Inside Look at the Agents’ Reasoning Engines
+# Appendix F - Under the Hood: An Inside Look at the Agents' Reasoning Engines
 
 # 附录 F - 深入探究：智能体推理引擎的内部机制
 
@@ -12,7 +12,9 @@ Therefore, understanding the internal reasoning mechanisms of these models is no
 
 | Prompt given to each LLM: I understand you can reason, can you explain to me how you reason? Explain me step by step |
 | :---- |
+
 | 向各 LLM 提供的提示：我理解你具备推理能力，能否向我解释你是如何推理的？请逐步解释 |
+| :---- |
 
 ## Gemini
 
@@ -44,7 +46,7 @@ Of course. I reason by breaking down your request into smaller parts and then us
 
 当然。我的推理方式是将您的请求分解为更小的部分，然后利用我的海量训练数据构建一个合乎逻辑且相关的响应。这是一个从理解到生成的多阶段过程。
 
-Here’s a step-by-step breakdown of how I reason:
+Here's a step-by-step breakdown of how I reason:
 
 以下是我的推理过程的逐步解析：
 
@@ -139,8 +141,8 @@ I begin by **analyzing your words**.
 * 判定**问题类型**（逻辑、数学、判断、语言等）。
 
 📌 *Example*:  
-You say: "If Tom is older than Jane, and Jane is older than Sue, who is the youngest?"  
-→ I recognize this is a **logic puzzle**.
+ You say: "If Tom is older than Jane, and Jane is older than Sue, who is the youngest?"  
+ → I recognize this is a **logic puzzle**.
 
 📌 *示例*：
  您说：「若 Tom 年长于 Jane，Jane 年长于 Sue，谁最年幼？」
@@ -167,8 +169,8 @@ I search through what I learned during training — books, articles, conversatio
 * 关系
 
 📌 *Example*:  
-I've seen that "older than" means someone has more age.  
-I know that if A > B and B > C, then A > C.
+ I've seen that "older than" means someone has more age.  
+ I know that if A > B and B > C, then A > C.
 
 📌 *示例*：
  我理解「年长于」表示年龄比较关系。
@@ -195,7 +197,7 @@ Based on the question, I decide which **kind of reasoning** to use:
 * **类比推理**（参照相似案例进行推论）
 
 📌 *Example*:  
-In the Tom/Jane/Sue case, I'll use **deduction**.
+ In the Tom/Jane/Sue case, I'll use **deduction**.
 
 📌 *示例*：
  针对 Tom/Jane/Sue 案例，我选用**演绎推理**。
@@ -211,6 +213,7 @@ Here I go step by step, as a human might do when solving a problem.
 在此阶段，我逐步推进，仿效人类解决问题时的思考方式。
 
 📌 *Example*:
+
 1. Tom is older than Jane  
 2. Jane is older than Sue  
 3. So: Tom > Jane > Sue  
@@ -245,7 +248,7 @@ Now I turn the conclusion into a response that:
 * 让您能理解
 
 📌 *Example*:  
-"Sue is the youngest because Tom is older than Jane, and Jane is older than Sue."
+ "Sue is the youngest because Tom is older than Jane, and Jane is older than Sue."
 
 📌 *示例*：
  「Sue 最年幼，因为 Tom 年长于 Jane，而 Jane 年长于 Sue。」
@@ -269,7 +272,7 @@ Finally, I adjust how I say it to:
 * 按需补充示例或深化解释
 
 📌 *Example*:  
-If you're asking casually, I'll answer simply. If you're learning, I might break it down more.
+ If you're asking casually, I'll answer simply. If you're learning, I might break it down more.
 
 📌 *示例*：
  若为轻松咨询，我简洁回应；若属学习场景，我提供详细解析。
@@ -497,11 +500,9 @@ Recognize it's a numeric comparison.
 Decide the simplest safe method is to compute both numbers.  
 Recall or calculate 3⁴ = 81 and 4³ = 64.  
 Compare 81 > 64.  
-Communicate the result clearly.
-
+Communicate the result clearly.  
 That pipeline—parsing, strategizing, knowledge retrieval, execution, verification, and explanation—repeats at every scale, from tiny arithmetic to complex multi-step problems.
 
-```text
 ────────────────────────
 阶段 0 – 输入预处理
 词汇切分
@@ -561,7 +562,6 @@ C. 模式启发法（小指数情况下 3 的幂次增长是否快于 4？）。
 执行数值比较 81 > 64。
 清晰传达最终结论。
 此处理管道——解析、策略制定、知识检索、执行、验证、解释——可在任意规模重复应用，从基础算术至复杂多步问题求解。
-```
 
 ## Claude
 

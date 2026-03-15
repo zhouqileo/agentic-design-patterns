@@ -232,7 +232,7 @@ This code implements a simple task management system using Python and LangChain,
 
 此代码使用 Python 和 LangChain 实现了一个简单的任务管理系统，旨在模拟由大语言模型驱动的项目管理智能体。
 
-The system employs a SuperSimpleTaskManager class to efficiently manage tasks within memory, utilizing a dictionary structure for rapid data retrieval. Each task is represented by a Task Pydantic model, which encompasses attributes such as a unique identifier, a descriptive text, an optional priority level (P0, P1, P2), and an optional assignee designation.Memory usage varies based on task type, the number of workers, and other contributing factors. The task manager provides methods for task creation, task modification, and retrieval of all tasks. 
+The system employs a SuperSimpleTaskManager class to efficiently manage tasks within memory, utilizing a dictionary structure for rapid data retrieval. Each task is represented by a Task Pydantic model, which encompasses attributes such as a unique identifier, a descriptive text, an optional priority level (P0, P1, P2), and an optional assignee designation. Memory usage varies based on task type, the number of workers, and other contributing factors. The task manager provides methods for task creation, task modification, and retrieval of all tasks. 
 
 该系统采用 [`SuperSimpleTaskManager`](chapters/Chapter 20_ Prioritization.md:58) 类在内存中高效管理任务，利用字典结构实现快速数据检索。每个任务由 [`Task`](chapters/Chapter 20_ Prioritization.md:51) Pydantic 模型表示，包含唯一标识符、描述文本、可选优先级级别（P0、P1、P2）和可选的受让人指定等属性。内存使用量会根据任务类型、工作人员数量等因素而变化。任务管理器提供任务创建、任务修改和检索所有任务的方法。
 

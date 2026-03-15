@@ -142,7 +142,7 @@ Interacting with smart home devices, IoT platforms, or other connected systems.
 
 Tool Use is what transforms a language model from a text generator into an agent capable of sensing, reasoning, and acting in the digital or physical world (see Fig. 1\)
 
-工具使用正是将语言模型从文本生成器转变为能够在数字或物理世界中感知、推理和行动的智能体的关键（见图 1）
+工具使用正是将语言模型从文本生成器转变为能够在数字或物理世界中感知、推理和行动的智能体的关键（见图 1）。
 
 ![][image1]
 
@@ -508,7 +508,7 @@ except RuntimeError as e:
   if "cannot be called from a running event loop" in str(e):
       print("\nRunning in an existing event loop (like Colab/Jupyter).")
       print("Please run `await main()` in a notebook cell instead.")
-      # If in an interactive environment like a notebook, you might need to run:
+      # If in an interactive environment (like a notebook), you might need to run:
       # await main()
   else:
       raise e # Re-raise other runtime errors

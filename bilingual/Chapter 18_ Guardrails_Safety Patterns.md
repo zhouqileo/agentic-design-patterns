@@ -4,7 +4,7 @@
 
 Guardrails, also referred to as safety patterns, are crucial mechanisms that ensure intelligent agents operate safely, ethically, and as intended, particularly as these agents become more autonomous and integrated into critical systems. They serve as a protective layer, guiding the agent's behavior and output to prevent harmful, biased, irrelevant, or otherwise undesirable responses. These guardrails can be implemented at various stages, including Input Validation/Sanitization to filter malicious content, Output Filtering/Post-processing to analyze generated responses for toxicity or bias, Behavioral Constraints (Prompt-level) through direct instructions, Tool Use Restrictions to limit agent capabilities, External Moderation APIs for content moderation, and Human Oversight/Intervention via "Human-in-the-Loop" mechanisms.
 
-Guardrails（防护栏），也称为安全模式，是确保智能体安全、符合道德规范并按预期运行的关键机制，特别是在智能体自主并集成到关键系统中的情况下。它们作为保护层，引导智能体的行为和输出，防止有害、有偏见、无关或其他不良响应。这些防护栏可以在多个阶段实施，包括输入验证/清理以过滤恶意内容、输出过滤/后处理以分析生成响应中的毒性或偏见、通过直接指令设置行为约束（提示词级别）、工具使用限制以约束智能体能力、用于内容审核的外部审核 API，以及通过"人机协同"机制实现的人工监督/干预。
+Guardrails（防护栏），也称为安全模式，是确保智能体安全、符合道德规范并按预期运行的关键机制，特别是当这些智能体变得更加自主并集成到关键系统中时。它们作为保护层，引导智能体的行为和输出，防止有害、有偏见、无关或其他不良响应。这些防护栏可以在多个阶段实施，包括输入验证/清理以过滤恶意内容、输出过滤/后处理以分析生成响应中的毒性或偏见、通过直接指令设置行为约束（提示词级别）、工具使用限制以约束智能体能力、用于内容审核的外部审核 API，以及通过"人机协同"机制实现的人工监督/干预。
 
 The primary aim of guardrails is not to restrict an agent's capabilities but to ensure its operation is robust, trustworthy, and beneficial. They function as a safety measure and a guiding influence, vital for constructing responsible AI systems, mitigating risks, and maintaining user trust by ensuring predictable, safe, and compliant behavior, thus preventing manipulation and upholding ethical and legal standards. Without them, an AI system may be unconstrained, unpredictable, and potentially hazardous. To further mitigate these risks, a less computationally intensive model can be employed as a rapid, additional safeguard to pre-screen inputs or double-check the outputs of the primary model for policy violations.
 
@@ -26,8 +26,8 @@ Guardrails 应用于各种智能体场景：
 * **Social Media Content Moderation:** To automatically identify and flag posts containing hate speech, misinformation, or graphic content.  
 * **Scientific Research Assistants:** To prevent the agent from fabricating research data or drawing unsupported conclusions, emphasizing the need for empirical validation and peer review.
 
-* **客户服务聊天机器人：** 防止生成冒犯性语言、不正确或有害的建议（例如医疗、法律建议）或离题响应。Guardrails 可以检测有毒的用户输入，并指示机器人以拒绝或升级到人工的方式响应。
-* **内容生成系统：** 确保生成的文章、营销文案或创意内容符合准则、法律要求和道德标准，同时避免仇恨言论、错误信息或露骨内容。Guardrails 可以涉及后处理过滤器，标记并删除有问题的短语。
+* **客户服务聊天机器人：** 防止生成冒犯性语言、不正确或有害的建议（例如医疗、法律建议）或离题响应。防护栏可以检测有毒的用户输入，并指示机器人以拒绝或升级到人工的方式响应。
+* **内容生成系统：** 确保生成的文章、营销文案或创意内容符合准则、法律要求和道德标准，同时避免仇恨言论、错误信息或露骨内容。防护栏可以涉及后处理过滤器，标记并删除有问题的短语。
 * **教育导师/助手：** 防止智能体提供不正确的答案、推广有偏见的观点或进行不当对话。这可能涉及内容过滤和遵守预定义的课程。
 * **法律研究助手：** 防止智能体提供明确的法律建议或充当持证律师的替代品，而是引导用户咨询法律专业人士。
 * **招聘和人力资源工具：** 通过过滤歧视性语言或标准，确保候选人筛选或员工评估的公平性并防止偏见。
@@ -56,7 +56,7 @@ Error handling and resilience are also essential. Anticipating failures and desi
 
 Agent configuration acts as another guardrail layer. Defining roles, goals, and backstories guides agent behavior and reduces unintended outputs. Employing specialized agents over generalists maintains focus. Practical aspects like managing the LLM's context window and setting rate limits prevent API restrictions from being exceeded. Securely managing API keys, protecting sensitive data, and considering adversarial training are critical for advanced security to enhance model robustness against malicious attacks.
 
-智能体配置充当另一个防护栏层。定义角色、目标和背景故事可以引导智能体并减少意外输出。使用专业的智能体可以保持专注。管理 LLM 的上下文窗口和设置速率限制等实际方面可防止超出 API 限制。安全管理 API 密钥、保护敏感数据以及考虑对抗性训练对于增强模型对恶意攻击鲁棒性的高级安全性至关重要。
+智能体配置充当另一个防护栏层。定义角色、目标和背景故事可以引导智能体并减少意外输出。与通用智能体相比，使用专业智能体可以更好地保持任务聚焦。管理 LLM 的上下文窗口和设置速率限制等实际方面可防止超出 API 限制。安全管理 API 密钥、保护敏感数据以及采用对抗性训练等高级安全措施，对于增强模型抵御恶意攻击的鲁棒性至关重要。
 
 Let's see an example. This code demonstrates how to use CrewAI to add a safety layer to an AI system by using a dedicated agent and task, guided by a specific prompt and validated by a Pydantic-based guardrail, to screen potentially problematic user inputs before they reach a primary AI.
 
@@ -317,7 +317,7 @@ To ensure the LLM's output conforms to this structure, a Pydantic model named Po
 
 Within the CrewAI framework, an Agent named policy\_enforcer\_agent is instantiated. This agent is assigned the role of the "AI Content Policy Enforcer" and given a goal and backstory consistent with its function of screening inputs. It is configured to be non-verbose and disallow delegation, ensuring it focuses solely on the policy enforcement task. This agent is explicitly linked to a specific LLM (gemini/gemini-2.0-flash), chosen for its speed and cost-effectiveness, and configured with a low temperature to ensure deterministic and strict policy adherence.
 
-在 CrewAI 框架内，实例化了一个名为 policy_enforcer_agent 的 Agent。此智能体被配置了"AI 内容策略执行者"的角色，并被赋予了与其筛选输入功能一致的目标和背景故事。它被配置为非详细模式并禁止委派，确保它专注于策略执行任务。此智能体被绑定到特定的 LLM（gemini/gemini-2.0-flash），因其速度和成本效益而被选择，并配置为低温度以确保确定性和严格的策略遵守。
+在 CrewAI 框架内，实例化了一个名为 policy_enforcer_agent 的智能体。此智能体被配置了"AI 内容策略执行者"的角色，并被赋予了与其筛选输入功能一致的目标和背景故事。它被配置为非详细模式并禁止委派，确保它专注于策略执行任务。此智能体明确关联到特定的 LLM（gemini/gemini-2.0-flash），因其速度和成本效益而被选择，并配置为低温度以确保确定性和严格的策略遵守。
 
 A Task called evaluate\_input\_task is then defined. Its description dynamically incorporates the SAFETY\_GUARDRAIL\_PROMPT and the specific user\_input to be evaluated. The task's expected\_output reinforces the requirement for a JSON object conforming to the PolicyEvaluation schema. Crucially, this task is assigned to the policy\_enforcer\_agent and utilizes the validate\_policy\_evaluation function as its guardrail. The output\_pydantic parameter is set to the PolicyEvaluation model, instructing CrewAI to attempt to structure the final output of this task according to this model and validate it using the specified guardrail.
 
@@ -341,7 +341,7 @@ Finally, the script includes a main execution block (if \_\_name\_\_ \== "\_\_ma
 
 Google Cloud's Vertex AI provides a multi-faceted approach to mitigating risks and developing reliable intelligent agents. This includes establishing agent and user identity and authorization, implementing mechanisms to filter inputs and outputs, designing tools with embedded safety controls and predefined context, utilizing built-in Gemini safety features such as content filters and system instructions, and validating model and tool invocations through callbacks.
 
-Google Cloud 的 Vertex AI 提供了一种多方面的方法来减轻风险并开发可靠的智能 Agent。这包括建立智能体的用户身份和授权、实施过滤输入和输出的机制、设计具有嵌入式安全控制和预定义上下文的工具、利用内置的 Gemini 安全功能（如内容过滤器和系统指令）以及通过回调验证模型和工具调用。
+Google Cloud 的 Vertex AI 提供了一种多方面的方法来减轻风险并开发可靠的智能体。这包括建立智能体和用户身份及授权、实施过滤输入和输出的机制、设计具有嵌入式安全控制和预定义上下文的工具、利用内置的 Gemini 安全功能（如内容过滤器和系统指令）以及通过回调验证模型和工具调用。
 
 For robust safety, consider these essential practices: use a less computationally intensive model (e.g., Gemini Flash Lite) as an extra safeguard, employ isolated code execution environments, rigorously evaluate and monitor agent actions, and restrict agent activity within secure network boundaries (e.g., VPC Service Controls). Before implementing these, conduct a detailed risk assessment tailored to the agent's functionalities, domain, and deployment environment. Beyond technical safeguards, sanitize all model-generated content before displaying it in user interfaces to prevent malicious code execution in browsers. Let's see an example.
 
@@ -458,7 +458,7 @@ You **must** output your decision in JSON format with two keys: `decision` and `
 
 Building reliable AI agents requires us to apply the same rigor and best practices that govern traditional software engineering. We must remember that even deterministic code is prone to bugs and unpredictable emergent behavior, which is why principles like fault tolerance, state management, and robust testing have always been paramount. Instead of viewing agents as something entirely new, we should see them as complex systems that demand these proven engineering disciplines more than ever.
 
-构建可靠的 AI 智能体要求我们应用与管理传统软件工程相同的严谨性和最佳实践。我们必须记住，即使是确定性代码也容易出现错误和不可预测的涌现行为，这就是为什么容错、状态管理和健壮测试等原则一直至关重要。我们不应将智能体视为神奇的东西，而应将它们视为比以往任何时候都更需要这些经过验证的工程学科的复杂系统。
+构建可靠的 AI 智能体要求我们应用与管理传统软件工程相同的严谨性和最佳实践。我们必须记住，即使是确定性代码也容易出现错误和不可预测的涌现行为，这就是为什么容错、状态管理和健壮测试等原则一直至关重要。我们不应将智能体视为全新的事物，而应将它们视为比以往任何时候都更需要这些经过验证的工程学科的复杂系统。
 
 The checkpoint and rollback pattern is a perfect example of this. Given that autonomous agents manage complex states and can head in unintended directions, implementing checkpoints is akin to designing a transactional system with commit and rollback capabilities—a cornerstone of database engineering. Each checkpoint is a validated state, a successful "commit" of the agent's work, while a rollback is the mechanism for fault tolerance. This transforms error recovery into a core part of a proactive testing and quality assurance strategy.
 
@@ -490,7 +490,7 @@ By integrating these core principles—fault tolerance, modular design, deep obs
 
 **Why:** Guardrails, or safety patterns, provide a standardized solution to manage the risks inherent in agentic systems. They function as a multi-layered defense mechanism to ensure agents operate safely, ethically, and aligned with their intended purpose. These patterns are implemented at various stages, including validating inputs to block malicious content and filtering outputs to catch undesirable responses. Advanced techniques include setting behavioral constraints via prompting, restricting tool usage, and integrating human-in-the-loop oversight for critical decisions. The ultimate goal is not to limit the agent's utility but to guide its behavior, ensuring it is trustworthy, predictable, and beneficial.
 
-**原因：** 防护栏或安全模式提供了一个标准化的解决方案来管理智能体系统固有的风险。它们作为一个多层防御机制，确保智能体以符合道德规范并与其预期目的保持一致地运行。这些模式在各个阶段实施，包括验证输入以阻止恶意内容和过滤输出以捕获不良响应。高级技术包括通过提示词设置行为约束、限制工具使用，以及为关键决策集成人机协同监督。最终目标不是限制智能体的能力，而是引导其行为，确保它值得信赖、可预测且有益。
+**原因：** 防护栏或安全模式提供了一个标准化的解决方案来管理智能体系统固有的风险。它们作为一个多层防御机制，确保智能体安全、符合道德规范地运行，并与其预期目的保持一致。这些模式在各个阶段实施，包括验证输入以阻止恶意内容和过滤输出以捕获不良响应。高级技术包括通过提示词设置行为约束、限制工具使用，以及为关键决策集成人机协同监督。最终目标不是限制智能体的能力，而是引导其行为，确保它值得信赖、可预测且有益。
 
 **Rule of thumb:** Guardrails should be implemented in any application where an AI agent's output can impact users, systems, or business reputation. They are critical for autonomous agents in customer-facing roles (e.g., chatbots), content generation platforms, and systems handling sensitive information in fields like finance, healthcare, or legal research. Use them to enforce ethical guidelines, prevent the spread of misinformation, protect brand safety, and ensure legal and regulatory compliance.
 
@@ -517,7 +517,7 @@ Fig. 1: Guardrail design pattern
 * Effective guardrails are crucial for maintaining user trust and protecting the reputation of the Agents and its developers.  
 * The most effective way to build reliable, production-grade Agents is to treat them as complex software, applying the same proven engineering best practices—like fault tolerance, state management, and robust testing—that have governed traditional systems for decades.
 
-* 防护栏对于通过防止有害、有偏见或离题的响应来构建负责任、符合道德规范和安全的智能体很重要。
+* 防护栏是构建负责任、符合道德规范且安全的智能体的核心要素，可防止生成有害、有偏见或离题的响应。
 * 它们可以在各个阶段实施，包括输入验证、输出过滤、行为提示词、工具使用限制和外部审核。
 * 不同防护栏技术的组合提供了最强大的保护。
 * 防护栏需要持续的监控、评估和改进，以适应不断演变的风险和用户交互。
@@ -530,7 +530,7 @@ Fig. 1: Guardrail design pattern
 
 Implementing effective guardrails represents a core commitment to responsible AI development, extending beyond mere technical execution. Strategic application of these safety patterns enables developers to construct intelligent agents that are robust and efficient, while prioritizing trustworthiness and beneficial outcomes. Employing a layered defense mechanism, which integrates diverse techniques ranging from input validation to human oversight, yields a resilient system against unintended or harmful outputs. Ongoing evaluation and refinement of these guardrails are essential for adaptation to evolving challenges and ensuring the enduring integrity of agentic systems. Ultimately, carefully designed guardrails empower AI to serve human needs in a safe and effective manner.
 
-实施有效的防护栏代表了对负责任的 AI 开发的核心承诺，超越了单纯的技术执行。这些安全模式的战略性应用使开发者能够构建既稳健又高效的智能 Agent，同时优先考虑可信度和有益结果。采用分层防御机制，整合从输入验证到人工监督的各种技术，可以产生一个对意外或有害输出具有弹性的系统。持续评估和改进这些防护栏对于适应不断演变的挑战并确保智能体的持久完整性至关重要。最终，精心设计的防护栏使 AI 能够以安全有效的方式服务于人类需求。
+实施有效的防护栏代表了对负责任的 AI 开发的核心承诺，超越了单纯的技术执行。这些安全模式的战略性应用使开发者能够构建既稳健又高效的智能体，同时优先考虑可信度和有益结果。采用分层防御机制，整合从输入验证到人工监督的各种技术，可以产生一个对意外或有害输出具有弹性的系统。持续评估和改进这些防护栏对于适应不断演变的挑战并确保智能体的持久完整性至关重要。最终，精心设计的防护栏使 AI 能够以安全有效的方式服务于人类需求。
 
 ## **References**
 

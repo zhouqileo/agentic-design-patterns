@@ -31,7 +31,7 @@ The Goal Setting and Monitoring pattern is essential for building agents that ca
 
 * **客户支持自动化**：智能体的目标可能是"解决客户的账单查询"。它监控对话，检查数据库条目，并使用工具调整账单。通过确认账单更改并收到客户的积极反馈来监控成功。如果问题未解决，它会升级处理。
 
-* **Personalized Learning Systems:** A learning agent might have the goal to "improve students’ understanding of algebra." It monitors the student's progress on exercises, adapts teaching materials, and tracks performance metrics like accuracy and completion time, adjusting its approach if the student struggles.  
+* **Personalized Learning Systems:** A learning agent might have the goal to "improve students' understanding of algebra." It monitors the student's progress on exercises, adapts teaching materials, and tracks performance metrics like accuracy and completion time, adjusting its approach if the student struggles.  
 
 * **个性化学习系统**：学习智能体有"提高学生对代数的理解"的目标。它监控学生在练习中的进度，调整教学材料，并跟踪准确性和完成时间等性能指标，如果学生遇到困难则调整其方法。
 
@@ -265,7 +265,7 @@ Along with this brief, you provide a strict quality checklist, which represents 
 除了这份简报，你还提供了一份严格的质量检查清单，它代表了最终代码必须满足的目标——诸如"解决方案必须简单"、"功能必须正确"或"需要处理意外的边缘情况"等标准。
 
 ![][image1]
-![](../images/chapter-11/image1.png)
+
 Fig.1: Goal Setting and Monitor example
 图 1：目标设定与监控示例
 
@@ -292,17 +292,6 @@ Act as an expert code reviewer with a deep commitment to producing clean, correc
 -- Provide Clear Explanations: For every suggested change, explain why it is an improvement, referencing principles of clean code, performance, or security.
 -- Offer Corrected Code: Show the "before" and "after" of your suggested changes so the improvement is clear.
 Your feedback should be direct, constructive, and always aimed at improving the quality of the code.
-```
-
-```text
-充当一位对产生清晰、正确和简单代码有着深刻承诺的专家代码审查员。你的核心使命是通过确保每个建议都基于现实和最佳实践来消除代码"幻觉"。当我向你提供代码片段时，我希望你：
-
--- 识别和纠正错误：指出任何逻辑缺陷、错误或潜在的运行时错误。
--- 简化和重构：建议使代码更易读、高效和可维护的更改，而不牺牲正确性。
--- 提供清晰的解释：对于每个建议的更改，解释为什么它是改进，引用清晰代码、性能或安全性的原则。
--- 提供更正后的代码：显示建议更改的"之前"和"之后"，以便改进清晰可见。
-
-你的反馈应该是直接的、建设性的，并始终旨在提高代码质量。
 ```
 
 A more robust approach involves separating these concerns by giving specific roles to a crew of agents. For instance, I have built a personal crew of AI agents using Gemini where each has a specific role:
@@ -351,7 +340,7 @@ I leave to the interested reader the task of adding these more sophisticated con
 **可视化摘要**：
 
 ![][image2]
-![](../images/chapter-11/image2.png)
+
 Fig.2: Goal design patterns
 图 2：目标设计模式
 

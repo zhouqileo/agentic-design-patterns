@@ -1,5 +1,4 @@
 ---
-
 layout: bilingual
 lang: bilingual
 ---
@@ -128,6 +127,18 @@ Few-shot prompting enhances one-shot prompting by supplying several examples, ty
 * **Evolution to "Many-Shot" Learning:** As modern LLMs like Gemini get stronger with long context modeling, they are becoming highly effective at utilizing "many-shot" learning. This means optimal performance for complex tasks can now be achieved by including a much larger number of examples—sometimes even hundreds—directly within the prompt, allowing the model to learn more intricate patterns.  
 * **Example:**  
   Classify the sentiment of the following movie reviews as POSITIVE, NEUTRAL, or NEGATIVE:
+
+  Review: "The acting was superb and the story was engaging."  
+  Sentiment: POSITIVE
+
+  Review: "It was okay, nothing special."  
+  Sentiment: NEUTRAL
+
+  Review: "I found the plot confusing and the characters unlikable."  
+  Sentiment: NEGATIVE
+
+  Review: "The visuals were stunning, but the dialogue was weak."  
+  Sentiment:
 
 * **适用场景**：少样本提示特别适用于需要遵循特定格式、风格或展现细微变化的任务。它非常适合于分类、具有特定模式的数据提取或以特定风格生成文本等任务，尤其是在零样本或单样本无法产生一致结果时。使用至少三到五个示例是通用经验法则，可根据任务复杂度和模型 token 限制进行调整。
 * **示例质量与多样性的重要性**：少样本提示的效果很大程度上取决于所提供示例的质量和多样性。示例应准确、具有代表性，并涵盖模型可能遇到的潜在变化或边缘情况。高质量、精心编写的示例至关重要；即使微小错误也可能混淆模型并导致不良输出。包含多样化示例有助于模型更好地泛化到未见过的输入。
@@ -448,7 +459,7 @@ This approach improves the accuracy and coherence of responses, particularly for
 
 ## Step-Back Prompting
 
-## 后退式提示（Step-Back Prompting）
+## 后退提示
 
 Step-back prompting enhances reasoning by first asking the language model to consider a general principle or concept related to the task before addressing specific details. The response to this broader question is then used as context for solving the original problem.
 
@@ -498,7 +509,7 @@ Intelligent agents possess the capability to actively engage with their environm
 
 ## Tool Use / Function Calling
 
-## 工具使用/函数调用
+## 工具使用/工具调用
 
 A crucial ability for an agent is using external tools or calling functions to perform actions beyond its internal capabilities. These actions may include web searches, database access, sending emails, performing calculations, or interacting with external APIs. Effective prompting for tool use involves designing prompts that instruct the model on the appropriate timing and methodology for tool utilization.
 
@@ -782,8 +793,10 @@ Consequently, the user avoids the need to re-establish the same contextual infor
 
 因此，用户无需在每个新查询中重新建立相同上下文信息。这种方法减少了对话冗余，提升了任务执行效率。产生的交互更加专注，输出与用户初始要求保持高度一致。此框架允许对通用 AI 模型应用细粒度、持久的用户指导。最终，Gems 实现了从通用交互向专业化、预定义 AI 功能的转变。
 
-![][image1]
+![][image1]  
+Fig.1: Example of Google Gem usage.
 
+![][image1]
 图 1：Google Gem 使用示例。
 
 ## Using LLMs to Refine Prompts (The Meta Approach)
@@ -800,11 +813,11 @@ This capability is particularly "cool" because it represents a form of AI self-i
 
 How does this work in practice? You can provide a language model with an existing prompt that you're trying to improve, along with the task you want it to accomplish and perhaps even examples of the output you're currently getting (and why it's not meeting your expectations). You then prompt the LLM to analyze the prompt and suggest improvements.
 
-如何在实践中应用？您可以为语言模型提供一个您试图改进的现有提示，以及您希望它完成的任务，甚至可能是您当前获得的输出示例（以及为什么它不符合您的期望）。然后提示 LLM 分析该提示并提出改进建议。
+如何在实践中实现这一点？您可以为语言模型提供一个您正在尝试改进的现有提示，以及您希望它完成的任务，甚至可能包括您当前获得的输出示例（以及为什么它不符合您的期望）。然后提示 LLM 分析提示并提出改进建议。
 
 A model like Gemini, with its strong reasoning and language generation capabilities, can analyze your existing prompt for potential areas of ambiguity, lack of specificity, or inefficient phrasing. It can suggest incorporating techniques we've discussed, such as adding delimiters, clarifying the desired output format, suggesting a more effective persona, or recommending the inclusion of few-shot examples.
 
-像 Gemini 这样的模型，凭借其强大的推理和语言生成能力，可以分析您的现有提示，寻找潜在的歧义、缺乏具体性或措辞低效的区域。它可以建议整合我们讨论过的技术，例如添加分隔符、阐明期望的输出格式、建议更有效的角色，或推荐包含少样本示例。
+像 Gemini 这样的模型，凭借其强大的推理和语言生成能力，可以分析您的现有提示，寻找潜在的歧义、缺乏具体性或措辞效率低下的区域。它可以建议结合我们讨论过的技术，例如添加分隔符、明确期望的输出格式、建议更有效的角色或推荐包含少样本示例。
 
 The benefits of this meta-prompting approach include:
 
@@ -848,7 +861,7 @@ In this example, we're using the LLM to critique and enhance another prompt. Thi
 
 ## 特定任务的提示
 
-While the techniques discussed so far are broadly applicable, some tasks benefit from specific prompting considerations. These are particularly relevant in the realm of code and multimodal inputs.
+While the techniques discussed so far are broadly applicable, some tasks benefit from specific prompting considerations. This is particularly relevant in the realm of code and multimodal inputs.
 
 尽管前述技术具有广泛适用性，但某些任务仍受益于特定的提示考量。这在代码和多模态输入领域尤为相关。
 
@@ -856,18 +869,18 @@ While the techniques discussed so far are broadly applicable, some tasks benefit
 
 ## 代码提示
 
-Language models, especially those trained on large code datasets, can be powerful allies for developers. Code prompting involves using LLMs to generate, interpret, translate, or debug code. There are various applications:
+Language models, especially those trained on large code datasets, can be powerful assistants for developers. Prompting for code involves using LLMs to generate, explain, translate, or debug code. Various use cases exist:
 
 语言模型，尤其是在大型代码数据集上训练的模型，可成为开发者的强大助手。代码提示涉及使用 LLM 生成、解释、翻译或调试代码。存在多种应用场景：
 
-* **Code Generation Prompting:** Ask the model to generate a code snippet or function based on a functional description.  
+* **Prompts for writing code:** Asking the model to generate code snippets or functions based on a description of the desired functionality.  
   * **Example:** "Write a Python function that takes a list of numbers and returns the average."  
-* **Code Interpretation Prompting:** Provide a code snippet and ask the model to explain what it does, line by line or as a whole.  
+* **Prompts for explaining code:** Providing a code snippet and asking the model to explain what it does, line by line or in a summary.  
   * **Example:** "Explain the following JavaScript code snippet: [insert code]."  
-* **Code Translation Prompting:** Ask the model to translate code from one programming language to another.  
+* **Prompts for translating code:** Asking the model to translate code from one programming language to another.  
   * **Example:** "Translate the following Java code to C++: [insert code]."  
-* **Code Debugging & Review Prompting:** Provide code with an error or that can be optimized, and ask the model to identify issues, suggest fixes, or provide refactoring advice.  
-  * **Example:** "The following Python code has a 'NameError'. What's wrong? How to fix it? [insert code and error traceback]."
+* **Prompts for debugging and reviewing code:** Providing code that has an error or could be improved and asking the model to identify issues, suggest fixes, or provide refactoring suggestions.  
+  * **Example:** "The following Python code is giving a 'NameError'. What is wrong and how can I fix it? [insert code and traceback]."
 
 * **代码编写提示**：要求模型基于功能描述生成代码片段或函数。
   * **示例**："编写一个接受数字列表并返回平均值的 Python 函数。"
@@ -878,7 +891,7 @@ Language models, especially those trained on large code datasets, can be powerfu
 * **代码调试与审查提示**：提供存在错误或可优化代码，要求模型识别问题、建议修复或提供重构意见。
   * **示例**："以下 Python 代码出现'NameError'。问题何在？如何修复？[插入代码和错误回溯]。"
 
-Effective code prompting often requires providing sufficient context, clearly specifying the language and version, and clearly articulating the functional requirements or problem description.
+Effective code prompting often requires providing sufficient context, specifying the desired language and version, and being clear about the functionality or issue.
 
 有效的代码提示通常需要提供充分上下文、明确指定语言和版本，并清晰阐述功能需求或问题描述。
 
@@ -886,15 +899,15 @@ Effective code prompting often requires providing sufficient context, clearly sp
 
 ## 多模态提示
 
-While this appendix focuses and most current LLM interactions are text-based, the field is rapidly evolving toward multimodal models that can process and generate information across modalities (text, images, audio, video, etc.). Multimodal prompting involves using input combinations to guide the model, i.e., using multiple input formats rather than just text.
+While the focus of this appendix and much of current LLM interaction is text-based, the field is rapidly moving towards multimodal models that can process and generate information across different modalities (text, images, audio, video, etc.). Multimodal prompting involves using a combination of inputs to guide the model. This refers to using multiple input formats instead of just text.
 
 尽管本附录重点及当前多数 LLM 交互基于文本，但该领域正迅速向能跨模态（文本、图像、音频、视频等）处理和生成信息的多模态模型发展。多模态提示涉及使用输入组合引导模型，即采用多种输入格式而非仅文本。
 
-* **Example:** Providing an image of a chart and asking the model to explain the process shown in the chart (image input + text prompt). Or providing an image and asking the model to generate a descriptive title (image input + text prompt -> text output).
+* **Example:** Providing an image of a diagram and asking the model to explain the process shown in the diagram (Image Input + Text Prompt). Or providing an image and asking the model to generate a descriptive caption (Image Input + Text Prompt -> Text Output).
 
 * **示例**：提供图表图像并要求模型解释图中所示过程（图像输入 + 文本提示）。或提供图像并要求模型生成描述性标题（图像输入 + 文本提示 -> 文本输出）。
 
-As multimodal capabilities become more sophisticated, prompting techniques will correspondingly evolve to effectively leverage these combinations of inputs and outputs.
+As multimodal capabilities become more sophisticated, prompting techniques will evolve to effectively leverage these combined inputs and outputs.
 
 随着多模态能力日益复杂，提示技术将相应演进，以有效利用这些组合的输入与输出。
 
@@ -902,25 +915,25 @@ As multimodal capabilities become more sophisticated, prompting techniques will 
 
 ## 最佳实践与实验
 
-Becoming a proficient prompt engineer is an iterative process that requires continuous learning and experimentation. Several valuable best practices are worth reiterating and emphasizing:
+Becoming a skilled prompt engineer is an iterative process that involves continuous learning and experimentation. Several valuable best practices are worth reiterating and emphasizing:
 
 成为熟练的提示工程师是一个需要持续学习和实验的迭代过程。值得重申和强调若干有价值的最佳实践：
 
-* **Provide Examples:** Providing one-shot or few-shot examples is one of the most effective ways to guide a model.  
-* **Keep it Simple:** Keep prompts concise, clear, and easy to understand. Avoid unnecessary jargon or overly complex phrasing.  
-* **Specify Output Requirements:** Clearly define the expected format, length, style, and content of the model's response.  
-* **Prefer Instructions Over Constraints:** Focus on telling the model what to do, rather than what not to do.  
-* **Control Maximum Token Length:** Use model configuration or explicit prompt instructions to manage the length of generated outputs.  
-* **Use Variables in Prompts:** For prompts used in applications, use variables to make them dynamically reusable, avoiding hardcoding specific values.  
-* **Experiment with Input Formats & Writing Styles:** Test different prompt phrasing approaches (questions, statements, instructions) and explore different tones or styles to find what works best.  
-* **Mix Up Classes in Few-Shot Classification Prompts:** Randomize the order of examples from different classes to prevent overfitting.  
-* **Adapt to Model Updates:** Language models are continuously updated. Be prepared to test existing prompts on new model versions and adjust to take advantage of new features or maintain performance.  
-* **Try Output Formats:** Especially for non-creative tasks, experiment with requesting structured output like JSON or XML.  
-* **Collaborate & Experiment with Other Prompt Engineers:** Collaboration can provide different perspectives and help discover more effective prompts.  
-* **CoT Best Practices:** Keep Chain of Thought specific practices in mind, like putting the answer after reasoning and setting temperature to 0 for single-correct-answer tasks.  
-* **Document Prompt Attempts:** Crucial for tracking what works, what doesn't, and why. Maintain a structured record of prompts, configurations, and results.  
-* **Store Prompts in Codebase:** When integrating prompts into applications, store them in separate, well-organized files for easy maintenance and version control.  
-* **Rely on Automated Testing & Evaluation:** For production systems, implement automated testing and evaluation processes to monitor prompt performance and ensure generalization to new data.
+* **Provide Examples:** Providing one or few-shot examples is one of the most effective ways to guide the model.  
+* **Design with Simplicity:** Keep your prompts concise, clear, and easy to understand. Avoid unnecessary jargon or overly complex phrasing.  
+* **Be Specific about the Output:** Clearly define the desired format, length, style, and content of the model's response.  
+* **Use Instructions over Constraints:** Focus on telling the model what you want it to do rather than what you don't want it to do.  
+* **Control the Max Token Length:** Use model configurations or explicit prompt instructions to manage the length of the generated output.  
+* **Use Variables in Prompts:** For prompts used in applications, use variables to make them dynamic and reusable, avoiding hardcoding specific values.  
+* **Experiment with Input Formats and Writing Styles:** Try different ways of phrasing your prompt (question, statement, instruction) and experiment with different tones or styles to see what yields the best results.  
+* **For Few-Shot Prompting with Classification Tasks, Mix Up the Classes:** Randomize the order of examples from different categories to prevent overfitting.  
+* **Adapt to Model Updates:** Language models are constantly being updated. Be prepared to test your existing prompts on new model versions and adjust them to leverage new capabilities or maintain performance.  
+* **Experiment with Output Formats:** Especially for non-creative tasks, experiment with requesting structured output like JSON or XML.  
+* **Experiment Together with Other Prompt Engineers:** Collaborating with others can provide different perspectives and lead to discovering more effective prompts.  
+* **CoT Best Practices:** Remember specific practices for Chain of Thought, such as placing the answer after the reasoning and setting temperature to 0 for tasks with a single correct answer.  
+* **Document the Various Prompt Attempts:** This is crucial for tracking what works, what doesn't, and why. Maintain a structured record of your prompts, configurations, and results.  
+* **Save Prompts in Codebases:** When integrating prompts into applications, store them in separate, well-organized files for easier maintenance and version control.  
+* **Rely on Automated Tests and Evaluation:** For production systems, implement automated tests and evaluation procedures to monitor prompt performance and ensure generalization to new data.
 
 * **提供示例**：提供 one-shot 或 few-shot 示例是最有效的模型引导方法之一。
 * **设计简洁**：保持提示简明、清晰且易于理解。避免不必要的专业术语或过度复杂措辞。
@@ -938,7 +951,7 @@ Becoming a proficient prompt engineer is an iterative process that requires cont
 * **代码库中保存提示**：集成提示至应用时，将其存储于独立、组织良好的文件中，便于维护和版本控制。
 * **依赖自动化测试与评估**：对生产系统，实施自动化测试和评估流程，监控提示性能并确保对新数据的泛化能力。
 
-Prompt engineering is a skill that improves continuously with practice. By applying these principles and techniques, and maintaining a systematic approach to experimentation and documentation, you will significantly enhance your ability to build effective agentic systems.
+Prompt engineering is a skill that improves with practice. By applying these principles and techniques, and by maintaining a systematic approach to experimentation and documentation, you can significantly enhance your ability to build effective agentic systems.
 
 提示工程是一项通过实践持续提升的技能。应用这些原则与技术，并保持对实验和文档的系统性方法，您将显著增强构建高效 Agentic 系统的能力。
 
@@ -946,15 +959,15 @@ Prompt engineering is a skill that improves continuously with practice. By apply
 
 ## 结论
 
-This appendix has provided a comprehensive overview of prompt engineering, repositioning it as a disciplined engineering practice rather than simply asking questions. Its core goal is to demonstrate how general-purpose language models can be transformed into specialized, reliable, and highly capable tools for specific tasks. This journey began with non-negotiable core principles: clarity, conciseness, and iterative experimentation, which are the foundation for effective communication with AI. These principles are critical because they reduce the ambiguity inherent in natural language, helping guide the model's probabilistic outputs toward a clear and correct intent. Building on this foundation, foundational techniques like zero-shot, one-shot, and few-shot prompting serve as the primary means of demonstrating expected behavior through examples. These methods provide varying levels of contextual guidance, powerfully shaping the model's response style, tone, and format. Going beyond examples, constructing prompts with explicit roles, system-level instructions, and clear delimiters provides the necessary architectural layers for fine-grained control over the model.
+This appendix provides a comprehensive overview of prompting, reframing it as a disciplined engineering practice rather than a simple act of asking questions. Its central purpose is to demonstrate how to transform general-purpose language models into specialized, reliable, and highly capable tools for specific tasks. The journey begins with non-negotiable core principles like clarity, conciseness, and iterative experimentation, which are the bedrock of effective communication with AI. These principles are critical because they reduce the inherent ambiguity in natural language, helping to steer the model's probabilistic outputs toward a single, correct intention. Building on this foundation, basic techniques such as zero-shot, one-shot, and few-shot prompting serve as the primary methods for demonstrating expected behavior through examples. These methods provide varying levels of contextual guidance, powerfully shaping the model's response style, tone, and format. Beyond just examples, structuring prompts with explicit roles, system-level instructions, and clear delimiters provides an essential architectural layer for fine-grained control over the model.
 
 本附录全面概述了提示工程，将其重新定位为一项有纪律的工程实践，而非简单的提问行为。其核心目标是展示如何将通用语言模型转化为针对特定任务的专业化、可靠且高度能干的工具。这一旅程始于不容妥协的核心原则：清晰性、简洁性和迭代实验，这些是与 AI 有效沟通的基石。这些原则至关重要，因其减少了自然语言固有的歧义，帮助引导模型的概率输出朝向明确正确的意图。在此基础上，基础技术（如 zero-shot、one-shot 和 few-shot 提示）作为通过示例展示预期行为的主要手段。这些方法提供不同层级的上下文指导，有力塑造模型的响应风格、语气和格式。超越示例范畴，使用明确角色、系统级指令和清晰分隔符构建提示，为精细控制模型提供了必要的架构层次。
 
-These techniques become crucial in the context of building autonomous agents, where they provide the necessary control and reliability for complex multi-step operations. To enable agents to formulate and execute plans, it is essential to leverage advanced reasoning patterns like Chain of Thought and Tree of Thoughts. These sophisticated approaches force the model to externalize its logical steps, systematically decomposing complex goals into manageable sequences of sub-tasks. The operational reliability of the entire agentic system depends on the predictability of its components' outputs. This is why requesting structured data like JSON and using tools like Pydantic for programmatic validation is not just a convenience but an absolute necessity for robust automation. Without this discipline, an agent's internal cognitive components cannot reliably communicate, leading to catastrophic failures in automated workflows. Ultimately, these structuring and reasoning techniques successfully transform the model's probabilistic text generation into a reliable cognitive engine for agents.
+The importance of these techniques becomes paramount in the context of building autonomous agents, where they provide the control and reliability necessary for complex, multi-step operations. For an agent to effectively create and execute a plan, it must leverage advanced reasoning patterns like Chain of Thought and Tree of Thoughts. These sophisticated methods compel the model to externalize its logical steps, systematically breaking down complex goals into a sequence of manageable sub-tasks. The operational reliability of the entire agentic system hinges on the predictability of each component's output. This is precisely why requesting structured data like JSON, and programmatically validating it with tools such as Pydantic, is not a mere convenience but an absolute necessity for robust automation. Without this discipline, the agent's internal cognitive components cannot communicate reliably, leading to catastrophic failures within an automated workflow. Ultimately, these structuring and reasoning techniques are what successfully convert a model's probabilistic text generation into a deterministic and trustworthy cognitive engine for an agent.
 
 这些技术在构建自主智能体的背景下变得至关重要，它们为复杂多步骤操作提供了必要的控制与可靠性。为使智能体能够制定和执行计划，必须利用高级推理模式，如思维链和思维树。这些复杂方法迫使模型外化其逻辑步骤，系统地将复杂目标分解为可管理的子任务序列。整个 Agentic 系统的运营可靠性依赖于各组件输出的可预测性。这正是为何请求 JSON 等结构化数据，并使用 Pydantic 等工具进行程序化验证，不仅是一种便利，更是强大自动化的绝对必要条件。缺乏这种纪律，Agent 的内部认知组件无法可靠通信，导致自动化工作流中的灾难性故障。最终，这些结构化与推理技术成功将模型的概率文本生成转化为智能体的可靠认知引擎。
 
-Furthermore, these prompts endow agents with the critical ability to perceive and interact with their environment, bridging the gap between digital thinking and real-world action. Action-oriented frameworks like ReAct and native tool calling empower agents to act, enabling them to use tools, query APIs, and manipulate data. Meanwhile, Retrieval Augmented Generation (RAG) and the broader discipline of context engineering serve as the information retrieval system for agents, allowing them to proactively retrieve relevant real-time information from external knowledge bases, ensuring that agents' decisions are grounded in real-world information. This critical capability prevents agents from operating in an information vacuum and shields them from being limited by their static and potentially outdated training data. Thus, mastering the full spectrum of prompting techniques is the decisive skill that elevates general-purpose language models from simple text generators to truly sophisticated agents, empowering them with autonomy, situational awareness, and the intelligence to perform complex tasks.
+Furthermore, these prompts are what grant an agent its crucial ability to perceive and act upon its environment, bridging the gap between digital thought and real-world interaction. Action-oriented frameworks like ReAct and native function calling are the vital mechanisms that serve as the agent's hands, allowing it to use tools, query APIs, and manipulate data. In parallel, techniques like Retrieval Augmented Generation (RAG) and the broader discipline of Context Engineering function as the agent's senses. They actively retrieve relevant, real-time information from external knowledge bases, ensuring the agent's decisions are grounded in current, factual reality. This critical capability prevents the agent from operating in a vacuum, where it would be limited to its static and potentially outdated training data. Mastering this full spectrum of prompting is therefore the definitive skill that elevates a generalist language model from a simple text generator into a truly sophisticated agent, capable of performing complex tasks with autonomy, awareness, and intelligence.
 
 此外，这些提示赋予智能体感知环境并与之交互的关键能力，弥合数字思维与现实世界行动间的鸿沟。ReAct 和原生工具调用等行动导向框架赋予智能体行动能力，使其能使用工具、查询 API 和操作数据。同时，检索增强生成（RAG）及更广泛的上下文工程学科则充当智能体的信息检索系统，使它们能主动从外部知识库检索相关实时信息，确保智能体的决策基于现实世界信息。这一关键能力防止智能体在信息真空中运作，并使其免受限于其静态且可能过时的训练数据。因此，掌握完整的提示技术谱系，是将通用语言模型从简单文本生成器提升为真正复杂智能体的决定性技能，使智能体具备自主性、情境意识和智能执行复杂任务的能力。
 
@@ -962,7 +975,7 @@ Furthermore, these prompts endow agents with the critical ability to perceive an
 
 ## 参考文献
 
-The following is a list of resources for further reading and in-depth exploration of prompt engineering techniques:
+Here is a list of resources for further reading and deeper exploration of prompt engineering techniques:
 
 以下是进一步阅读和深入探索提示工程技术的资源列表：
 

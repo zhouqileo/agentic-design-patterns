@@ -1,5 +1,4 @@
 # Chapter 17: Reasoning Techniques
-
 # 第 17 章：推理技术
 
 This chapter delves into advanced reasoning methodologies for intelligent agents, focusing on multi-step logical inferences and problem-solving. These techniques go beyond simple sequential operations, making the agent's internal reasoning explicit. This allows agents to break down problems, consider intermediate steps, and reach more robust and accurate conclusions.  A core principle among these advanced methods is the allocation of increased computational resources during inference. This means granting the agent, or the underlying LLM, more processing time or steps to process a query and generate a response. Rather than a quick, single pass, the agent can engage in iterative refinement, explore multiple solution paths, or utilize external tools. This extended processing time during inference often significantly enhances accuracy, coherence, and robustness, especially for complex problems requiring deeper analysis and deliberation.
@@ -7,7 +6,6 @@ This chapter delves into advanced reasoning methodologies for intelligent agents
 本章深入探讨智能体的高级推理方法，重点关注多步骤逻辑推理和复杂问题解决。这些技术超越了简单的顺序操作，使智能体的内部推理过程变得透明可见。通过这种方式，智能体能够将复杂问题分解为更小的子问题、考虑中间推理步骤，并得出更加可靠和准确的结论。这些高级方法的核心原则是在推理过程中分配更多的计算资源。这意味着给予智能体或底层 LLM 更多的处理时间或推理步骤来处理查询并生成响应。与快速单次处理不同，智能体可以进行迭代改进、探索多种解决方案或利用外部工具。这种延长推理时间的方法通常能显著提升准确性、连贯性和鲁棒性，特别是在处理需要深入分析和仔细审议的复杂问题时。
 
 ## Practical Applications & Use Cases
-
 ## 实际应用和用例
 
 Practical applications include:
@@ -15,21 +13,30 @@ Practical applications include:
 这些推理技术的实际应用场景包括：
 
 * **Complex Question Answering:** Facilitating the resolution of multi-hop queries, which necessitate the integration of data from diverse sources and the execution of logical deductions, potentially involving the examination of multiple reasoning paths, and benefiting from extended inference time to synthesize information.  
-* **Mathematical Problem Solving:** Enabling the division of mathematical problems into smaller, solvable components, illustrating the step-by-step process, and employing code execution for precise computations, where prolonged inference enables more intricate code generation and validation.  
-* **Code Debugging and Generation:** Supporting an agent's explanation of its rationale for generating or correcting code, pinpointing potential issues sequentially, and iteratively refining the code based on test results (Self-Correction), leveraging extended inference time for thorough debugging cycles.  
-* **Strategic Planning:** Assisting in the development of comprehensive plans through reasoning across various options, consequences, and preconditions, and adjusting plans based on real-time feedback (ReAct), where extended deliberation can lead to more effective and reliable plans.  
-* **Medical Diagnosis:** Aiding an agent in systematically assessing symptoms, test outcomes, and patient histories to reach a diagnosis, articulating its reasoning at each phase, and potentially utilizing external instruments for data retrieval (ReAct). Increased inference time allows for a more comprehensive differential diagnosis.  
-* **Legal Analysis:** Supporting the analysis of legal documents and precedents to formulate arguments or provide guidance, detailing the logical steps taken, and ensuring logical consistency through self-correction. Increased inference time allows for more in-depth legal research and argument construction.
 
 * **复杂问答**：支持解决多跳查询，这类查询需要整合不同来源的数据并进行逻辑推理，可能涉及检查多条推理路径，通过延长推理时间来综合信息。
+
+* **Mathematical Problem Solving:** Enabling the division of mathematical problems into smaller, solvable components, illustrating the step-by-step process, and employing code execution for precise computations, where prolonged inference enables more intricate code generation and validation.  
+
 * **数学问题解决**：能够将复杂数学问题分解为更小、可解决的组件，展示逐步解题过程，并使用代码执行进行精确计算，延长的推理时间使得更复杂的代码生成和验证成为可能。
+
+* **Code Debugging and Generation:** Supporting an agent's explanation of its rationale for generating or correcting code, pinpointing potential issues sequentially, and iteratively refining the code based on test results (Self-Correction), leveraging extended inference time for thorough debugging cycles.  
+
 * **代码调试和生成**：支持智能体解释其生成或修改代码的理由，按顺序识别潜在问题，并根据测试结果迭代改进代码（自我纠正），利用延长的推理时间进行彻底的调试。
+
+* **Strategic Planning:** Assisting in the development of comprehensive plans through reasoning across various options, consequences, and preconditions, and adjusting plans based on real-time feedback (ReAct), where extended deliberation can lead to more effective and reliable plans.  
+
 * **战略规划**：通过对各种选项、后果和前提条件进行推理，协助制定全面计划，并根据实时反馈调整策略（ReAct），延长的审议时间可以带来更有效和可靠的规划。
+
+* **Medical Diagnosis:** Aiding an agent in systematically assessing symptoms, test outcomes, and patient histories to reach a diagnosis, articulating its reasoning at each phase, and potentially utilizing external instruments for data retrieval (ReAct). Increased inference time allows for a more comprehensive differential diagnosis.
+
 * **医疗诊断**：帮助智能体评估症状、检查结果和患者病史以达成诊断，在每个阶段阐明推理过程，并可能利用外部工具检索数据（ReAct）。增加的推理时间允许进行更全面的鉴别诊断。
+
+* **Legal Analysis:** Supporting the analysis of legal documents and precedents to formulate arguments or provide guidance, detailing the logical steps taken, and ensuring logical consistency through self-correction. Increased inference time allows for more in-depth legal research and argument construction.
+
 * **法律分析**：支持分析法律文件和先例以构建论点或提供指导，详细说明所采取的逻辑步骤，并通过自我纠正确保逻辑一致性。增加的推理时间允许进行更深入的法律研究和论证构建。
 
 ## Reasoning techniques
-
 ## 推理技术
 
 To start, let's delve into the core reasoning techniques used to enhance the problem-solving abilities of AI models..
@@ -40,7 +47,7 @@ To start, let's delve into the core reasoning techniques used to enhance the pro
 
 **思维链（Chain-of-Thought，CoT）**提示词通过模拟逐步思考过程，显著增强了 LLM 的复杂推理能力（见图 1）。CoT 提示词不是要求模型直接给出答案，而是引导其生成一系列中间推理步骤。这种显式的分解使 LLM 能够将复杂问题拆分为更小、更易管理的子问题来逐步解决。该技术显著提升了模型在需要多步推理任务上的表现，例如算术计算、常识推理和符号操作。CoT 的主要优势在于能够将困难的单步问题转化为一系列更简单的步骤，从而提高 LLM 推理过程的透明度。这种方法不仅提高了准确性，还为理解模型决策过程提供了宝贵见解，有助于调试和分析。CoT 可以通过多种策略实现，包括提供展示逐步推理的少样本示例，或简单地指示模型"逐步思考"。其有效性源于它能够引导模型的内部处理过程朝着更审慎和逻辑化的方向发展。因此，思维链已成为在当代 LLM 中实现高级推理能力的基石技术。这种增强的透明度和复杂问题分解能力对于自主智能体尤为重要，使它们能够在复杂环境中执行更可靠和可审计的动作。
 
- ![][image1]  
+![][image1]  
 Fig. 1: CoT prompt alongside the detailed, step-by-step response generated by the agent.
 
 ![][image1]  
@@ -107,6 +114,7 @@ This example demonstrates a systematic process of self-correction, crucial for r
 
 ```
 You are a highly critical and detail-oriented Self-Correction Agent. Your task is to review a previously generated piece of content against its original requirements and identify areas for improvement. Your goal is to refine the content to be more accurate, comprehensive, engaging, and aligned with the prompt.
+
 Here's the process you must follow for self-correction:
 1.  **Understand Original Requirements:** Review the initial prompt/requirements that led to the content's creation. What was the *original intent*? What were the key constraints or goals?
 2.  **Analyze Current Content:** Read the provided content carefully.
@@ -151,6 +159,7 @@ Here's the process you must follow for self-correction:
 **Thought 5 (Generate Revised Content):**
 Original: "We have new products. They are green and techy. Buy GreenTech Gadgets now!"
 Revised idea 1: "🌱 Discover GreenTech Gadgets! Our new eco-friendly line blends innovation with sustainability. Go green, go smart! Shop now! #EcoFriendly #GreenTech" (148 characters)
+
 This revision directly addresses eco-friendliness, uses emojis for engagement, adds a stronger call to action, and includes relevant hashtags while staying within the character limit.
 
 **Self-Correction Agent's Final Revised Content (Output to User):**
@@ -209,6 +218,7 @@ root_agent = Agent(
 **ReAct**（推理与行动，见图 3，其中 KB 代表知识库）是一种将思维链（CoT）提示词与智能体通过工具与外部环境交互的能力相结合的范式。与直接生成最终答案的生成模型不同，ReAct 智能体对采取哪些行动进行推理。这个推理阶段涉及内部规划过程，类似于 CoT，Agent 确定下一步行动，考虑可用工具并预测可能的结果。然后，Agent 通过执行工具或工具调用来行动，例如查询数据库、执行计算或与 API 交互。
 
 ![][image3]
+
 Fig.3: Reasoning and Act
 
 ![][image3]
@@ -257,11 +267,15 @@ MASS 采用多阶段优化策略，通过交错进行提示词和拓扑优化来
 #### 关键发现和原则：实验表明，经 MASS 优化的多智能体在一系列任务中显著优于现有的手动设计系统和其他自动设计方法。从这项研究中得出的有效多智能体的关键设计原则有三个方面：
 
 * Optimize individual agents with high-quality prompts before composing them.  
-* Construct MAS by composing influential topologies rather than exploring an unconstrained search space.  
-* Model and optimize the interdependencies between agents through a final, workflow-level joint optimization.
 
 * 在组合智能体之前，使用高质量提示词优化各个 Agent。
+
+* Construct MAS by composing influential topologies rather than exploring an unconstrained search space.  
+
 * 通过组合有影响力的拓扑而不是探索无约束的搜索空间来构建多智能体系统。
+
+* Model and optimize the interdependencies between agents through a final, workflow-level joint optimization.
+
 * 通过最终的工作流级联合优化来建模和优化智能体的相互依赖性。
 
 Building on our discussion of key reasoning techniques, let's first examine a core performance principle: the Scaling Inference Law for LLMs. This law states that a model's performance predictably improves as the computational resources allocated to it increase. We can see this principle in action in complex systems like Deep Research, where an AI agent leverages these resources to autonomously investigate a topic by breaking it down into sub-questions, using Web search as a tool, and synthesizing its findings.
@@ -285,13 +299,19 @@ During this time, the AI works on your behalf in an agentic way. It autonomously
 在此期间，AI 以 agentic 方式代表用户工作。它自主执行一系列复杂的步骤，这些步骤对于人类来说将是非常耗时的：
 
 1. Initial Exploration: It runs multiple, targeted searches based on your initial prompt.  
-2. Reasoning and Refinement: It reads and analyzes the first wave of results, synthesizes the findings, and critically identifies gaps, contradictions, or areas that require more detail.  
-3. Follow-up Inquiry: Based on its internal reasoning, it conducts new, more nuanced searches to fill those gaps and deepen its understanding.  
-4. Final Synthesis: After several rounds of this iterative searching and reasoning, it compiles all the validated information into a single, cohesive, and structured summary.
 
 1. 初始探索：根据用户的初始提示词运行多个有针对性的搜索。
+
+2. Reasoning and Refinement: It reads and analyzes the first wave of results, synthesizes the findings, and critically identifies gaps, contradictions, or areas that require more detail.  
+
 2. 推理和改进：阅读和分析第一波结果，综合发现，并批判性地识别差距、矛盾或需要更多细节的领域。
+
+3. Follow-up Inquiry: Based on its internal reasoning, it conducts new, more nuanced searches to fill those gaps and deepen its understanding.  
+
 3. 后续查询：基于内部推理，进行新的、更细致的搜索以填补这些差距并加深理解。
+
+4. Final Synthesis: After several rounds of this iterative searching and reasoning, it compiles all the validated information into a single, cohesive, and structured summary.
+
 4. 最终综合：经过几轮这种迭代搜索和推理，将所有验证的信息编译成一个单一的、连贯的、结构化的摘要。
 
 This systematic approach ensures a comprehensive and well-reasoned response, significantly enhancing the efficiency and depth of information gathering, thereby facilitating more agentic decision-making.
@@ -319,11 +339,15 @@ Consequently, the Scaling Inference Law becomes fundamental to constructing effi
 因此，推理扩展定律成为构建高效和具有成本效益的 Agentic 系统的基础。它提供了一种方法来仔细平衡几个相互关联的因素：
 
 * **Model Size:** Smaller models are inherently less demanding in terms of memory and storage.  
-* **Response Latency:** While increased inference-time computation can add to latency, the law helps identify the point at which the performance gains outweigh this increase, or how to strategically apply computation to avoid excessive delays.  
-* **Operational Cost:** Deploying and running larger models typically incurs higher ongoing operational costs due to increased power consumption and infrastructure requirements. The law demonstrates how to optimize performance without unnecessarily escalating these costs.
 
 * **模型大小**：较小的模型在内存和存储方面本质上要求较低。
+
+* **Response Latency:** While increased inference-time computation can add to latency, the law helps identify the point at which the performance gains outweigh this increase, or how to strategically apply computation to avoid excessive delays.  
+
 * **响应延迟**：虽然增加的推理时间计算可能会增加延迟，但该定律有助于识别性能增益超过这种增加的点，或如何战略性地应用计算以避免过度延迟。
+
+* **Operational Cost:** Deploying and running larger models typically incurs higher ongoing operational costs due to increased power consumption and infrastructure requirements. The law demonstrates how to optimize performance without unnecessarily escalating these costs.
+
 * **运营成本**：部署和运行更大的模型通常会因增加的功耗和基础设施要求而产生更高的持续运营成本。该定律演示了如何在不必要地提高这些成本的情况下优化性能。
 
 By understanding and applying the Scaling Inference Law, developers and organizations can make strategic choices that lead to optimal performance for specific agentic applications, ensuring that computational resources are allocated where they will have the most significant impact on the quality and utility of the LLM's output. This allows for more nuanced and economically viable approaches to AI deployment, moving beyond a simple "bigger is better" paradigm.
@@ -331,7 +355,6 @@ By understanding and applying the Scaling Inference Law, developers and organiza
 通过理解和应用推理扩展定律，开发人员和组织可以做出战略选择，从而为特定的 agentic 应用实现最佳性能，确保计算资源分配到它们对 LLM 输出的质量和效用产生最显著影响的地方。这允许更细致和经济可行的 AI 部署方法，超越简单的"更大就是更好"的范式。
 
 ## Hands-On Code Example
-
 ## 实践代码示例
 
 The DeepSearch code, open-sourced by Google, is available through the gemini-fullstack-langgraph-quickstart repository (Fig. 6). This repository provides a template for developers to construct full-stack AI agents using Gemini 2.5 and the LangGraph orchestration framework. This open-source stack facilitates experimentation with agent-based architectures and can be integrated with local LLLMs such as Gemma. It utilizes Docker and modular project scaffolding for rapid prototyping. It should be noted that this release serves as a well-structured demonstration and is not intended as a production-ready backend.
@@ -344,9 +367,9 @@ Fig. 6: (Courtesy of authors) Example of DeepSearch with multiple Reflection ste
 
 图 6：（由作者提供）具有多个反思步骤的 DeepSearch 示例
 
-This project provides a full-stack application featuring a React frontend and a LangGraph backend, designed for advanced research and conversational AI. A LangGraph agent dynamically generates search queries using Google Gemini models and integrates web research via the Google Search API. The system employs reflective reasoning to identify knowledge gaps, refine searches iteratively, and synthesize answers with citations. The frontend and backend support hot-reloading. The project's structure includes separate frontend/ and backend/ directories. Requirements for setup include Node.js, npm, Python 3.8+, and a Google Gemini API key. After configuring the API key in the backend's .env file, dependencies for both the backend (using pip install .) and frontend (npm install) can be installed. Development servers can be run concurrently with make dev or individually. The backend agent, defined in backend/src/agent/graph.py, generates initial search queries, conducts web research, performs knowledge gap analysis, refines queries iteratively, and synthesizes a cited answer using a Gemini model. Production deployment involves the backend server delivering a static frontend build and requires Redis for streaming real-time output and a Postgres database for managing data. A Docker image can be built and run using docker-compose up, which also requires a LangSmith API key for the docker-compose.yml example. The application utilizes React with Vite, Tailwind CSS, Shadcn UI, LangGraph, and Google Gemini. The project is licensed under the Apache License 2.0.
+This project provides a full-stack application featuring a React frontend and a LangGraph backend, designed for advanced research and conversational AI. A LangGraph agent dynamically generates search queries using Google Gemini models and integrates web research via the Google Search API. The system employs reflective reasoning to identify knowledge gaps, refine searches iteratively, and synthesize answers with citations. The frontend and backend support hot-reloading. The project's structure includes separate frontend/ and backend/ directories. Requirements for setup include Node.js, npm, Python 3.8+, and a Google Gemini API key. After configuring the API key in the backend's .env file, dependencies for both the backend (using pip install .) and frontend (npm install) can be installed. Development servers can be run concurrently with make dev or individually. The backend agent, defined in backend/src/agent/graph.py, generates initial search queries, conducts web research, performs knowledge gap analysis, refines queries iteratively, and synthesizes a cited answer using a Gemini model. Production deployment involves the backend server delivering a static frontend build and requires Redis for streaming real-time output and a Postgres database for managing data. A Docker image can be built and run using docker-compose up, which also requires a LangSmith API key for the docker-compose.yml example. The application uses React with Vite, Tailwind CSS, Shadcn UI, LangGraph, and Google Gemini. The project is licensed under the Apache License 2.0.
 
-该项目提供了一个具有 React 前端和 LangGraph 后端的全栈应用程序，专为高级研究和对话式 AI 而设计。LangGraph 智能体使用 Google Gemini 模型动态生成搜索查询，并通过 Google Search API 集成网络研究。系统采用反思推理来识别知识差距、迭代改进搜索并综合带引用的答案。前端和后端支持热重载。项目结构包括单独的 frontend/ 和 backend/ 目录。设置要求包括 Node.js、npm、Python 3.8+ 和 Google Gemini API 密钥。在后端的 .env 文件中配置 API 密钥后，可以为后端（使用 pip install .）和前端（npm install）安装依赖项。开发服务器可以使用 make dev 同时运行或单独运行。在 backend/src/agent/graph.py 中定义的后端智能体生成初始搜索查询、进行网络研究、执行知识差距分析、迭代改进查询并使用 Gemini 模型综合带引用的答案。生产部署涉及后端服务器提供静态前端构建，并需要 Redis 用于流式实时输出和 Postgres 数据库用于管理数据。可以使用 docker-compose up 构建和运行 Docker 镜像，这也需要 docker-compose.yml 示例的 LangSmith API 密钥。该应用程序使用带 Vite 的 React、Tailwind CSS、Shadcn UI、LangGraph 和 Google Gemini。该项目在 Apache License 2.0 下授权。
+该项目提供了一个具有 React 前端和 LangGraph 后端的全栈应用程序，专为高级研究和对话式 AI 而设计。LangGraph 智能体使用 Google Gemini 模型动态生成搜索查询，并通过 Google Search API 集成网络研究。系统采用反思推理来识别知识差距、迭代改进搜索并综合带引用的答案。前端和后端支持热重载。项目结构包括单独的 frontend/ 和 backend/ 目录。设置要求包括 Node.js、npm、Python 3.8+ 和 Google Gemini API 密钥。在后端的 .env 文件中配置 API 密钥后，可以为后端（使用 pip install .）和前端（npm install）安装依赖项。开发服务器可以使用 make dev 同时运行或单独运行。在 backend/src/agent/graph.py 中定义的后端智能体生成初始搜索查询、进行网络研究、执行知识差距分析、迭代改进查询并使用 Gemini 模型综合带引用的答案。生产部署涉及后端服务器提供静态前端构建，并需要 Redis 用于流式实时输出和 Postgres 数据库用于管理数据。可以使用 docker-compose up 构建和运行 Docker 镜像，这也需要 docker-compose.yml 示例的 LangSmith API 密钥。该应用使用带 Vite 的 React、Tailwind CSS、Shadcn UI、LangGraph 和 Google Gemini。该项目在 Apache License 2.0 下授权。
 
 ```python
 ## Create our Agent Graph
@@ -390,7 +413,6 @@ Fig.4: Example of DeepSearch with LangGraph (code from backend/src/agent/graph.p
 图 4：使用 LangGraph 的 DeepSearch 示例（来自 backend/src/agent/graph.py 的代码）
 
 ## So, what do agents think?
-
 ## 智能体的思考过程
 
 In summary, an agent's thinking process is a structured approach that combines reasoning and acting to solve problems. This method allows an agent to explicitly plan its steps, monitor its progress, and interact with external tools to gather information.
@@ -402,11 +424,15 @@ At its core, the agent's "thinking" is facilitated by a powerful LLM. This LLM g
 其核心是，Agent 的"思考"由强大的 LLM 驱动。这个 LLM 生成一系列指导智能体行动的思考。该过程通常遵循思考-行动-观察循环：
 
 1. **Thought:** The agent first generates a textual thought that breaks down the problem, formulates a plan, or analyzes the current situation. This internal monologue makes the agent's reasoning process transparent and steerable.  
-2. **Action:** Based on the thought, the agent selects an action from a predefined, discrete set of options. For example, in a question-answering scenario, the action space might include searching online, retrieving information from a specific webpage, or providing a final answer.  
-3. **Observation:** The agent then receives feedback from its environment based on the action taken. This could be the results of a web search or the content of a webpage.
 
 1. **思考**：Agent 首先生成分解问题、制定计划或分析当前情况的文本思考。这种内部独白使智能体的推理过程透明且可引导。
+
+2. **Action:** Based on the thought, the agent selects an action from a predefined, discrete set of options. For example, in a question-answering scenario, the action space might include searching online, retrieving information from a specific webpage, or providing a final answer.  
+
 2. **行动**：基于思考，Agent 从预定义的离散选项集中选择一个行动。例如，在问答场景中，行动空间可能包括在线搜索、从特定网页检索信息或提供最终答案。
+
+3. **Observation:** The agent then receives feedback from its environment based on the action taken. This could be the results of a web search or the content of a webpage.
+
 3. **观察**：Agent 然后根据所采取的行动从其环境接收反馈。这可能是网络搜索的结果或网页的内容。
 
 This cycle repeats, with each observation informing the next thought, until the agent determines that it has reached a final solution and performs a "finish" action.
@@ -422,7 +448,6 @@ The frequency of an agent's thoughts can be adjusted depending on the task. For 
 Agent 思考的频率可以根据任务进行调整。对于知识密集型推理任务（如事实核查），思考通常与每个行动交错，以确保信息收集和推理的逻辑流动。相比之下，对于需要许多行动的决策任务（例如在模拟环境中导航），思考可能更谨慎地使用，允许智能体决定何时需要思考。
 
 ## At a Glance
-
 ## 概览
 
 **What**: Complex problem-solving often requires more than a single, direct answer, posing a significant challenge for AI. The core problem is enabling AI agents to tackle multi-step tasks that demand logical inference, decomposition, and strategic planning. Without a structured approach, agents may fail to handle intricacies, leading to inaccurate or incomplete conclusions. These advanced reasoning methodologies aim to make an agent's internal "thought" process explicit, allowing it to systematically work through challenges.
@@ -448,31 +473,45 @@ Fig. 7: Reasoning design pattern
 图 7：推理设计模式
 
 ## Key Takeaways
-
 ## 关键要点
 
 * By making their reasoning explicit, agents can formulate transparent, multi-step plans, which is the foundational capability for autonomous action and user trust.  
-* The ReAct framework provides agents with their core operational loop, empowering them to move beyond mere reasoning and interact with external tools to dynamically act and adapt within an environment.  
-* The Scaling Inference Law implies an agent's performance is not just about its underlying model size, but its allocated "thinking time," allowing for more deliberate and higher-quality autonomous actions.  
-* Chain-of-Thought (CoT) serves as an agent's internal monologue, providing a structured way to formulate a plan by breaking a complex goal into a sequence of manageable actions.  
-* Tree-of-Thought and Self-Correction give agents the crucial ability to deliberate, allowing them to evaluate multiple strategies, backtrack from errors, and improve their own plans before execution.  
-* Collaborative frameworks like Chain of Debates (CoD) signal the shift from solitary agents to multi-agent systems, where teams of agents can reason together to tackle more complex problems and reduce individual biases.  
-* Applications like Deep Research demonstrate how these techniques culminate in agents that can execute complex, long-running tasks, such as in-depth investigation, completely autonomously on a user's behalf.  
-* To build effective teams of agents, frameworks like MASS automate the optimization of how individual agents are instructed and how they interact, ensuring the entire multi-agent system performs optimally.  
-* By integrating these reasoning techniques, we build agents that are not just automated but truly autonomous, capable of being trusted to plan, act, and solve complex problems without direct supervision.
 
 * 通过使推理明确，Agent 可以制定透明的、多步骤的计划，这是自主行动和用户信任的基础能力。
+
+* The ReAct framework provides agents with their core operational loop, empowering them to move beyond mere reasoning and interact with external tools to dynamically act and adapt within an environment.  
+
 * ReAct 框架为智能体提供了其核心操作循环，使它们能够超越单纯的推理并与外部工具交互，以在环境中动态行动和适应。
+
+* The Scaling Inference Law implies an agent's performance is not just about its underlying model size, but its allocated "thinking time," allowing for more deliberate and higher-quality autonomous actions.  
+
 * 推理扩展定律意味着智能体的性能不仅关乎其底层模型大小，还关乎其分配的"思考时间"，允许更审慎和更高质量的自主行动。
+
+* Chain-of-Thought (CoT) serves as an agent's internal monologue, providing a structured way to formulate a plan by breaking a complex goal into a sequence of manageable actions.  
+
 * 思维链（CoT）作为智能体的内部独白，提供了一种通过将复杂目标分解为一系列可管理的行动来制定计划的结构化方法。
+
+* Tree-of-Thought and Self-Correction give agents the crucial ability to deliberate, allowing them to evaluate multiple strategies, backtrack from errors, and improve their own plans before execution.  
+
 * 思维树和自我纠正赋予智能体关键的审议能力，允许它们评估多个策略、从错误中回溯并在执行前改进自己的计划。
+
+* Collaborative frameworks like Chain of Debates (CoD) signal the shift from solitary agents to multi-agent systems, where teams of agents can reason together to tackle more complex problems and reduce individual biases.  
+
 * 像辩论链（CoD）这样的协作框架标志着从单独智能体到多智能体系统的转变，其中智能体团队可以共同推理以解决更复杂的问题并减少个体偏见。
+
+* Applications like Deep Research demonstrate how these techniques culminate in agents that can execute complex, long-running tasks, such as in-depth investigation, completely autonomously on a user's behalf.  
+
 * 像 Deep Research 这样的应用程序展示了这些技术如何在智能体中达到高潮，这些智能体能够完全自主地代表用户执行复杂的、长期运行的任务，例如深入调查。
+
+* To build effective teams of agents, frameworks like MASS automate the optimization of how individual agents are instructed and how they interact, ensuring the entire multi-agent system performs optimally.  
+
 * 为了构建有效的智能体团队，像 MASS 这样的框架自动化优化各个智能体的指令方式以及它们如何交互，确保整个多智能体系统以最优方式执行。
+
+* By integrating these reasoning techniques, we build agents that are not just automated but truly autonomous, capable of being trusted to plan, act, and solve complex problems without direct supervision.
+
 * 通过集成这些推理技术，我们构建的智能体不仅是自动化的，而且是真正自主的，能够被信任去规划、行动和解决复杂问题而无需直接监督。
 
 ## Conclusions
-
 ## 结论
 
 Modern AI is evolving from passive tools into autonomous agents, capable of tackling complex goals through structured reasoning. This agentic behavior begins with an internal monologue, powered by techniques like Chain-of-Thought (CoT), which allows an agent to formulate a coherent plan before acting. True autonomy requires deliberation, which agents achieve through Self-Correction and Tree-of-Thought (ToT), enabling them to evaluate multiple strategies and independently improve their own work. The pivotal leap to fully agentic systems comes from the ReAct framework, which empowers an agent to move beyond thinking and start acting by using external tools. This establishes the core agentic loop of thought, action, and observation, allowing the agent to dynamically adapt its strategy based on environmental feedback.
@@ -484,7 +523,6 @@ An agent's capacity for deep deliberation is fueled by the Scaling Inference Law
 Agent 的深度审议能力由推理扩展定律推动，其中更多的计算"思考时间"直接转化为更稳健的自主行动。下一个前沿是多智能体系统，其中像辩论链（CoD）这样的框架创建协作智能体群体，它们一起推理以实现共同目标。这不是理论性的；像 Deep Research 这样的 agentic 应用程序已经展示了自主智能体如何能够代表用户执行复杂的、多步骤的调查。总体目标是设计可靠和透明的自主 Agent，可以被信任独立管理和解决复杂问题。最终，通过将明确推理与行动能力相结合，这些方法正在完成 AI 向真正 agentic 问题解决者的转变。
 
 ## References
-
 ## 参考文献
 
 Relevant research includes:
@@ -492,10 +530,15 @@ Relevant research includes:
 相关研究包括：
 
 1. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" by Wei et al. (2022)  
+
 2. "Tree of Thoughts: Deliberate Problem Solving with Large Language Models" by Yao et al. (2023)  
+
 3. "Program-Aided Language Models" by Gao et al. (2023)  
+
 4. "ReAct: Synergizing Reasoning and Acting in Language Models" by Yao et al. (2023)  
+
 5. Inference Scaling Laws: An Empirical Analysis of Compute-Optimal Inference for LLM Problem-Solving, 2024  
+
 6. Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies, [https://arxiv.org/abs/2502.02533](https://arxiv.org/abs/2502.02533) 
 
 [image1]: ../images/chapter-17/image1.png

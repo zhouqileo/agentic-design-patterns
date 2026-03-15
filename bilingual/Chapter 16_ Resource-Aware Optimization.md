@@ -19,17 +19,27 @@ Practical use cases include:
 实际应用场景包括:
 
 * **Cost-Optimized LLM Usage:** An agent deciding whether to use a large, expensive LLM for complex tasks or a smaller, more affordable one for simpler queries, based on a budget constraint.  
-* **Latency-Sensitive Operations:** In real-time systems, an agent chooses a faster but potentially less comprehensive reasoning path to ensure a timely response.  
-* **Energy Efficiency:** For agents deployed on edge devices or with limited power, optimizing their processing to conserve battery life.  
-* **Fallback for service reliability:**  An agent automatically switches to a backup model when the primary choice is unavailable, ensuring service continuity and graceful degradation.  
-* **Data Usage Management:** An agent opting for summarized data retrieval instead of full dataset downloads to save bandwidth or storage.  
-* **Adaptive Task Allocation:** In multi-agent systems, agents self-assign tasks based on their current computational load or available time.
 
 * **成本优化的 LLM 使用**:智能体根据预算约束,决定是对复杂任务使用大型、昂贵的 LLM,还是对简单查询使用更小、更经济的 LLM。
+
+* **Latency-Sensitive Operations:** In real-time systems, an agent chooses a faster but potentially less comprehensive reasoning path to ensure a timely response.  
+
 * **延迟敏感操作**:在实时系统中,智能体选择更快但可能不够全面的推理路径,以确保及时响应。
+
+* **Energy Efficiency:** For agents deployed on edge devices or with limited power, optimizing their processing to conserve battery life.  
+
 * **能源效率**:对于部署在边缘设备或电力受限环境中的智能体,优化其处理过程以延长电池寿命。
+
+* **Fallback for service reliability:**  An agent automatically switches to a backup model when the primary choice is unavailable, ensuring service continuity and graceful degradation.  
+
 * **服务可靠性回退**:当主要选择不可用时,智能体自动切换到备用模型,确保服务连续性和优雅降级。
+
+* **Data Usage Management:** An agent opting for summarized data retrieval instead of full dataset downloads to save bandwidth or storage.  
+
 * **数据使用管理**:智能体选择摘要数据检索而非完整数据集下载,以节省带宽或存储空间。
+
+* **Adaptive Task Allocation:** In multi-agent systems, agents self-assign tasks based on their current computational load or available time.
+
 * **自适应任务分配**:在多智能体系统中,智能体根据其当前计算负载或可用时间自行分配任务。
 
 ## Hands-On Code Example
@@ -78,27 +88,6 @@ gemini_flash_agent = Agent(
 )
 ```
 
-```python
-## 概念性的类 Python 结构,非可运行代码
-## from google.adk.models.lite_llm import LiteLlm  # 如果使用 ADK 默认智能体不直接支持的模型
-
-## 使用更昂贵的 Gemini Pro 2.5 的智能体
-gemini_pro_agent = Agent(
-    name="GeminiProAgent",
-    model="gemini-2.5-pro",  # 如果实际模型名称不同,这是占位符
-    description="一个用于复杂查询的高能力智能体。",
-    instruction="您是一个专门解决复杂问题的专家助手。"
-)
-
-## 使用更便宜的 Gemini Flash 2.5 的智能体
-gemini_flash_agent = Agent(
-    name="GeminiFlashAgent",
-    model="gemini-2.5-flash",  # 如果实际模型名称不同,这是占位符
-    description="一个用于简单查询的快速高效智能体。",
-    instruction="您是一个处理简单问题的快速助手。"
-)
-```
-
 A Router Agent can direct queries based on simple metrics like query length, where shorter queries go to less expensive models and longer queries to more capable models. However, a more sophisticated Router Agent can utilize either  LLM or ML models to analyze query nuances and complexity. This LLM router can determine which downstream language model is most suitable. For example, a query requesting a factual recall is routed to a flash model, while a complex query requiring deep analysis is routed to a pro model.
 
 路由器智能体可以基于简单的指标(如查询长度)来引导查询,其中较短的查询转到较便宜的模型,较长的查询转到更强大的模型。然而,更复杂的路由器智能体可以使用 LLM 或 ML 模型来分析查询的细微差别和复杂性。这个 LLM 路由器可以确定哪个下游语言模型最合适。例如,请求事实回忆的查询被路由到 Flash 模型,而需要深入分析的复杂查询被路由到 Pro 模型。
@@ -126,33 +115,6 @@ class QueryRouterAgent(BaseAgent):
             print(f"Routing to Gemini Flash Agent for short query (length: {query_length})")
             # In a real ADK setup, you would 'transfer_to_agent' or directly invoke
             # For demonstration, we'll simulate a call and yield its response
-            response = await gemini_flash_agent.run_async(context.current_message)
-            yield Event(author=self.name, content=f"Flash Agent processed: {response}")
-        else:
-            print(f"Routing to Gemini Pro Agent for long query (length: {query_length})")
-            response = await gemini_pro_agent.run_async(context.current_message)
-            yield Event(author=self.name, content=f"Pro Agent processed: {response}")
-```
-
-```python
-## 概念性的类 Python 结构,非可运行代码
-from google.adk.agents import Agent, BaseAgent
-from google.adk.events import Event
-from google.adk.agents.invocation_context import InvocationContext
-import asyncio
-
-class QueryRouterAgent(BaseAgent):
-    name: str = "QueryRouter"
-    description: str = "根据复杂性将用户查询路由到适当的LLM智能体。"
-
-    async def _run_async_impl(self, context: InvocationContext) -> AsyncGenerator[Event, None]:
-        user_query = context.current_message.text  # 假设文本输入
-        query_length = len(user_query.split())  # 简单指标：单词数
-
-        if query_length < 20:  # 示例阈值，用于简单性与复杂性的区分
-            print(f"Routing to Gemini Flash Agent for short query (length: {query_length})")
-            # 在真实的 ADK 设置中，您会使用 'transfer_to_agent' 或直接调用
-            # 为了演示，我们将模拟一个调用并产生其响应
             response = await gemini_flash_agent.run_async(context.current_message)
             yield Event(author=self.name, content=f"Flash Agent processed: {response}")
         else:
@@ -192,18 +154,6 @@ Your overarching aim is to ensure the final research product meets the highest p
 """
 ```
 
-```python
-CRITIC_SYSTEM_PROMPT = """
-您是**批评智能体**,作为我们协作研究助手系统的质量保证部门。您的主要功能是**细致审查和质疑**来自研究智能体的信息,确保**准确性、完整性和无偏见的呈现**。您的职责包括:
-* **评估研究发现**的事实正确性、全面性和潜在倾向。
-* **识别任何缺失数据**或推理中的不一致。
-* **提出关键问题**以改进或扩展当前理解。
-* **提供建设性建议**以增强或探索不同角度。
-* **验证最终输出是否全面**且平衡。
-所有批评必须是建设性的。您的目标是加强研究,而非否定它。清晰组织您的反馈,突出需要修订的具体要点。您的首要目标是确保最终研究产品达到尽可能高的质量标准。
-"""
-```
-
 The Critic Agent operates based on a predefined system prompt that outlines its role, responsibilities, and feedback approach. A well-designed prompt for this agent must clearly establish its function as an evaluator. It should specify the areas for critical focus and emphasize providing constructive feedback rather than mere dismissal. The prompt should also encourage the identification of both strengths and weaknesses, and it must guide the agent on how to structure and present its feedback.
 
 批评智能体按照预定义的系统提示词运行,该提示词概述其角色、职责和反馈方法。为此智能体设计的良好提示词必须清楚地确立其作为评估者的功能。它应指定批评重点领域,并强调提供建设性反馈而不仅仅是拒绝。提示词还应鼓励识别优势和弱点,并且必须指导智能体如何组织和呈现其反馈。
@@ -217,11 +167,15 @@ This system uses a resource-aware optimization strategy to handle user queries e
 该系统使用资源感知优化策略来高效处理用户查询。它首先将每个查询分类为三个类别之一,以确定最合适和最具成本效益的处理路径。这种方法避免在简单请求上浪费计算资源,同时确保复杂查询获得必要的关注。三个类别是:
 
 * simple: For straightforward questions that can be answered directly without complex reasoning or external data.  
-* reasoning: For queries that require logical deduction or multi-step thought processes, which are routed to more powerful models.  
-* internet\_search: For questions needing current information, which automatically triggers a Google Search to provide an up-to-date answer.
 
 * simple：用于可以直接回答而无需复杂推理或外部数据的简单问题。
+
+* reasoning: For queries that require logical deduction or multi-step thought processes, which are routed to more powerful models.  
+
 * reasoning：用于需要逻辑推理或多步骤思考过程的查询,这些查询被路由到更强大的模型。
+
+* internet\_search: For questions needing current information, which automatically triggers a Google Search to provide an up-to-date answer.
+
 * internet_search：用于需要当前信息的问题,会自动触发 Google 搜索以提供最新答案。
 
 The code is under the MIT license and available on Github: ([https://github.com/mahtabsyed/21-Agentic-Patterns/blob/main/16\_Resource\_Aware\_Opt\_LLM\_Reflection\_v2.ipynb](https://github.com/mahtabsyed/21-Agentic-Patterns/blob/main/16_Resource_Aware_Opt_LLM_Reflection_v2.ipynb))
@@ -357,135 +311,6 @@ print("🧠 Model Used:", result["model"])
 print("🧠 Response:\n", result["response"])
 ```
 
-```python
-## MIT License
-## Copyright (c) 2025 Mahtab Syed
-## https://www.linkedin.com/in/mahtabsyed/
-
-import os
-import requests
-import json
-from dotenv import load_dotenv
-from openai import OpenAI
-
-## 加载环境变量
-load_dotenv()
-
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-GOOGLE_CUSTOM_SEARCH_API_KEY = os.getenv("GOOGLE_CUSTOM_SEARCH_API_KEY")
-GOOGLE_CSE_ID = os.getenv("GOOGLE_CSE_ID")
-
-if not OPENAI_API_KEY or not GOOGLE_CUSTOM_SEARCH_API_KEY or not GOOGLE_CSE_ID:
-    raise ValueError(
-        "Please set OPENAI_API_KEY, GOOGLE_CUSTOM_SEARCH_API_KEY, and GOOGLE_CSE_ID in your .env file."
-    )
-
-client = OpenAI(api_key=OPENAI_API_KEY)
-
-## --- 步骤 1：分类提示词 ---
-def classify_prompt(prompt: str) -> dict:
-    system_message = {
-        "role": "system",
-        "content": (
-            "You are a classifier that analyzes user prompts and returns one of three categories ONLY:\n\n"
-            "- simple\n"
-            "- reasoning\n"
-            "- internet_search\n\n"
-            "Rules:\n"
-            "- Use 'simple' for direct factual questions that need no reasoning or current events.\n"
-            "- Use 'reasoning' for logic, math, or multi-step inference questions.\n"
-            "- Use 'internet_search' if the prompt refers to current events, recent data, or things not in your training data.\n\n"
-            "Respond ONLY with JSON like:\n"
-            '{ "classification": "simple" }'
-        ),
-    }
-    user_message = {"role": "user", "content": prompt}
-    response = client.chat.completions.create(
-        model="gpt-4o", messages=[system_message, user_message], temperature=1
-    )
-    reply = response.choices[0].message.content
-    return json.loads(reply)
-
-## --- 步骤 2：Google 搜索 ---
-def google_search(query: str, num_results=1) -> list:
-    url = "https://www.googleapis.com/customsearch/v1"
-    params = {
-        "key": GOOGLE_CUSTOM_SEARCH_API_KEY,
-        "cx": GOOGLE_CSE_ID,
-        "q": query,
-        "num": num_results,
-    }
-    try:
-        response = requests.get(url, params=params)
-        response.raise_for_status()
-        results = response.json()
-        if "items" in results and results["items"]:
-            return [
-                {
-                    "title": item.get("title"),
-                    "snippet": item.get("snippet"),
-                    "link": item.get("link"),
-                }
-                for item in results["items"]
-            ]
-        else:
-            return []
-    except requests.exceptions.RequestException as e:
-        return {"error": str(e)}
-
-## --- 步骤 3：生成响应 ---
-def generate_response(prompt: str, classification: str, search_results=None) -> str:
-    if classification == "simple":
-        model = "gpt-4o-mini"
-        full_prompt = prompt
-    elif classification == "reasoning":
-        model = "o4-mini"
-        full_prompt = prompt
-    elif classification == "internet_search":
-        model = "gpt-4o"
-        # 将每个搜索结果字典转换为可读字符串
-        if search_results:
-            search_context = "\n".join(
-                [
-                    f"Title: {item.get('title')}\nSnippet: {item.get('snippet')}\nLink: {item.get('link')}"
-                    for item in search_results
-                ]
-            )
-        else:
-            search_context = "未找到搜索结果。"
-        full_prompt = f"""使用以下网络结果回答用户查询：{search_context} 查询：{prompt}"""
-
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": full_prompt}],
-        temperature=1,
-    )
-    return response.choices[0].message.content, model
-
-## --- 步骤 4：组合路由器 ---
-def handle_prompt(prompt: str) -> dict:
-    classification_result = classify_prompt(prompt)
-    # 删除或注释掉下一行以避免重复打印
-    # print("\n🔍 Classification Result:", classification_result)
-    classification = classification_result["classification"]
-
-    search_results = None
-    if classification == "internet_search":
-        search_results = google_search(prompt)
-        # print("\n🔍 Search Results:", search_results)
-
-    answer, model = generate_response(prompt, classification, search_results)
-    return {"classification": classification, "response": answer, "model": model}
-
-test_prompt = "What is the capital of Australia?"
-## test_prompt = "Explain the impact of quantum computing on cryptography."
-## test_prompt = "When does the Australian Open 2026 start, give me full date?"
-result = handle_prompt(test_prompt)
-print("🔍 Classification:", result["classification"])
-print("🧠 Model Used:", result["model"])
-print("🧠 Response:\n", result["response"])
-```
-
 This Python code implements a prompt routing system to answer user questions. It begins by loading necessary API keys from a .env file for OpenAI and Google Custom Search. The core functionality lies in classifying the user's prompt into three categories: simple, reasoning, or internet search. A dedicated function utilizes an OpenAI model for this classification step. If the prompt requires current information, a Google search is performed using the Google Custom Search API. Another function then generates the final response, selecting an appropriate OpenAI model based on the classification. For internet search queries, the search results are provided as context to the model. The main handle\_prompt function orchestrates this workflow, calling the classification and search (if needed) functions before generating the response. It returns the classification, the model used, and the generated answer. This system efficiently directs different types of queries to optimized methods for a better response.
 
 这段 Python 代码实现了一个提示词路由系统来回答用户问题。它首先从 .env 文件加载 OpenAI 和 Google 自定义搜索的必要 API 密钥。核心功能在于将用户的提示词分类为三个类别：simple、reasoning 或 internet search。专用函数利用 OpenAI 模型进行此分类步骤。如果提示词需要当前信息,则使用 Google 自定义搜索 API 执行 Google 搜索。另一个函数然后生成最终响应,根据分类选择适当的 OpenAI 模型。对于互联网搜索查询,搜索结果作为上下文提供给模型。主 handle_prompt 函数编排此工作流,在生成响应之前调用分类和搜索(如果需要)函数。它返回分类、使用的模型和生成的答案。该系统有效地将不同类型的查询引导到优化的方法以获得更好的响应。
@@ -521,29 +346,6 @@ response = requests.post(
 )
 ```
 
-```python
-import requests
-import json
-
-response = requests.post(
-  url="https://openrouter.ai/api/v1/chat/completions",
-  headers={
-    "Authorization": "Bearer <OPENROUTER_API_KEY>",
-    "HTTP-Referer": "<YOUR_SITE_URL>",  # 可选。用于 openrouter.ai 上排名的网站 URL。
-    "X-Title": "<YOUR_SITE_NAME>",      # 可选。用于 openrouter.ai 上排名的网站标题。
-  },
-  data=json.dumps({
-    "model": "openai/gpt-4o",  # 可选
-    "messages": [
-      {
-        "role": "user",
-        "content": "What is the meaning of life?"
-      }
-    ]
-  })
-)
-```
-
 This code snippet uses the requests library to interact with the OpenRouter API. It sends a POST request to the chat completion endpoint with a user message. The request includes authorization headers with an API key and optional site information. The goal is to get a response from a specified language model, in this case, "openai/gpt-4o". 
 
 这段代码片段使用 requests 库与 OpenRouter API 交互。它向聊天完成端点发送带有用户消息的 POST 请求。请求包括带有 API 密钥和可选网站信息的授权头。目标是从指定的语言模型(在本例中为"openai/gpt-4o")获得响应。
@@ -563,13 +365,6 @@ OpenRouter 提供两种不同的方法来路由和确定用于处理给定请求
 }
 ```
 
-```json
-{
-  "model": "openrouter/auto",
-  ... // 其他参数
-}
-```
-
 * **Sequential Model Fallback:** This mechanism provides operational redundancy by allowing users to specify a hierarchical list of models. The system will first attempt to process the request with the primary model designated in the sequence. Should this primary model fail to respond due to any number of error conditions—such as service unavailability, rate-limiting, or content filtering—the system will automatically re-route the request to the next specified model in the sequence. This process continues until a model in the list successfully executes the request or the list is exhausted. The final cost of the operation and the model identifier returned in the response will correspond to the model that successfully completed the computation.
 
 * **顺序模型回退**:此机制通过允许用户指定分层模型列表来提供运营冗余。系统将首先尝试使用序列中指定的主要模型处理请求。如果此主要模型由于任何错误条件(如服务不可用、速率限制或内容过滤)而无法响应,系统将自动将请求重新路由到序列中的下一个指定模型。此过程继续,直到列表中的模型成功执行请求或列表耗尽。操作的最终成本和响应中返回的模型标识符将对应于成功完成计算的模型。
@@ -578,13 +373,6 @@ OpenRouter 提供两种不同的方法来路由和确定用于处理给定请求
 {
   "models": ["anthropic/claude-3.5-sonnet", "gryphe/mythomax-l2-13b"],
   ... // Other params
-}
-```
-
-```json
-{
-  "models": ["anthropic/claude-3.5-sonnet", "gryphe/mythomax-l2-13b"],
-  ... // 其他参数
 }
 ```
 
@@ -673,17 +461,27 @@ Fig. 2: Resource-Aware Optimization Design Pattern
 ## 关键要点
 
 * Resource-Aware Optimization is Essential: Intelligent agents can manage computational, temporal, and financial resources dynamically. Decisions regarding model usage and execution paths are made based on real-time constraints and objectives.  
-* Multi-Agent Architecture for Scalability: Google's ADK provides a multi-agent framework, enabling modular design. Different agents (answering, routing, critique) handle specific tasks.  
-* Dynamic, LLM-Driven Routing: A Router Agent directs queries to language models (Gemini Flash for simple, Gemini Pro for complex) based on query complexity and budget. This optimizes cost and performance.  
-* Critique Agent Functionality: A dedicated Critique Agent provides feedback for self-correction, performance monitoring, and refining routing logic, enhancing system effectiveness.  
-* Optimization Through Feedback and Flexibility: Evaluation capabilities for critique and model integration flexibility contribute to adaptive and self-improving system behavior.  
-* Additional Resource-Aware Optimizations: Other methods include Adaptive Tool Use & Selection, Contextual Pruning & Summarization, Proactive Resource Prediction, Cost-Sensitive Exploration in Multi-Agent Systems, Energy-Efficient Deployment, Parallelization & Distributed Computing Awareness, Learned Resource Allocation Policies, Graceful Degradation and Fallback Mechanisms, and Prioritization of Critical Tasks.
 
 * **资源感知优化至关重要**:智能体可以动态管理计算、时间和财务资源。根据实时约束和目标做出关于模型使用和执行路径的决策。
+
+* Multi-Agent Architecture for Scalability: Google's ADK provides a multi-agent framework, enabling modular design. Different agents (answering, routing, critique) handle specific tasks.  
+
 * **可扩展性的多智能体架构**:Google 的 ADK 提供多智能体框架,实现模块化设计。不同的智能体(回答、路由、批评)处理特定任务。
+
+* Dynamic, LLM-Driven Routing: A Router Agent directs queries to language models (Gemini Flash for simple, Gemini Pro for complex) based on query complexity and budget. This optimizes cost and performance.  
+
 * **动态、LLM 驱动的路由**:路由器智能体根据查询复杂性和预算将查询引导到语言模型(简单查询使用 Gemini Flash,复杂查询使用 Gemini Pro)。这优化了成本和性能。
+
+* Critique Agent Functionality: A dedicated Critique Agent provides feedback for self-correction, performance monitoring, and refining routing logic, enhancing system effectiveness.  
+
 * **批评智能体功能**:专用批评智能体为自我纠正、性能监控和改进路由逻辑提供反馈,增强系统有效性。
+
+* Optimization Through Feedback and Flexibility: Evaluation capabilities for critique and model integration flexibility contribute to adaptive and self-improving system behavior.  
+
 * **通过反馈和灵活性进行优化**:批评的评估能力和模型集成灵活性有助于自适应和自我改进的系统行为。
+
+* Additional Resource-Aware Optimizations: Other methods include Adaptive Tool Use & Selection, Contextual Pruning & Summarization, Proactive Resource Prediction, Cost-Sensitive Exploration in Multi-Agent Systems, Energy-Efficient Deployment, Parallelization & Distributed Computing Awareness, Learned Resource Allocation Policies, Graceful Degradation and Fallback Mechanisms, and Prioritization of Critical Tasks.
+
 * **其他资源感知优化技术**:其他方法包括自适应工具使用和选择、上下文修剪和摘要、主动资源预测、多智能体系统中的成本敏感探索、节能部署、并行化和分布式计算感知、学习型资源分配策略、优雅降级和回退机制,以及关键任务的优先级排序。
 
 ## Conclusions

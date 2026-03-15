@@ -109,7 +109,7 @@ You will also need to set up your environment with your API key for the language
 ```python
 ## Copyright (c) 2025 Marco Fago
 ## https://www.linkedin.com/in/marco-fago/
-##
+#
 ## This code is licensed under the MIT License.
 ## See the LICENSE file in the repository for the full license text.
 
@@ -209,11 +209,11 @@ if __name__ == "__main__":
    main()
 ```
 
-As mentioned, this Python code constructs a simple agent-like system using the LangChain library and Google's Generative AI model, specifically gemini-2.5-flash. In detail, It defines three simulated sub-agent handlers: booking\_handler, info\_handler, and unclear\_handler, each designed to process specific types of requests.
+As mentioned, this Python code constructs a simple agent-like system using the LangChain library and Google's Generative AI model, specifically gemini-2.5-flash. In detail, It defines three simulated sub-agent handlers: booking\_handler, info\_handler, and unclear\_handler, each designed to process specific types of requests. 
 
 如上所述，这段 Python 代码使用 LangChain 库和 Google 的生成式 AI 模型（特别是 gemini-2.5-flash）构建了一个简单的类智能体系统。详细来说，它定义了三个模拟子智能体处理程序：booking_handler、info_handler 和 unclear_handler，每个都设计用于处理特定类型的请求。
 
-A core component is the coordinator\_router\_chain, which utilizes a ChatPromptTemplate to instruct the language model to categorize incoming user requests into one of three categories: 'booker', 'info', or 'unclear'. The output of this router chain is then used by a RunnableBranch to delegate the original request to the corresponding handler function. The RunnableBranch checks the decision from the language model and directs the request data to either the booking\_handler, info\_handler, or unclear\_handler. The coordinator\_agent combines these components, first routing the request for a decision and then passing the request to the chosen handler. The final output is extracted from the handler's response.
+A core component is the coordinator\_router\_chain, which utilizes a ChatPromptTemplate to instruct the language model to categorize incoming user requests into one of three categories: 'booker', 'info', or 'unclear'. The output of this router chain is then used by a RunnableBranch to delegate the original request to the corresponding handler function. The RunnableBranch checks the decision from the language model and directs the request data to either the booking\_handler, info\_handler, or unclear\_handler. The coordinator\_agent combines these components, first routing the request for a decision and then passing the request to the chosen handler. The final output is extracted from the handler's response. 
 
 核心组件是 coordinator_router_chain，它利用 ChatPromptTemplate 指示语言模型将传入的用户请求分类为三个类别之一：'booker'、'info' 或 'unclear'。然后路由链的输出由 RunnableBranch 使用，将原始请求委托给相应的处理函数。RunnableBranch 检查来自语言模型的决策，并将请求数据定向到 booking_handler、info_handler 或 unclear_handler。coordinator_agent 结合了这些组件，首先路由请求以做出决策，然后将请求传递给选定的处理程序。最终输出从处理程序的响应中提取。
 
@@ -229,9 +229,9 @@ The Agent Development Kit (ADK) is a framework for engineering agentic systems, 
 
 智能体开发工具包 (ADK) 是一个用于工程化智能体系统的框架，为定义智能体能力和行为提供了结构化环境。与基于显式计算图的架构相比，ADK 范式中的路由通常通过定义一组离散的"工具"来实现，这些工具代表智能体的功能。响应用户查询选择适当工具由框架的内部逻辑管理，该逻辑利用底层模型将用户意图与正确的功能处理程序匹配。
 
-This Python code demonstrates an example of an Agent Development Kit (ADK) application using Google's ADK library. It sets up a "Coordinator" agent that routes user requests to specialized sub-agents ("Booker" for bookings and "Info" for general information) based on defined instructions. The sub-agents then use specific tools to simulate handling the requests, showcasing a basic delegation pattern within an agent system.
+This Python code demonstrates an example of an Agent Development Kit (ADK) application using Google's ADK library. It sets up a "Coordinator" agent that routes user requests to specialized sub-agents ("Booker" for bookings and "Info" for general information) based on defined instructions. The sub-agents then use specific tools to simulate handling the requests, showcasing a basic delegation pattern within an agent system
 
-此 Python 代码演示了使用 Google ADK 库的智能体开发工具包 (ADK) 应用程序示例。它设置了一个"协调器"智能体，根据定义的指令将用户请求路由到专门的子智能体（"Booker"用于预订，"Info"用于一般信息）。然后子智能体使用特定工具模拟处理请求，展示了智能体系统中的基本委托模式。
+此 Python 代码演示了使用 Google ADK 库的智能体开发工具包 (ADK) 应用程序示例。它设置了一个"协调器"智能体，根据定义的指令将用户请求路由到专门的子智能体（"Booker"用于预订，"Info"用于一般信息）。然后子智能体使用特定工具模拟处理请求，展示了智能体系统中的基本委托模式
 
 ```python
 ## Copyright (c) 2025 Marco Fago
@@ -372,11 +372,11 @@ if __name__ == "__main__":
    await main()
 ```
 
-This script consists of a main Coordinator agent and two specialized sub\_agents: Booker and Info. Each specialized agent is equipped with a FunctionTool that wraps a Python function simulating an action. The booking\_handler function simulates handling flight and hotel bookings, while the info\_handler function simulates retrieving general information. The unclear\_handler is included as a fallback for requests the coordinator cannot delegate, although the current coordinator logic doesn't explicitly use it for delegation failure in the main run\_coordinator function.
+This script consists of a main Coordinator agent and two specialized sub\_agents: Booker and Info. Each specialized agent is equipped with a FunctionTool that wraps a Python function simulating an action. The booking\_handler function simulates handling flight and hotel bookings, while the info\_handler function simulates retrieving general information. The unclear\_handler is included as a fallback for requests the coordinator cannot delegate, although the current coordinator logic doesn't explicitly use it for delegation failure in the main run\_coordinator function. 
 
 此脚本由一个主协调器智能体和两个专门的子智能体组成：Booker 和 Info。每个专门的智能体都配备了一个 FunctionTool，它包装了一个模拟操作的 Python 函数。booking_handler 函数模拟处理航班和酒店预订，而 info_handler 函数模拟检索一般信息。unclear_handler 作为协调器无法委托的请求的后备包含在内，尽管当前协调器逻辑在主 run_coordinator 函数中没有明确使用它进行委托失败处理。
 
-The Coordinator agent's primary role, as defined in its instruction, is to analyze incoming user messages and delegate them to either the Booker or Info agent. This delegation is handled automatically by the ADK's Auto-Flow mechanism because the Coordinator has sub\_agents defined. The run\_coordinator function sets up an InMemoryRunner, creates a user and session ID, and then uses the runner to process the user's request through the coordinator agent. The runner.run method processes the request and yields events, and the code extracts the final response text from the event.content.
+The Coordinator agent's primary role, as defined in its instruction, is to analyze incoming user messages and delegate them to either the Booker or Info agent. This delegation is handled automatically by the ADK's Auto-Flow mechanism because the Coordinator has sub\_agents defined. The run\_coordinator function sets up an InMemoryRunner, creates a user and session ID, and then uses the runner to process the user's request through the coordinator agent. The runner.run method processes the request and yields events, and the code extracts the final response text from the event.content. 
 
 协调器智能体的主要角色，如其指令中所定义的，是分析传入的用户消息并将它们委托给 Booker 或 Info 智能体。这种委托由 ADK 的自动流机制自动处理，因为协调器定义了 sub_agents。run_coordinator 函数设置了一个 InMemoryRunner，创建一个用户和会话 ID，然后使用运行器通过协调器智能体处理用户的请求。runner.run 方法处理请求并产生事件，代码从 event.content 中提取最终响应文本。
 
@@ -407,8 +407,8 @@ main 函数通过使用不同请求运行协调器来演示系统的用法，展
 ![][image1]  
 Fig.1: Router pattern, using an LLM as a Router
 
-![][image1]  
 图 1：路由模式，使用 LLM 作为路由器
+
 ## Key Takeaways
 
 ## 关键要点
@@ -448,6 +448,6 @@ Mastering the Routing pattern is essential for building agents that can intellig
 ## 参考文献
 
 1. LangGraph Documentation: [https://www.langchain.com/](https://www.langchain.com/)
-2. Google 智能体开发工具包文档: [https://google.github.io/adk-docs/](https://google.github.io/adk-docs/)
+2. Google Agent Developer Kit Documentation: [https://google.github.io/adk-docs/](https://google.github.io/adk-docs/)
 
 [image1]: ../images/chapter-2/image1.png

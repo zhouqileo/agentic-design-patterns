@@ -18,9 +18,9 @@
 
 ### 上下文学习（In-Context Learning）：上下文学习是 AI 直接从提示词中提供的示例学习新任务的能力，无需任何重新训练。这个强大的功能允许单个通用模型即时适应无数特定任务。
 
-## Zero-Shot, One-Shot, &amp; Few-Shot Prompting: These are prompting techniques where a model is given zero, one, or a few examples of a task to guide its response. Providing more examples generally helps the model better understand the user's intent and improves its accuracy for the specific task.
+## Zero-Shot, One-Shot, & Few-Shot Prompting: These are prompting techniques where a model is given zero, one, or a few examples of a task to guide its response. Providing more examples generally helps the model better understand the user's intent and improves its accuracy for the specific task.
 
-### 零样本、单样本和少样本提示（Zero-Shot, One-Shot, &amp; Few-Shot Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。
+### 零样本、单样本和少样本提示（Zero-Shot, One-Shot, & Few-Shot Prompting）：这些是提示技术，其中向模型提供零个、一个或几个任务示例来指导其响应。提供更多示例通常有助于模型更好地理解用户意图，并提高特定任务的准确性。
 
 ## Multimodality: Multimodality is an AI's ability to understand and process information across multiple data types like text, images, and audio. This allows for more versatile and human-like interactions, such as describing an image or answering a spoken question.
 
@@ -70,7 +70,7 @@
 
 ### 微调技术：微调是使用较小的专业化数据集将通用预训练模型适应特定任务的过程。最常见的方法是监督微调（SFT），其中模型在标记的正确输入输出对示例上进行训练。一个流行的变体是指令调优，专注于训练模型更好地遵循用户命令。为了使此过程更高效，使用参数高效微调（PEFT）方法，顶级技术包括 LoRA（低秩适应），仅更新少量参数，以及其内存优化版本 QLoRA。另一种技术，检索增强生成（RAG），通过在微调或推理阶段将模型连接到外部知识源来增强模型。
 
-## Alignment &amp; Safety Techniques: Alignment is the process of ensuring an AI model's behavior aligns with human values and expectations, making it helpful and harmless. The most prominent technique is Reinforcement Learning from Human Feedback (RLHF), where a "reward model" trained on human preferences guides the AI's learning process, often using an algorithm like Proximal Policy Optimization (PPO) for stability. Simpler alternatives have emerged, such as Direct Preference Optimization (DPO), which bypasses the need for a separate reward model, and Kahneman-Tversky Optimization (KTO), which simplifies data collection further. To ensure safe deployment, Guardrails are implemented as a final safety layer to filter outputs and block harmful actions in real-time.
+## Alignment & Safety Techniques: Alignment is the process of ensuring an AI model's behavior aligns with human values and expectations, making it helpful and harmless. The most prominent technique is Reinforcement Learning from Human Feedback (RLHF), where a "reward model" trained on human preferences guides the AI's learning process, often using an algorithm like Proximal Policy Optimization (PPO) for stability. Simpler alternatives have emerged, such as Direct Preference Optimization (DPO), which bypasses the need for a separate reward model, and Kahneman-Tversky Optimization (KTO), which simplifies data collection further. To ensure safe deployment, Guardrails are implemented as a final safety layer to filter outputs and block harmful actions in real-time.
 
 ### 对齐和安全技术：对齐是确保 AI 模型行为与人类价值观和期望保持一致的过程，使其有帮助且无害。最突出的技术是基于人类反馈的强化学习（RLHF），其中在人类偏好上训练的"奖励模型"指导 AI 的学习过程，通常使用近端策略优化（PPO）等算法来保持稳定性。已经出现了更简单的替代方案，例如直接偏好优化（DPO），它绕过了对单独奖励模型的需求，以及 Kahneman-Tversky 优化（KTO），它进一步简化了数据收集。为确保安全部署，实施护栏作为最终安全层，以实时过滤输出并阻止有害行为。
 
@@ -130,8 +130,8 @@ This index of terms was generated using Gemini Pro 2.5. The prompt and reasoning
 * Adaptive Task Allocation \- Chapter 16: Resource-Aware Optimization  
 * 自适应任务分配(Adaptive Task Allocation) - 第 16 章：资源感知优化
 
-* Adaptive Tool Use &amp; Selection \- Chapter 16: Resource-Aware Optimization  
-* 自适应工具使用与选择(Adaptive Tool Use &amp; Selection) - 第 16 章：资源感知优化
+* Adaptive Tool Use & Selection \- Chapter 16: Resource-Aware Optimization  
+* 自适应工具使用与选择(Adaptive Tool Use & Selection) - 第 16 章：资源感知优化
 
 * Agent \- What makes an AI system an Agent?  
 * 智能体(Agent) - 什么使 AI 系统成为 Agent？
@@ -285,8 +285,8 @@ This index of terms was generated using Gemini Pro 2.5. The prompt and reasoning
 * Context Window \- Glossary  
 * 上下文窗口(Context Window) - 术语表
 
-* Contextual Pruning &amp; Summarization \- Chapter 16: Resource-Aware Optimization  
-* 上下文修剪与摘要(Contextual Pruning &amp; Summarization) - 第 16 章：资源感知优化
+* Contextual Pruning & Summarization \- Chapter 16: Resource-Aware Optimization  
+* 上下文修剪与摘要(Contextual Pruning & Summarization) - 第 16 章：资源感知优化
 
 * Contextual Prompting \- Appendix A  
 * 上下文提示(Contextual Prompting) - 附录 A
@@ -436,7 +436,7 @@ This index of terms was generated using Gemini Pro 2.5. The prompt and reasoning
 * 正式化合同(Formalized Contract) - 第 19 章：评估与监控
 
 * Function Calling \- Chapter 5: Tool Use, Appendix A  
-* 工具调用(Tool Calling) - 第 5 章：工具使用，附录 A
+* 工具调用(Function Calling) - 第 5 章：工具使用，附录 A
 
 **G**
 
@@ -682,8 +682,8 @@ This index of terms was generated using Gemini Pro 2.5. The prompt and reasoning
 * Parallelization \- Chapter 3: Parallelization  
 * 并行化(Parallelization) - 第 3 章：并行化
 
-* Parallelization &amp; Distributed Computing Awareness \- Chapter 16: Resource-Aware Optimization  
-* 并行化与分布式计算感知(Parallelization &amp; Distributed Computing Awareness) - 第 16 章：资源感知优化
+* Parallelization & Distributed Computing Awareness \- Chapter 16: Resource-Aware Optimization  
+* 并行化与分布式计算感知(Parallelization & Distributed Computing Awareness) - 第 16 章：资源感知优化
 
 * Parameter-Efficient Fine-Tuning (PEFT) \- Glossary  
 * 参数高效微调(Parameter-Efficient Fine-Tuning, PEFT) - 术语表

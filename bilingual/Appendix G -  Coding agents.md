@@ -201,4 +201,5 @@ By offloading tactical execution to Agents, developers can now dedicate their co
 
 1. AI is responsible for generating more than 30% of the code at Google [https://www.reddit.com/r/singularity/comments/1k7rxo0/ai_is_now_writing_well_over_30_of_the_code_at/](https://www.reddit.com/r/singularity/comments/1k7rxo0/ai_is_now_writing_well_over_30_of_the_code_at/)
 2. AI is responsible for generating more than 30% of the code at Microsoft [https://www.businesstoday.in/tech-today/news/story/30-of-microsofts-code-is-now-ai-generated-says-ceo-satya-nadella-474167-2025-04-30](https://www.businesstoday.in/tech-today/news/story/30-of-microsofts-code-is-now-ai-generated-says-ceo-satya-nadella-474167-2025-04-30)
+
 [image1]: ../images/appendix-g/image1.png

@@ -45,8 +45,8 @@ The significance of prompt chaining extends beyond simple problem-solving. It se
 2. Second Prompt (Trend Identification): "Using the summary, identify the top three emerging trends and extract the specific data points that support each trend: \[output from step 1\]." This prompt is now more constrained and builds directly upon a validated output.  
 3. Third Prompt (Email Composition): "Draft a concise email to the marketing team that outlines the following trends and their supporting data: \[output from step 2\]."
 
-1. 初始提示词（总结）："总结以下市场研究报告的主要发现：[文本]。" 模型的唯一焦点是总结，提高了这一初始步骤的准确性。  
-2. 第二个提示词（趋势识别）："使用摘要，识别前三个新兴趋势并提取支持每个趋势的具体数据点：[步骤 1 的输出]。" 此提示词现在更受约束，并直接建立在经过验证的输出之上。  
+1. 初始提示词（总结）："总结以下市场研究报告的主要发现：[文本]。" 模型的唯一焦点是总结，提高了这一初始步骤的准确性。
+2. 第二个提示词（趋势识别）："使用摘要，识别前三个新兴趋势并提取支持每个趋势的具体数据点：[步骤 1 的输出]。" 此提示词现在更受约束，并直接建立在经过验证的输出之上。
 3. 第三个提示词（电子邮件撰写）："向营销团队起草一封简明的电子邮件，概述以下趋势及其支持数据：[步骤 2 的输出]。"
 
 This decomposition allows for more granular control over the process. Each step is simpler and less ambiguous, which reduces the cognitive load on the model and leads to a more accurate and reliable final output. This modularity is analogous to a computational pipeline where each function performs a specific operation before passing its result to the next. To ensure an accurate response for each specific task, the model can be assigned a distinct role at every stage. For example, in the given scenario, the initial prompt could be designated as "Market Analyst," the subsequent prompt as "Trade Analyst," and the third prompt as "Expert Documentation Writer," and so forth.
@@ -98,10 +98,10 @@ Prompt chaining is a versatile pattern applicable in a wide range of scenarios w
 * Prompt 4: Use the entities to search an internal knowledge base.  
 * Prompt 5: Generate a final report incorporating the summary, entities, and search results.
 
-* 提示词 1：从给定的 URL 或文档中提取文本内容。  
-* 提示词 2：总结清理后的文本。  
-* 提示词 3：从摘要或原始文本中提取特定实体（例如，姓名、日期、位置）。  
-* 提示词 4：使用实体搜索内部知识库。  
+* 提示词 1：从给定的 URL 或文档中提取文本内容。
+* 提示词 2：总结清理后的文本。
+* 提示词 3：从摘要或原始文本中提取特定实体（例如，姓名、日期、位置）。
+* 提示词 4：使用实体搜索内部知识库。
 * 提示词 5：生成包含摘要、实体和搜索结果的最终报告。
 
 This methodology is applied in domains such as automated content analysis, the development of AI-driven research assistants, and complex report generation.
@@ -117,9 +117,9 @@ This methodology is applied in domains such as automated content analysis, the d
 * Prompt 3: Research or retrieve information specifically about the government's policy response to the 1929 stock market crash.  
 * Prompt 4: Synthesize the information from steps 2 and 3 into a coherent answer to the original query.
 
-* 提示词 1：识别用户查询中的核心子问题（崩盘原因、政府响应）。  
-* 提示词 2：专门研究或检索有关 1929 年崩盘原因的信息。  
-* 提示词 3：专门研究或检索有关政府对 1929 年股市崩盘的政策响应的信息。  
+* 提示词 1：识别用户查询中的核心子问题（崩盘原因、政府响应）。
+* 提示词 2：专门研究或检索有关 1929 年崩盘原因的信息。
+* 提示词 3：专门研究或检索有关政府对 1929 年股市崩盘的政策响应的信息。
 * 提示词 4：将步骤 2 和 3 的信息综合成对原始查询的连贯答案。
 
 This sequential processing methodology is integral to developing AI systems capable of multi-step inference and information synthesis. Such systems are required when a query cannot be answered from a single data point but instead necessitates a series of logical steps or the integration of information from diverse sources.
@@ -144,10 +144,10 @@ However, once the individual extractions are complete, the process becomes inher
 * Processing: Validate the results again. Repeat if necessary.  
 * Output: Provide the extracted, validated structured data.
 
-* 提示词 1：尝试从发票文档中提取特定字段（例如，姓名、地址、金额）。  
-* 处理：检查是否提取了所有必需字段以及它们是否满足格式要求。  
-* 提示词 2（条件性）：如果字段缺失或格式错误，制作新提示词要求模型专门查找缺失/格式错误的信息，可能提供失败尝试的上下文。  
-* 处理：再次验证结果。如有必要重复。  
+* 提示词 1：尝试从发票文档中提取特定字段（例如，姓名、地址、金额）。
+* 处理：检查是否提取了所有必需字段以及它们是否满足格式要求。
+* 提示词 2（条件性）：如果字段缺失或格式错误，制作新提示词要求模型专门查找缺失/格式错误的信息，可能提供失败尝试的上下文。
+* 处理：再次验证结果。如有必要重复。
 * 输出：提供提取的、验证的结构化数据。
 
 This sequential processing methodology is particularly applicable to data extraction and analysis from unstructured sources like forms, invoices, or emails. For example, solving complex Optical Character Recognition (OCR) problems, such as processing a PDF form, is more effectively handled through a decomposed, multi-step approach.
@@ -169,11 +169,11 @@ Initially, a large language model is employed to perform the primary text extrac
 * Prompt 4: Write a draft section based on the second point in the outline, providing the previous section for context. Continue this for all outline points.  
 * Prompt 5: Review and refine the complete draft for coherence, tone, and grammar.
 
-* 提示词 1：根据用户的一般兴趣生成 5 个主题想法。  
-* 处理：允许用户选择一个想法或自动选择最佳想法。  
-* 提示词 2：基于选定的主题，生成详细的大纲。  
-* 提示词 3：根据大纲中的第一点编写草稿部分。  
-* 提示词 4：根据大纲中的第二点编写草稿部分，提供前一部分作为上下文。对所有大纲点继续这样做。  
+* 提示词 1：根据用户的一般兴趣生成 5 个主题想法。
+* 处理：允许用户选择一个想法或自动选择最佳想法。
+* 提示词 2：基于选定的主题，生成详细的大纲。
+* 提示词 3：根据大纲中的第一点编写草稿部分。
+* 提示词 4：根据大纲中的第二点编写草稿部分，提供前一部分作为上下文。对所有大纲点继续这样做。
 * 提示词 5：审查和完善完整草稿的连贯性、语气和语法。
 
 This methodology is employed for a range of natural language generation tasks, including the automated composition of creative narratives, technical documentation, and other forms of structured textual content.
@@ -189,9 +189,9 @@ This methodology is employed for a range of natural language generation tasks, i
 * Prompt 2: Based on current state, generate a response and/or identify the next required piece of information.  
 * Repeat for subsequent turns, with each new user utterance initiating a chain that leverages the accumulating conversation history (state).
 
-* 提示词 1：处理用户话语 1，识别意图和关键实体。  
-* 处理：使用意图和实体更新对话状态。  
-* 提示词 2：基于当前状态，生成响应和/或识别下一个所需的信息片段。  
+* 提示词 1：处理用户话语 1，识别意图和关键实体。
+* 处理：使用意图和实体更新对话状态。
+* 提示词 2：基于当前状态，生成响应和/或识别下一个所需的信息片段。
 * 对于后续轮次重复，每个新的用户话语启动一个利用累积对话历史（状态）的链。
 
 This principle is fundamental to the development of conversational agents, enabling them to maintain context and coherence across extended, multi-turn dialogues. By preserving the conversational history, the system can understand and appropriately respond to user inputs that depend on previously exchanged information.
@@ -208,10 +208,10 @@ This principle is fundamental to the development of conversational agents, enabl
 * Prompt 4: Rewrite or refine the code based on the identified issues.  
 * Prompt 5: Add documentation or test cases.
 
-* 提示词 1：理解用户对代码函数的请求。生成伪代码或大纲。  
-* 提示词 2：基于大纲编写初始代码草稿。  
-* 提示词 3：识别代码中的潜在错误或改进领域（可能使用静态分析工具或另一个 LLM 调用）。  
-* 提示词 4：基于识别的问题重写或完善代码。  
+* 提示词 1：理解用户对代码函数的请求。生成伪代码或大纲。
+* 提示词 2：基于大纲编写初始代码草稿。
+* 提示词 3：识别代码中的潜在错误或改进领域（可能使用静态分析工具或另一个 LLM 调用）。
+* 提示词 4：基于识别的问题重写或完善代码。
 * 提示词 5：添加文档或测试用例。
 
 In applications such as AI-assisted software development, the utility of prompt chaining stems from its capacity to decompose complex coding tasks into a series of manageable sub-problems. This modular structure reduces the operational complexity for the large language model at each step. Critically, this approach also allows for the insertion of deterministic logic between model calls, enabling intermediate data processing, output validation, and conditional branching within the workflow. By this method, a single, multifaceted request that could otherwise lead to unreliable or incomplete results is converted into a structured sequence of operations managed by an underlying execution framework.
@@ -226,8 +226,8 @@ In applications such as AI-assisted software development, the utility of prompt 
 * Prompt 2: Link the extracted image text with its corresponding labels.  
 * Prompt 3: Interpret the gathered information using a table to determine the required output.
 
-* 提示词 1：从用户的图像请求中提取和理解文本。  
-* 提示词 2：将提取的图像文本与其相应的标签链接起来。  
+* 提示词 1：从用户的图像请求中提取和理解文本。
+* 提示词 2：将提取的图像文本与其相应的标签链接起来。
 * 提示词 3：使用表格解释收集的信息以确定所需的输出。
 
 ## Hands-On Code Example
@@ -378,9 +378,9 @@ Here are some key takeaways:
 * This pattern improves the reliability and manageability of complex interactions with language models.  
 * Frameworks like LangChain/LangGraph, and Google ADK  provide robust tools to define, manage, and execute these multi-step sequences.
 
-* 提示词链将复杂任务分解为一系列较小的、聚焦的步骤。这有时也被称为管道模式。  
-* 链中的每一步都涉及LLM调用或处理逻辑，使用前一步的输出作为输入。  
-* 这种模式提高了与语言模型进行复杂交互的可靠性和可管理性。  
+* 提示词链将复杂任务分解为一系列较小的、聚焦的步骤。这有时也被称为管道模式。
+* 链中的每一步都涉及LLM调用或处理逻辑，使用前一步的输出作为输入。
+* 这种模式提高了与语言模型进行复杂交互的可靠性和可管理性。
 * LangChain/LangGraph和Google ADK等框架提供了定义、管理和执行这些多步序列的健壮工具。
 
 ## Conclusion

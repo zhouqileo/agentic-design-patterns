@@ -37,11 +37,11 @@ Figure 1 illustrates how to access AgentSpace by selecting AI Applications from 
 
 ![](../images/appendix-d/image1.png)
 
-Fig. 1:  How to use Google Cloud Console to access AgentSpace
+Fig. 1: How to use Google Cloud Console to access AgentSpace
 
 图 1：通过 Google Cloud Console 访问 AgentSpace 的方法
 
-Your agent can be connected to various services, including Calendar, Google Mail, Workaday, Jira, Outlook, and Service Now (see Fig. 2).
+Your agent can be connected to various services, including Calendar, Google Mail, Workday, Jira, Outlook, and Service Now (see Fig. 2).
 
 您的智能体可以连接到多种服务，包括 Calendar、Google Mail、Workday、Jira、Outlook 和 Service Now（见图 2）。
 
@@ -57,21 +57,21 @@ The Agent can then utilize its own prompt, chosen from a gallery of pre-made pro
 
 ![](../images/appendix-d/image3.png)
 
-Fig.3: Google's Gallery of Pre-assembled  prompts
+Fig. 3: Google's Gallery of Pre-assembled prompts
 
 图 3：Google 预置提示词库
 
-In alternative you can create your own prompt as in Fig.4, which will be then used by your agent
+Alternatively, you can create your own prompt as in Fig. 4, which will then be used by your agent.
 
 或者，您可以创建自己的提示词，如图 4 所示，供您的智能体使用。
 
 ![](../images/appendix-d/image4.png)
 
-Fig.4: Customizing the Agent's Prompt
+Fig. 4: Customizing the Agent's Prompt
 
 图 4：智能体提示词定制
 
-AgentSpace offers a number of advanced features such as integration with datastores to store your own data, integration with Google Knowledge Graph or with your private Knowledge Graph, Web interface for exposing your agent to the Web, and Analytics to monitor usage, and more (see Fig. 5)
+AgentSpace offers a number of advanced features such as integration with datastores to store your own data, integration with Google Knowledge Graph or with your private Knowledge Graph, Web interface for exposing your agent to the Web, and Analytics to monitor usage, and more (see Fig. 5).
 
 AgentSpace 提供多项高级功能，例如与数据存储集成以存储自有数据、与 Google 知识图谱或私有知识图谱集成、用于向 Web 公开智能体的 Web 界面、使用情况监控分析等（见图 5）。
 
@@ -107,7 +107,7 @@ This approach abstracts the underlying technical complexity, enabling the constr
 
 ## 参考文献
 
-1. Create a no-code agent with Agent Designer, [https://cloud.google.com/agentspace/agentspace-enterprise/docs/agent-designer](https://cloud.google.com/agentspace/agentspace-enterprise/docs/agent-designer)   
+1. Create a no-code agent with Agent Designer, [https://cloud.google.com/agentspace/agentspace-enterprise/docs/agent-designer](https://cloud.google.com/agentspace/agentspace-enterprise/docs/agent-designer)
 2. Google Cloud Skills Boost, [https://www.cloudskillsboost.google/](https://www.cloudskillsboost.google/)
 
 [image1]: ../images/appendix-d/image1.png

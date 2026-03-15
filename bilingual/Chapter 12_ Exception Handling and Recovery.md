@@ -159,7 +159,7 @@ This code defines a robust location retrieval system using a ADK's SequentialAge
 
 **可视化摘要**
 
-**![][image2]**
+![][image2]
 
 Fig.2: Exception handling pattern
 
