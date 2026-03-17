@@ -1,11 +1,11 @@
 # Chapter 20: Prioritization
+
 # 第 20 章：优先级排序
 
 In complex, dynamic environments, Agents frequently encounter numerous potential actions, conflicting goals, and limited resources. Without a defined process for determining the subsequent action, the agents may experience reduced efficiency, operational delays, or failures to achieve key objectives. The prioritization pattern addresses this issue by enabling agents to assess and rank tasks, objectives, or actions based on their significance, urgency, dependencies, and established criteria. This ensures the agents concentrate efforts on the most critical tasks, resulting in enhanced effectiveness and goal alignment.
 
-在复杂、动态的环境中，智能体常常面临大量潜在行动、相互冲突的目标以及有限的资源。如果没有明确的流程来确定后续行动，智能体可能会遇到效率低下、操作延迟或无法实现关键目标的问题。优先级排序模式通过使智能体根据重要性、紧迫性、依赖关系和既定标准来评估和排序任务、目标或行动，从而解决这一挑战。这确保智能体将精力集中在最关键的任务上，从而提高有效性和目标一致性。
-
 ## Prioritization Pattern Overview
+
 ## 优先级排序模式概述
 
 Agents employ prioritization to effectively manage tasks, goals, and sub-goals, guiding subsequent actions. This process facilitates informed decision-making when addressing multiple demands, prioritizing vital or urgent activities over less critical ones. It is particularly relevant in real-world scenarios where resources are constrained, time is limited, and objectives may conflict.
@@ -21,9 +21,10 @@ Prioritization can occur at various levels: selecting an overarching objective (
 优先级排序可以在各个层面进行：选择总体目标（高层次目标优先级排序）、在计划内排序步骤（子任务优先级排序）或从可用选项中选择下一个即时行动（行动选择）。有效的优先级排序使智能体展现更智能、更高效、更稳健的行为，特别是在复杂的多目标环境中。这反映了人类团队的组织方式，其中管理者通过考虑所有成员的输入来优先处理任务。
 
 ## Practical Applications & Use Cases
+
 ## 实际应用和用例
 
-In various real-world applications, AI agents demonstrate a sophisticated use of prioritization to make timely and effective decisions. 
+In various real-world applications, AI agents demonstrate a sophisticated use of prioritization to make timely and effective decisions.
 
 在各种实际应用中，AI 智能体展现了优先级排序的复杂运用，以做出及时有效的决策。
 
@@ -48,6 +49,7 @@ These examples collectively illustrate how the ability to prioritize is fundamen
 这些示例共同说明了优先级排序能力对于增强 AI 智能体在各种情况下的性能和决策能力是多么基础。
 
 ## Hands-On Code Example
+
 ## 实践代码示例
 
 The following demonstrates the development of a Project Manager AI agent using LangChain. This agent facilitates the creation, prioritization, and assignment of tasks to team members, illustrating the application of large language models with bespoke tools for automated project management.
@@ -232,15 +234,15 @@ This code implements a simple task management system using Python and LangChain,
 
 此代码使用 Python 和 LangChain 实现了一个简单的任务管理系统，旨在模拟由大语言模型驱动的项目管理智能体。
 
-The system employs a SuperSimpleTaskManager class to efficiently manage tasks within memory, utilizing a dictionary structure for rapid data retrieval. Each task is represented by a Task Pydantic model, which encompasses attributes such as a unique identifier, a descriptive text, an optional priority level (P0, P1, P2), and an optional assignee designation. Memory usage varies based on task type, the number of workers, and other contributing factors. The task manager provides methods for task creation, task modification, and retrieval of all tasks. 
+The system employs a SuperSimpleTaskManager class to efficiently manage tasks within memory, utilizing a dictionary structure for rapid data retrieval. Each task is represented by a Task Pydantic model, which encompasses attributes such as a unique identifier, a descriptive text, an optional priority level (P0, P1, P2), and an optional assignee designation. Memory usage varies based on task type, the number of workers, and other contributing factors. The task manager provides methods for task creation, task modification, and retrieval of all tasks.
 
 该系统采用 [`SuperSimpleTaskManager`](chapters/Chapter 20_ Prioritization.md:58) 类在内存中高效管理任务，利用字典结构实现快速数据检索。每个任务由 [`Task`](chapters/Chapter 20_ Prioritization.md:51) Pydantic 模型表示，包含唯一标识符、描述文本、可选优先级级别（P0、P1、P2）和可选的受让人指定等属性。内存使用量会根据任务类型、工作人员数量等因素而变化。任务管理器提供任务创建、任务修改和检索所有任务的方法。
 
-The agent interacts with the task manager via a defined set of Tools. These tools facilitate the creation of new tasks, the assignment of priorities to tasks, the allocation of tasks to personnel, and the listing of all tasks. Each tool is encapsulated to enable interaction with an instance of the SuperSimpleTaskManager. Pydantic models are utilized to delineate the requisite arguments for the tools, thereby ensuring data validation. 
+The agent interacts with the task manager via a defined set of Tools. These tools facilitate the creation of new tasks, the assignment of priorities to tasks, the allocation of tasks to personnel, and the listing of all tasks. Each tool is encapsulated to enable interaction with an instance of the SuperSimpleTaskManager. Pydantic models are utilized to delineate the requisite arguments for the tools, thereby ensuring data validation.
 
 智能体通过一组定义好的工具与任务管理器交互。这些工具支持创建新任务、为任务分配优先级、将任务分配给人员以及列出所有任务。每个工具都被封装为与 [`SuperSimpleTaskManager`](chapters/Chapter 20_ Prioritization.md:58) 的实例交互。Pydantic 模型用于描述工具所需的参数，从而确保数据验证。
 
-An AgentExecutor is configured with the language model, the toolset, and a conversation memory component to maintain contextual continuity. A specific ChatPromptTemplate is defined to direct the agent's behavior in its project management role. The prompt instructs the agent to initiate by creating a task, subsequently assigning priority and personnel as specified, and concluding with a comprehensive task list. Default assignments, such as P1 priority and 'Worker A', are stipulated within the prompt for instances where information is absent. 
+An AgentExecutor is configured with the language model, the toolset, and a conversation memory component to maintain contextual continuity. A specific ChatPromptTemplate is defined to direct the agent's behavior in its project management role. The prompt instructs the agent to initiate by creating a task, subsequently assigning priority and personnel as specified, and concluding with a comprehensive task list. Default assignments, such as P1 priority and 'Worker A', are stipulated within the prompt for instances where information is absent.
 
 [`AgentExecutor`](chapters/Chapter 20_ Prioritization.md:179) 配置了语言模型、工具集和对话内存组件以保持上下文连续性。定义了特定的 [`ChatPromptTemplate`](chapters/Chapter 20_ Prioritization.md:161) 来指导智能体在项目管理角色中的行为。提示词指示智能体先创建任务，然后根据指定分配优先级和人员，最后以完整的任务列表结束。当信息缺失时，提示词中规定了默认分配，例如 P1 优先级和 'Worker A'。
 
@@ -249,6 +251,7 @@ The code incorporates a simulation function (run\_simulation) of asynchronous na
 代码包含一个异步模拟函数（[`run_simulation`](chapters/Chapter 20_ Prioritization.md:189)）来演示智能体的协作能力。模拟执行两个不同的场景：管理带有指定人员的紧急任务，以及管理输入信息较少的非紧急任务。由于在 [`AgentExecutor`](chapters/Chapter 20_ Prioritization.md:179) 中启用了 `verbose=True`，智能体的行动和逻辑过程会输出到控制台。
 
 ## At a Glance
+
 ## 概览
 
 **What:** AI agents operating in complex environments face a multitude of potential actions, conflicting goals, and finite resources. Without a clear method to determine their next move, these agents risk becoming inefficient and ineffective. This can lead to significant operational delays or a complete failure to accomplish primary objectives. The core challenge is to manage this overwhelming number of choices to ensure the agent acts purposefully and logically.
@@ -272,6 +275,7 @@ The code incorporates a simulation function (run\_simulation) of asynchronous na
 图 1：优先级排序设计模式
 
 ## Key Takeaways
+
 ## 关键要点
 
 * Prioritization enables AI agents to function effectively in complex, multi-faceted environments.  
@@ -287,6 +291,7 @@ The code incorporates a simulation function (run\_simulation) of asynchronous na
 * 有效的优先级排序可提高 AI 智能体效率和操作稳健性。
 
 ## Conclusions
+
 ## 结论
 
 In conclusion, the prioritization pattern is a cornerstone of effective agentic AI, equipping systems to navigate the complexities of dynamic environments with purpose and intelligence. It allows an agent to autonomously evaluate a multitude of conflicting tasks and goals, making reasoned decisions about where to focus its limited resources. This agentic capability moves beyond simple task execution, enabling the system to act as a proactive, strategic decision-maker. By weighing criteria such as urgency, importance, and dependencies, the agent demonstrates a sophisticated, human-like reasoning process.
@@ -298,9 +303,10 @@ A key feature of this agentic behavior is dynamic re-prioritization, which grant
 这种智能体行为的一个关键特征是动态重新优先级排序，它赋予智能体在条件变化时实时调整关注点的自主权。如代码示例所示，智能体解释模糊的请求，自主选择和使用适当的工具，并逻辑地排列其行动以实现目标。这种自我管理工作流程的能力，正是真正的智能体系统与简单自动化脚本的区别所在。最终，掌握优先级排序对于创建能够在任何复杂的实际场景中有效、可靠运行的稳健且智能的智能体至关重要。
 
 ## References
+
 ## 参考文献
 
-1. Examining the Security of Artificial Intelligence in Project Management: A Case Study of AI-driven Project Scheduling and Resource Allocation in Information Systems Projects ; [https://www.irejournals.com/paper-details/1706160](https://www.irejournals.com/paper-details/1706160)   
-2. AI-Driven Decision Support Systems in Agile Software Project Management: Enhancing Risk Mitigation and Resource Allocation; [https://www.mdpi.com/2079-8954/13/3/208](https://www.mdpi.com/2079-8954/13/3/208)  
+1. Examining the Security of Artificial Intelligence in Project Management: A Case Study of AI-driven Project Scheduling and Resource Allocation in Information Systems Projects ; [https://www.irejournals.com/paper-details/1706160](https://www.irejournals.com/paper-details/1706160)
+2. AI-Driven Decision Support Systems in Agile Software Project Management: Enhancing Risk Mitigation and Resource Allocation; [https://www.mdpi.com/2079-8954/13/3/208](https://www.mdpi.com/2079-8954/13/3/208)
 
 [image1]: ../images/chapter-20/image1.png

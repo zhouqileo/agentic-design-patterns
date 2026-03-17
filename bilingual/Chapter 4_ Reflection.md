@@ -56,7 +56,7 @@ The Reflection pattern is crucial for building agents that can produce high-qual
 
 反思模式对于构建能够产生高质量输出、处理精细任务并展现一定程度自我意识和适应性的智能体至关重要。它推动智能体从单纯执行指令转向更复杂的问题解决和内容生成形式。
 
-The intersection of reflection with goal setting and monitoring (see Chapter 11\) is worth noticing. A goal provides the ultimate benchmark for the agent's self-evaluation, while monitoring tracks its progress. In a number of practical cases, Reflection then might act as the corrective engine, using monitored feedback to analyze deviations and adjust its strategy. This synergy transforms the agent from a passive executor into a purposeful system that adaptively works to achieve its objectives.
+The intersection of reflection with goal setting and monitoring (see Chapter 11) is worth noticing. A goal provides the ultimate benchmark for the agent's self-evaluation, while monitoring tracks its progress. In a number of practical cases, Reflection then might act as the corrective engine, using monitored feedback to analyze deviations and adjust its strategy. This synergy transforms the agent from a passive executor into a purposeful system that adaptively works to achieve its objectives.
 
 值得注意的是反思与目标设定和监控（见第11章）的交叉点。目标为智能体的自我评估提供最终基准，而监控则跟踪其进展。在许多实际案例中，反思可能充当纠正引擎，利用监控反馈分析偏差并调整策略。这种协同使智能体从被动执行者转变为有目的的系统，能够自适应地工作以实现其目标。
 
@@ -358,17 +358,17 @@ Before concluding, it's important to consider that while the Reflection pattern 
 
 **经验法则：** 当最终输出的质量、准确性和细节比速度和成本更重要时使用反思模式。它对生成精炼的长篇内容、编写和调试代码以及创建详细计划等任务特别有效。当任务需要通用生产者智能体可能遗漏的高客观性或专门评估时，使用独立评审者智能体。
 
-**Visual summary**
+## Visual summary
 
-**可视化摘要**
+## 可视化摘要
 
-**![][image1]**
+![Reflection design pattern, self-reflection][image1]
 
 Fig. 1: Reflection design pattern, self-reflection
 
 图 1：反思设计模式，自我反思
 
-**![][image2]**
+![Reflection design pattern, producer and critique agent][image2]
 
 Fig.2: Reflection design pattern, producer and critique agent
 

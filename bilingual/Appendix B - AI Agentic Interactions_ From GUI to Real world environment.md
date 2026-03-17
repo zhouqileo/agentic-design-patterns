@@ -94,17 +94,17 @@ This process is characterized by:
 
 该过程具有以下特征：
 
-- **Conversational Prompts:** Instead of writing detailed specifications, a developer might say, "Create a simple, modern-looking landing page for a new app," or, "Refactor this function to be more Pythonic and readable." The AI interprets the "vibe" of "modern" or "Pythonic" and generates the corresponding code.  
-- **Iterative Refinement:** The initial output from the AI is often a starting point. The developer then provides feedback in natural language, such as, "That's a good start, but can you make the buttons blue?" or, "Add some error handling to that." This back-and-forth continues until the code meets the developer's expectations.  
-- **Creative Partnership:** In vibe coding, the AI acts as a creative partner, suggesting ideas and solutions that the developer may not have considered. This can accelerate the development process and lead to more innovative outcomes.  
-- **Focus on "What" not "How":** The developer focuses on the desired outcome (the "what") and leaves the implementation details (the "how") to the AI. This allows for rapid prototyping and exploration of different approaches without getting bogged down in boilerplate code.  
-- **Optional Memory Banks:** To maintain context across longer interactions, developers can use "memory banks" to store key information, preferences, or constraints. For example, a developer might save a specific coding style or a set of project requirements to the AI's memory, ensuring that future code generations remain consistent with the established "vibe" without needing to repeat the instructions.
+* **Conversational Prompts:** Instead of writing detailed specifications, a developer might say, "Create a simple, modern-looking landing page for a new app," or, "Refactor this function to be more Pythonic and readable." The AI interprets the "vibe" of "modern" or "Pythonic" and generates the corresponding code.
+* **Iterative Refinement:** The initial output from the AI is often a starting point. The developer then provides feedback in natural language, such as, "That's a good start, but can you make the buttons blue?" or, "Add some error handling to that." This back-and-forth continues until the code meets the developer's expectations.
+* **Creative Partnership:** In vibe coding, the AI acts as a creative partner, suggesting ideas and solutions that the developer may not have considered. This can accelerate the development process and lead to more innovative outcomes.
+* **Focus on "What" not "How":** The developer focuses on the desired outcome (the "what") and leaves the implementation details (the "how") to the AI. This allows for rapid prototyping and exploration of different approaches without getting bogged down in boilerplate code.
+* **Optional Memory Banks:** To maintain context across longer interactions, developers can use "memory banks" to store key information, preferences, or constraints. For example, a developer might save a specific coding style or a set of project requirements to the AI's memory, ensuring that future code generations remain consistent with the established "vibe" without needing to repeat the instructions.
 
-- **对话式提示**：开发者不再编写详细规格说明，而是用自然语言表达，如"为新应用创建一个简洁现代风格的登录页面"，或"重构此函数使其更符合 Pythonic 风格并提升可读性"。AI 会解读"现代"或"Pythonic"的"氛围"内涵，生成相应代码。
-- **迭代精炼**：AI 的初始输出通常只是起点。开发者随后以自然语言提供反馈，如"这个开头不错，但能把按钮改成蓝色吗？"或"为那段代码添加错误处理机制。"如此往复，直至代码符合预期。
-- **创意伙伴关系**：在 vibe 编码中，AI 扮演创意伙伴角色，提出开发者可能未曾考虑的创意和解决方案。这能加速开发进程并催生更具创新性的成果。
-- **聚焦"目标"而非"方法"**：开发者专注于期望成果（"目标"），将实现细节（"方法"）交由 AI 处理。这使得快速原型设计和多方案探索成为可能，避免陷入样板代码的繁琐。
-- **可选记忆库**：为在长对话中保持上下文连贯，开发者可使用"记忆库"存储关键信息、偏好或约束条件。例如，开发者可将特定编码风格或项目需求集保存至 AI 记忆库，确保后续代码生成与既定"氛围"保持一致，无需重复指令。
+* **对话式提示**：开发者不再编写详细规格说明，而是用自然语言表达，如"为新应用创建一个简洁现代风格的登录页面"，或"重构此函数使其更符合 Pythonic 风格并提升可读性"。AI 会解读"现代"或"Pythonic"的"氛围"内涵，生成相应代码。
+* **迭代精炼**：AI 的初始输出通常只是起点。开发者随后以自然语言提供反馈，如"这个开头不错，但能把按钮改成蓝色吗？"或"为那段代码添加错误处理机制。"如此往复，直至代码符合预期。
+* **创意伙伴关系**：在 vibe 编码中，AI 扮演创意伙伴角色，提出开发者可能未曾考虑的创意和解决方案。这能加速开发进程并催生更具创新性的成果。
+* **聚焦"目标"而非"方法"**：开发者专注于期望成果（"目标"），将实现细节（"方法"）交由 AI 处理。这使得快速原型设计和多方案探索成为可能，避免陷入样板代码的繁琐。
+* **可选记忆库**：为在长对话中保持上下文连贯，开发者可使用"记忆库"存储关键信息、偏好或约束条件。例如，开发者可将特定编码风格或项目需求集保存至 AI 记忆库，确保后续代码生成与既定"氛围"保持一致，无需重复指令。
 
 Vibe coding is becoming increasingly popular with the rise of powerful AI models like GPT-4, Claude, and Gemini, which are integrated into development environments. These tools are not just auto-completing code; they are actively participating in the creative process of software development, making it more accessible and efficient. This new way of working is changing the nature of software engineering, emphasizing creativity and high-level thinking over rote memorization of syntax and APIs.
 
@@ -140,14 +140,14 @@ The ultimate vision is a convergence of these digital and physical capabilities,
 
 ## 参考文献
 
-1. Open AI Operator, [https://openai.com/index/introducing-operator/](https://openai.com/index/introducing-operator/)   
-2. Open AI ChatGPT Agent: [https://openai.com/index/introducing-chatgpt-agent/](https://openai.com/index/introducing-chatgpt-agent/)   
-3. Browser Use: [https://docs.browser-use.com/introduction](https://docs.browser-use.com/introduction)   
-4. Project Mariner, [https://deepmind.google/models/project-mariner/](https://deepmind.google/models/project-mariner/)   
-5. Anthropic Computer use: [https://docs.anthropic.com/en/docs/build-with-claude/computer-use](https://docs.anthropic.com/en/docs/build-with-claude/computer-use)  
-6. Project Astra, [https://deepmind.google/models/project-astra/](https://deepmind.google/models/project-astra/)   
-7. Gemini Live, [https://gemini.google/overview/gemini-live/?hl=en](https://gemini.google/overview/gemini-live/?hl=en)   
-8. OpenAI's GPT-4,  [https://openai.com/index/gpt-4-research/](https://openai.com/index/gpt-4-research/)   
-9. Claude 4, [https://www.anthropic.com/news/claude-4](https://www.anthropic.com/news/claude-4)
+ 1. Open AI Operator, [https://openai.com/index/introducing-operator/](https://openai.com/index/introducing-operator/)
+ 2. Open AI ChatGPT Agent: [https://openai.com/index/introducing-chatgpt-agent/](https://openai.com/index/introducing-chatgpt-agent/)
+ 3. Browser Use: [https://docs.browser-use.com/introduction](https://docs.browser-use.com/introduction)
+ 4. Project Mariner, [https://deepmind.google/models/project-mariner/](https://deepmind.google/models/project-mariner/)
+ 5. Anthropic Computer use: [https://docs.anthropic.com/en/docs/build-with-claude/computer-use](https://docs.anthropic.com/en/docs/build-with-claude/computer-use)
+ 6. Project Astra, [https://deepmind.google/models/project-astra/](https://deepmind.google/models/project-astra/)
+ 7. Gemini Live, [https://gemini.google/overview/gemini-live/?hl=en](https://gemini.google/overview/gemini-live/?hl=en)
+ 8. OpenAI's GPT-4,  [https://openai.com/index/gpt-4-research/](https://openai.com/index/gpt-4-research/)
+ 9. Claude 4, [https://www.anthropic.com/news/claude-4](https://www.anthropic.com/news/claude-4)
 
 [image1]: ../images/appendix-b/image1.png

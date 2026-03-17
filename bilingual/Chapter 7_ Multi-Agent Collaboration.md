@@ -1,4 +1,5 @@
 # Chapter 7: Multi-Agent Collaboration
+
 # 第 7 章：多智能体协作
 
 While a monolithic agent architecture can be effective for well-defined problems, its capabilities are often constrained when faced with complex, multi-domain tasks. The Multi-Agent Collaboration pattern addresses these limitations by structuring a system as a cooperative ensemble of distinct, specialized agents. This approach is predicated on the principle of task decomposition, where a high-level objective is broken down into discrete sub-problems. Each sub-problem is then assigned to an agent possessing the specific tools, data access, or reasoning capabilities best suited for that task.
@@ -14,6 +15,7 @@ This distributed architecture offers several advantages, including enhanced modu
 这种分布式架构提供了几个优势，包括增强的模块化、可扩展性和稳健性，因为单个智能体故障不一定会导致整个系统故障。协作允许产生协同结果，其中多智能体系统的性能超过集合内任何单个智能体的能力。
 
 ## Multi-Agent Collaboration Pattern Overview
+
 ## 多智能体协作模式概述
 
 The Multi-Agent Collaboration pattern involves designing systems where multiple independent or semi-independent agents work together to achieve a common goal. Each agent typically has a defined role, specific goals aligned with the overall objective, and potentially access to different tools or knowledge bases. The power of this pattern lies in the interaction and synergy between these agents.
@@ -56,6 +58,7 @@ Frameworks such as Crew AI and Google ADK are engineered to facilitate this para
 像 CrewAI 和 Google ADK 这样的框架旨在通过提供智能体、任务及其交互程序的规范结构来促进这种范式。这种方法对于需要各种专业知识、包含多个离散阶段或能从并发处理和跨智能体确认中获益的挑战特别有效。
 
 ## Practical Applications & Use Cases
+
 ## 实际应用与用例
 
 Multi-Agent Collaboration is a powerful pattern applicable across numerous domains:
@@ -80,14 +83,15 @@ Multi-Agent Collaboration is a powerful pattern applicable across numerous domai
 * **Supply Chain Optimization:** Agents could represent different nodes in a supply chain (suppliers, manufacturers, distributors) and collaborate to optimize inventory levels, logistics, and scheduling in response to changing demand or disruptions.
 * **供应链优化：** 多个智能体代表供应链中的不同节点（供应商、制造商、分销商）并协作优化库存水平、物流和调度以响应需求变化或中断。
 
-* **Network Analysis & Remediation**: Autonomous operations benefit greatly from an agentic architecture, particularly in failure pinpointing. Multiple agents can collaborate to triage and remediate issues, suggesting optimal actions. These agents can also integrate with traditional machine learning models and tooling, leveraging existing systems while simultaneously offering the advantages of Generative AI.
-* **网络分析与修复**：自主操作从多智能体协作中受益匪浅，特别是在故障定位方面。多个智能体协作分类和修复问题，建议最佳行动。这些智能体还支持机器学习模型和工具集成，利用现有系统，同时提供生成式 AI 的优势。
+* **Network Analysis & Remediation:** Autonomous operations benefit greatly from an agentic architecture, particularly in failure pinpointing. Multiple agents can collaborate to triage and remediate issues, suggesting optimal actions. These agents can also integrate with traditional machine learning models and tooling, leveraging existing systems while simultaneously offering the advantages of Generative AI.
+* **网络分析与修复：** 自主操作从多智能体协作中受益匪浅，特别是在故障定位方面。多个智能体协作分类和修复问题，建议最佳行动。这些智能体还支持机器学习模型和工具集成，利用现有系统，同时提供生成式 AI 的优势。
 
 The capacity to delineate specialized agents and meticulously orchestrate their interrelationships empowers developers to construct systems exhibiting enhanced modularity, scalability, and the ability to address complexities that would prove insurmountable for a singular, integrated agent.
 
 界定专门智能体以及编排其相互关系的能力使开发人员能够构建展现增强模块化、可扩展性以及处理单个集成智能体无法处理的复杂性的系统。
 
 ## Multi-Agent Collaboration: Exploring Interrelationships and Communication Structures
+
 ## 多智能体协作：探索相互关系和通信结构
 
 Understanding the intricate ways in which agents interact and communicate is fundamental to designing effective multi-agent systems. As depicted in Fig. 2, a spectrum of interrelationship and communication models exists, ranging from the simplest single-agent scenario to complex, custom-designed collaborative frameworks. Each model presents unique advantages and challenges, influencing the overall efficiency, robustness, and adaptability of the multi-agent system.
@@ -122,6 +126,7 @@ In summary, the choice of interrelationship and communication model for a multi-
 总之，为多智能体系统选择相互关系和通信模型是关键的设计决策。每个模型提供不同的优势和劣势，最佳选择取决于诸如任务复杂性、智能体数量、期望的自主程度、对稳健性的需求以及可接受的通信开销等因素。多智能体系统的未来进展可能会继续探索和完善这些模型，以及开发协作智能的新范式。
 
 ## Hands-On code (Crew AI)
+
 ## 实操代码（Crew AI）
 
 This Python code defines an AI-powered crew using the CrewAI framework to generate a blog post about AI trends. It starts by setting up the environment, loading API keys from a .env file. The core of the application involves defining two agents: a researcher to find and summarize AI trends, and a writer to create a blog post based on the research.
@@ -213,6 +218,7 @@ We will now delve into further examples within the Google ADK framework, with pa
 我们现在将深入研究 Google ADK 框架中的更多示例，特别强调层次化、并行和顺序协调范式，以及将智能体作为操作工具。
 
 ## Hands-on Code (Google ADK)
+
 ## 实操代码（Google ADK）
 
 The following code example demonstrates the establishment of a hierarchical agent structure within the Google ADK through the creation of a parent-child relationship. The code defines two types of agents: LlmAgent and a custom TaskExecutor agent derived from BaseAgent. The TaskExecutor is designed for specific, non-LLM tasks and in this example, it simply yields a "Task finished successfully" event. An LlmAgent named greeter is initialized with a specified model and instruction to act as a friendly greeter. The custom TaskExecutor is instantiated as task_doer. A parent LlmAgent called coordinator is created, also with a model and instructions. The coordinator's instructions guide it to delegate greetings to the greeter and task execution to the task_doer. The greeter and task_doer are added as sub-agents to the coordinator, establishing a parent-child relationship. The code then asserts that this relationship is correctly set up. Finally, it prints a message indicating that the agent hierarchy has been successfully created.
@@ -448,6 +454,7 @@ artist_agent = LlmAgent(
 ```
 
 ## At a Glance
+
 ## 概览
 
 **What:** Complex problems often exceed the capabilities of a single, monolithic LLM-based agent. A solitary agent may lack the diverse, specialized skills or access to the specific tools needed to address all parts of a multifaceted task. This limitation creates a bottleneck, reducing the system's overall effectiveness and scalability. As a result, tackling sophisticated, multi-domain objectives becomes inefficient and can lead to incomplete or suboptimal outcomes.
@@ -468,6 +475,7 @@ Fig.3: Multi-Agent design pattern
 图 3：多智能体模式
 
 ## Key Takeaways
+
 ## 关键要点
 
 * Multi-agent collaboration involves multiple agents working together to achieve a common goal.
@@ -483,6 +491,7 @@ Fig.3: Multi-Agent design pattern
 * 此模式非常适合需要多样化专业知识或多个不同阶段的复杂问题。
 
 ## Conclusion
+
 ## 结论
 
 This chapter explored the Multi-Agent Collaboration pattern, demonstrating the benefits of orchestrating multiple specialized agents within systems. We examined various collaboration models, emphasizing the pattern's essential role in addressing complex, multifaceted problems across diverse domains. Understanding agent collaboration naturally leads to an inquiry into their interactions with the external environment.
@@ -490,6 +499,7 @@ This chapter explored the Multi-Agent Collaboration pattern, demonstrating the b
 本章探讨了多智能体协作模式，展示了在系统内编排多个专门智能体的强大之处。我们研究了各种协作模型，强调该模式在跨不同领域解决复杂多方面问题中的关键作用。理解智能体间的交互自然会引出对其与外部环境交互的探究。
 
 ## References
+
 ## 参考文献
 
 1. Multi-Agent Collaboration Mechanisms: A Survey of LLMs, [https://arxiv.org/abs/2501.06322](https://arxiv.org/abs/2501.06322)

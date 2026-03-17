@@ -116,29 +116,29 @@ The Self-Improving Coding Agent (SICA), developed by Maxime Robeyns, Laurence Ai
 
 自我改进编码智能体（SICA）由 Maxime Robeyns、Laurence Aitchison 和 Martin Szummer 开发，代表了基于智能体学习的重要进展，展示了智能体修改自身源代码的能力。这与传统方法形成鲜明对比——在传统方法中，一个智能体可能训练另一个智能体；而 SICA 既是修改者又是被修改的实体，通过迭代方式改进其代码库，以提升在各种编码挑战中的性能。
 
-SICA's self-improvement operates through an iterative cycle (see Fig.1). Initially, SICA reviews an archive of its past versions and their performance on benchmark tests. It selects the version with the highest performance score, calculated based on a weighted formula considering success, time, and computational cost. This selected version then undertakes the next round of self-modification. It analyzes the archive to identify potential improvements and then directly alters its codebase. The modified agent is subsequently tested against benchmarks, with the results recorded in the archive. This process repeats, facilitating learning directly from past performance. This self-improvement mechanism allows SICA to evolve its capabilities without requiring traditional training paradigms.
-
-SICA 的自我改进通过一个迭代循环实现（见图1）。首先，SICA 审查其历史版本档案及其在基准测试中的表现，选择基于成功率、时间和计算成本的加权公式计算出的性能得分最高的版本。这个选定版本然后进行下一轮自我修改：它分析档案以识别潜在改进点，然后直接修改代码库。修改后的智能体随后接受基准测试，结果记录在档案中。这个过程不断重复，促进直接从过去表现中学习。这种自我改进机制让 SICA 无需传统训练范式就能进化其能力。
-
-![][image1]
+ SICA's self-improvement operates through an iterative cycle (see Fig.1). Initially, SICA reviews an archive of its past versions and their performance on benchmark tests. It selects the version with the highest performance score, calculated based on a weighted formula considering success, time, and computational cost. This selected version then undertakes the next round of self-modification. It analyzes the archive to identify potential improvements and then directly alters its codebase. The modified agent is subsequently tested against benchmarks, with the results recorded in the archive. This process repeats, facilitating learning directly from past performance. This self-improvement mechanism allows SICA to evolve its capabilities without requiring traditional training paradigms.
 
 Fig.1: SICA's self-improvement, learning and adapting based on its past versions
 
-图 1：SICA 的自我改进过程，基于其过去版本进行学习和适应
+![][image1]
 
-SICA underwent significant self-improvement, leading to advancements in code editing and navigation. Initially, SICA utilized a basic file-overwriting approach for code changes. It subsequently developed a "Smart Editor" capable of more intelligent and contextual edits. This evolved into a "Diff-Enhanced Smart Editor," incorporating diffs for targeted modifications and pattern-based editing, and a "Quick Overwrite Tool" to reduce processing demands. 
+ SICA 的自我改进通过一个迭代循环实现（见图1）。首先，SICA 审查其历史版本档案及其在基准测试中的表现，选择基于成功率、时间和计算成本的加权公式计算出的性能得分最高的版本。这个选定版本然后进行下一轮自我修改：它分析档案以识别潜在改进点，然后直接修改代码库。修改后的智能体随后接受基准测试，结果记录在档案中。这个过程不断重复，促进直接从过去表现中学习。这种自我改进机制让 SICA 无需传统训练范式就能进化其能力。
+
+ 图 1：SICA 的自我改进过程，基于其过去版本进行学习和适应
+
+ SICA 经历了显著的自我改进，在代码编辑和导航方面取得了重要进展。最初，SICA 使用基本的文件覆盖方法进行代码更改。随后，它开发了能够进行更智能和上下文相关编辑的"智能编辑器"。这进一步演变为"差异增强智能编辑器"，结合差异进行有针对性的修改和基于模式的编辑，以及"快速覆盖工具"以减少处理需求。 
 
 SICA 经历了显著的自我改进，在代码编辑和导航方面取得了重要进展。最初，SICA 使用基本的文件覆盖方法进行代码更改。随后，它开发了能够进行更智能和上下文相关编辑的"智能编辑器"。这进一步演变为"差异增强智能编辑器"，结合差异进行有针对性的修改和基于模式的编辑，以及"快速覆盖工具"以减少处理需求。
 
 SICA further implemented "Minimal Diff Output Optimization" and "Context-Sensitive Diff Minimization," using Abstract Syntax Tree (AST) parsing for efficiency. Additionally, a "SmartEditor Input Normalizer" was added. In terms of navigation, SICA independently created an "AST Symbol Locator," using the code's structural map (AST) to identify definitions within the codebase. Later, a "Hybrid Symbol Locator" was developed, combining a quick search with AST checking. This was further optimized via "Optimized AST Parsing in Hybrid Symbol Locator" to focus on relevant code sections, improving search speed.(see Fig. 2\)
 
-SICA 进一步实现了"最小差异输出优化"和"上下文敏感差异最小化"，使用抽象语法树（AST）解析来提高效率。此外，还添加了"智能编辑器输入规范化器"。在导航方面，SICA 独立创建了"AST 符号定位器"，使用代码的结构图（AST）来识别代码库中的定义。后来，开发了"混合符号定位器"，将快速搜索与 AST 检查相结合。这通过"混合符号定位器中的优化 AST 解析"进一步优化，专注于相关代码部分，提高搜索速度（见图2）。
+Fig.2 : Performance across iterations. Key improvements are annotated with their corresponding tool or agent modifications. (courtesy of Maxime Robeyns , Martin Szummer , Laurence Aitchison)
 
 ![][image2]
 
-Fig.2 : Performance across iterations. Key improvements are annotated with their corresponding tool or agent modifications. (courtesy of Maxime Robeyns , Martin Szummer , Laurence Aitchison)
+ SICA 进一步实现了"最小差异输出优化"和"上下文敏感差异最小化"，使用抽象语法树（AST）解析来提高效率。此外，还添加了"智能编辑器输入规范化器"。在导航方面，SICA 独立创建了"AST 符号定位器"，使用代码的结构图（AST）来识别代码库中的定义。后来，开发了"混合符号定位器"，将快速搜索与 AST 检查相结合。这通过"混合符号定位器中的优化 AST 解析"进一步优化，专注于相关代码部分，提高搜索速度（见图2）。
 
-图 2：跨迭代的性能表现。关键改进用其相应的工具或智能体修改进行标注。（由 Maxime Robeyns、Martin Szummer、Laurence Aitchison 提供）
+ 图 2：跨迭代的性能表现。关键改进用其相应的工具或智能体修改进行标注。（由 Maxime Robeyns、Martin Szummer、Laurence Aitchison 提供）
 
 SICA's architecture comprises a foundational toolkit for basic file operations, command execution, and arithmetic calculations. It includes mechanisms for result submission and the invocation of specialized sub-agents (coding, problem-solving, and reasoning). These sub-agents decompose complex tasks and manage the LLM's context length, especially during extended improvement cycles. 
 
@@ -198,13 +198,13 @@ In the realm of fundamental research, AlphaEvolve has contributed to the discove
 
 **OpenEvolve** is an evolutionary coding agent that leverages LLMs (see Fig.3) to iteratively optimize code. It orchestrates a pipeline of LLM-driven code generation, evaluation, and selection to continuously enhance programs for a wide range of tasks. A key aspect of OpenEvolve is its capability to evolve entire code files, rather than being limited to single functions. The agent is designed for versatility, offering support for multiple programming languages and compatibility with OpenAI-compatible APIs for any LLM. Furthermore, it incorporates multi-objective optimization, allows for flexible prompt engineering, and is capable of distributed evaluation to efficiently handle complex coding challenges. 
 
-**OpenEvolve** 是一个利用大语言模型（见图3）迭代优化代码的进化编码智能体。它编排 LLM 驱动的代码生成、评估和选择流水线，持续为广泛任务增强程序。OpenEvolve 的一个关键方面是它能够进化完整代码文件，而不仅限于单个函数。该智能体设计为多功能，支持多种编程语言，并与任何 LLM 的 OpenAI 兼容 API 兼容。此外，它整合了多目标优化，允许灵活的提示工程，并能够进行分布式评估以高效处理复杂的编码挑战。
+Fig. 3: The OpenEvolve internal architecture is managed by a controller. This controller orchestrates several key components: the program sampler, Program Database, Evaluator Pool, and LLM Ensembles. Its primary function is to facilitate their learning and adaptation processes to enhance code quality.
 
 ![][image3]
 
-Fig. 3: The OpenEvolve internal architecture is managed by a controller. This controller orchestrates several key components: the program sampler, Program Database, Evaluator Pool, and LLM Ensembles. Its primary function is to facilitate their learning and adaptation processes to enhance code quality.
+**OpenEvolve** 是一个利用大语言模型（见图3）迭代优化代码的进化编码智能体。它编排 LLM 驱动的代码生成、评估和选择流水线，持续为广泛任务增强程序。OpenEvolve 的一个关键方面是它能够进化完整代码文件，而不仅限于单个函数。该智能体设计为多功能，支持多种编程语言，并与任何 LLM 的 OpenAI 兼容 API 兼容。此外，它整合了多目标优化，允许灵活的提示工程，并能够进行分布式评估以高效处理复杂的编码挑战。
 
-图 3：OpenEvolve 内部架构由控制器管理。该控制器编排几个关键组件：程序采样器、程序数据库、评估器池和 LLM 集合。其主要功能是促进它们的学习和适应过程以提高代码质量。
+ 图 3：OpenEvolve 内部架构由控制器管理。该控制器编排几个关键组件：程序采样器、程序数据库、评估器池和 LLM 集合。其主要功能是促进它们的学习和适应过程以提高代码质量。
 
 This code snippet uses the OpenEvolve library to perform evolutionary optimization on a program. It initializes the OpenEvolve system with paths to an initial program, an evaluation file, and a configuration file. The evolve.run(iterations=1000) line starts the evolutionary process, running for 1000 iterations to find an improved version of the program. Finally, it prints the metrics of the best program found during the evolution, formatted to four decimal places. 
 
@@ -245,13 +245,13 @@ for name, value in best_program.metrics.items():
 
 **Visual summary**
 
-**可视化摘要**
+Fig.4: Learning and adapting pattern
 
 ![][image4]
 
-Fig.4: Learning and adapting pattern
+**可视化摘要**
 
-图 4：学习和适应模式
+ 图 4：学习和适应模式
 
 ## Key Takeaways
 
@@ -297,21 +297,33 @@ These elements contribute to significant advancements, such as Google's AlphaEvo
 
 ## 参考文献
 
-1. Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction*. MIT Press.   
-2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press.   
-3. Mitchell, T. M. (1997). *Machine Learning*. McGraw-Hill.   
-4. Proximal Policy Optimization Algorithm**s** by John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. You can find it on arXiv: [https://arxiv.org/abs/1707.06347](https://arxiv.org/abs/1707.06347)   
-5. Robeyns, M., Aitchison, L., & Szummer, M. (2025). *A Self-Improving Coding Agent*. arXiv:2504.15228v2. [https://arxiv.org/pdf/2504.15228](https://arxiv.org/pdf/2504.15228)  [https://github.com/MaximeRobeyns/self\_improving\_coding\_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)   
-6. AlphaEvolve blog, [https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)   
-7. OpenEvolve, [https://github.com/codelion/openevolve](https://github.com/codelion/openevolve) 
+ 1. Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction*. MIT Press.   
 
-1. Sutton, R. S., & Barto, A. G. (2018). *《强化学习：导论》*. MIT Press.   
-2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *《深度学习》*. MIT Press.   
-3. Mitchell, T. M. (1997). *《机器学习》*. McGraw-Hill.   
-4. 近端策略优化算法，作者 John Schulman、Filip Wolski、Prafulla Dhariwal、Alec Radford 和 Oleg Klimov。可在 arXiv 上找到：[https://arxiv.org/abs/1707.06347](https://arxiv.org/abs/1707.06347)   
-5. Robeyns, M., Aitchison, L., & Szummer, M. (2025). *《自我改进编码智能体》*. arXiv:2504.15228v2. [https://arxiv.org/pdf/2504.15228](https://arxiv.org/pdf/2504.15228)  [https://github.com/MaximeRobeyns/self\_improving\_coding\_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)   
-6. AlphaEvolve 博客，[https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)   
-7. OpenEvolve，[https://github.com/codelion/openevolve](https://github.com/codelion/openevolve) 
+ 1. Sutton, R. S., & Barto, A. G. (2018). *《强化学习：导论》*. MIT Press.   
+
+ 2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press.   
+
+ 2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *《深度学习》*. MIT Press.   
+
+ 3. Mitchell, T. M. (1997). *Machine Learning*. McGraw-Hill.   
+
+ 3. Mitchell, T. M. (1997). *《机器学习》*. McGraw-Hill.   
+
+ 4. Proximal Policy Optimization Algorithms by John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. You can find it on arXiv: [https://arxiv.org/abs/1707.06347](https://arxiv.org/abs/1707.06347)   
+
+ 4. 近端策略优化算法，作者 John Schulman、Filip Wolski、Prafulla Dhariwal、Alec Radford 和 Oleg Klimov。可在 arXiv 上找到：[https://arxiv.org/abs/1707.06347](https://arxiv.org/abs/1707.06347)   
+
+ 5. Robeyns, M., Aitchison, L., & Szummer, M. (2025). *A Self-Improving Coding Agent*. arXiv:2504.15228v2. [https://arxiv.org/pdf/2504.15228](https://arxiv.org/pdf/2504.15228)  [https://github.com/MaximeRobeyns/self_improving_coding_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)   
+
+ 5. Robeyns, M., Aitchison, L., & Szummer, M. (2025). *《自我改进编码智能体》*. arXiv:2504.15228v2. [https://arxiv.org/pdf/2504.15228](https://arxiv.org/pdf/2504.15228)  [https://github.com/MaximeRobeyns/self_improving_coding_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)   
+
+ 6. AlphaEvolve blog, [https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)   
+
+ 6. AlphaEvolve 博客，[https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)   
+
+ 7. OpenEvolve, [https://github.com/codelion/openevolve](https://github.com/codelion/openevolve) 
+
+ 7. OpenEvolve，[https://github.com/codelion/openevolve](https://github.com/codelion/openevolve) 
 
 [image1]: ../images/chapter-9/image1.png
 [image2]: ../images/chapter-9/image2.png

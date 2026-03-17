@@ -283,7 +283,9 @@ Building on our discussion of key reasoning techniques, let's first examine a co
 
 **Deep Research**：术语"Deep Research"描述了一类旨在充当不知疲倦、有条不紊的研究助手的 AI Agentic 工具。这一领域的主要平台包括 Perplexity AI、Google 的 Gemini 研究能力和 OpenAI 的 ChatGPT 高级功能（见图 5）。
 
-![][image5]Fig. 5: Google Deep Research for Information Gathering
+![][image5]
+
+Fig. 5: Google Deep Research for Information Gathering
 
 图 5：Google Deep Research 用于信息收集
 

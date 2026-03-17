@@ -179,7 +179,7 @@ The core components of this framework are Agents, Tasks, and the Crew. An Agent 
 
 该框架核心组件包括智能体、任务和团队。智能体不仅由功能定义，还通过角色、目标和背景故事等角色特征来定义，这些特征指导其行为与沟通风格。任务是具备明确描述和预期输出的离散工作单元，分配给特定智能体。团队是包含智能体和任务列表的协调单元，执行预定义的流程。此流程决定工作流模式，通常为顺序型（一个任务的输出成为下一任务的输入）或层级型（经理型智能体分配任务并协调其他智能体间的交互）。
 
-When compared to other frameworks, CrewAI occupies a distinct position. It moves away from the low-level, explicit state management and control flow of LangGraph, where a developer wires together every node and conditional edge. Instead of building a state machine, the developer designs a team charter. While Googlés ADK provides a comprehensive, production-oriented platform for the entire agent lifecycle, CrewAI concentrates specifically on the logic of agent collaboration and for simulating a team of specialists.
+When compared to other frameworks, CrewAI occupies a distinct position. It moves away from the low-level, explicit state management and control flow of LangGraph, where a developer wires together every node and conditional edge. Instead of building a state machine, the developer designs a team charter. While Google's ADK provides a comprehensive, production-oriented platform for the entire agent lifecycle, CrewAI concentrates specifically on the logic of agent collaboration and for simulating a team of specialists.
 
 与其他框架相比，CrewAI 定位独特。它脱离了 LangGraph 的低层级、显式状态管理与控制流（后者要求开发者连接每个节点与条件边）。开发者不是构建状态机，而是设计团队章程。尽管 Google 的 ADK 为整个智能体生命周期提供了全面、生产就绪的平台，CrewAI 则专注于智能体协作与专家团队模拟。
 
@@ -243,7 +243,7 @@ The landscape of agentic frameworks offers a diverse spectrum of tools, from low
 
 ## 参考文献
 
-1. LangChain, [https://www.langchain.com/](https://www.langchain.com/)   
-2. LangGraph, [https://www.langchain.com/langgraph](https://www.langchain.com/langgraph)   
-3. Google's ADK, [https://google.github.io/adk-docs/](https://google.github.io/adk-docs/)   
+1. LangChain, [https://www.langchain.com/](https://www.langchain.com/)
+2. LangGraph, [https://www.langchain.com/langgraph](https://www.langchain.com/langgraph)
+3. Google's ADK, [https://google.github.io/adk-docs/](https://google.github.io/adk-docs/)
 4. Crew.AI, [https://docs.crewai.com/en/introduction](https://docs.crewai.com/en/introduction)

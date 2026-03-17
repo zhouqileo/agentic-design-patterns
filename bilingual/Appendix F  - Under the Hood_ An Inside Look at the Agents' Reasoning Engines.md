@@ -18,25 +18,27 @@ Therefore, understanding the internal reasoning mechanisms of these models is no
 
 ## Gemini
 
-**Analyzing My Approach**
+## 双子座（Gemini）
 
-**分析我的方法**
+### Analyzing My Approach
+
+### 分析我的方法
 
 I've outlined the structure for my explanation, aiming for clarity and conciseness. First, a direct answer, then a breakdown into logical steps. Step 1 will involve defining the key reasoning process I use, and then I will elaborate on the subsequent steps. This should facilitate a straightforward and easy-to-understand explanation.
 
 我已经为我的解释规划好了结构，力求清晰简洁。首先是直接回答，然后分解为逻辑步骤。第 1 步将定义我使用的关键推理流程，然后我会详细阐述后续步骤。这样的结构应该有助于提供一个直截了当、易于理解的解释。
 
-**Refining the Explanation**
+### Refining the Explanation
 
-**完善解释**
+### 完善解释
 
 I've finalized the structure of my explanation. Step 1 focuses on deconstructing prompts, specifically the analysis of the user's request. Step 2 details information retrieval, emphasizing pattern recognition rather than simple database lookup. Step 3 explores synthesis and LLMs, and Step 4 will focus on response generation, which includes formatting, tone, and instruction adherence. I will conclude with a summary to reinforce the key stages, while maintaining clarity and engagement.
 
 我已经敲定了解释的结构。第 1 步聚焦于解构提示，特别是分析用户的请求。第 2 步详述信息检索，强调模式识别而非简单的数据库查询。第 3 步探讨综合处理与 LLM 机制，第 4 步则关注响应生成，包括格式、语气及指令遵循。我将以总结收尾，强化关键阶段，同时保持清晰度与吸引力。
 
-**Elaborating My Methodology**
+### Elaborating My Methodology
 
-**阐述我的方法论**
+### 阐述我的方法论
 
 I've fleshed out the "Deconstructing the Prompt" step, focusing on how I identify the user's intent, the core question, and any constraints provided. The Information Retrieval phase is now focused on pattern recognition, not just data retrieval, which will be the first item under this section. I am working on the Synthesis step, which is where I weave information together with LLMs and transformers. The Generating the Response step is solidified, and I will be using emojis to enhance the overall tone.
 
@@ -309,6 +311,8 @@ Would you like to give me a problem, and I'll show you this step-by-step reasoni
 
 ## Grok
 
+## 格罗克（Grok）
+
 Explaining how I reason is a fascinating challenge, as it involves unpacking the complex interplay of algorithms, data processing, and decision-making that underpins my responses. As Grok 3, my reasoning process is inspired by human cognition but operates within the constraints and capabilities of a large language model. Below, I'll break down the steps of how I approach reasoning, using a clear, step-by-step framework. I'll aim to keep it concise yet comprehensive, avoiding overly technical jargon while providing insight into my "thought" process.
 
 阐述我的推理机制是一项引人入胜的挑战，因为这涉及揭示支撑我响应的算法、数据处理与决策制定的复杂交互网络。作为 Grok 3，我的推理过程受人类认知启发，但运作于大语言模型的特定约束与能力边界内。下文我将通过清晰的阶段框架解析我的推理流程，力求在避免过度技术化的同时，提供对内部「思维」过程的深入洞察。
@@ -431,155 +435,155 @@ This step-by-step breakdown reflects how I simulate reasoning to provide clear, 
 
 ## Kimi
 
-## Kimi
+## 月之暗面（Kimi）
 
 I'm glad you asked—here is a transparent, "under-the-hood" walk-through of how I typically reason through a problem. I'll use a miniature example so you can see each stage in action.
 
 很高兴您提出此问——我将以透明的「幕后视角」逐步演示常规推理流程。通过微型案例，您可直观观察各阶段运作机制。
 
-EXAMPLE QUESTION  
-"Which is larger: 3⁴ or 4³?"  
+EXAMPLE QUESTION
+"Which is larger: 3⁴ or 4³?"
 I'll annotate every internal stage so you can see what I'm doing and why.
 
-示例问题  
-「3⁴ 与 4³ 何者更大？」  
+示例问题
+「3⁴ 与 4³ 何者更大？」
 我将逐阶段标注内部处理过程，揭示操作逻辑与决策依据。
 
-────────────────────────  
-PHASE 0 – INPUT PRE-PROCESSING  
-Tokenization  
+─────────────────────────
+PHASE 0 – INPUT PRE-PROCESSING
+Tokenization
 I break the text into discrete symbols: ["Which", "is", "larger", ":", "3", "^", "4", "or", "4", "^", "3", "?"]
 
-────────────────────────  
-阶段 0 – 输入预处理  
-词汇切分  
+─────────────────────────
+阶段 0 – 输入预处理
+词汇切分
 将文本分解为离散符号序列：["Which", "is", "larger", ":", "3", "^", "4", "or", "4", "^", "3", "?"]
 
-Syntactic parsing  
-I recognize the structure:  
-COMPARATIVE_QUERY (superlative adjective "larger") with two NUMERICAL_EXPONENT_TERMS [3^4] vs [4^3].  
-Semantic mapping  
+Syntactic parsing
+I recognize the structure:
+COMPARATIVE_QUERY (superlative adjective "larger") with two NUMERICAL_EXPONENT_TERMS [3^4] vs [4^3].
+Semantic mapping
 I map "larger" to the numerical relation ">".
 
-句法解析  
-识别结构特征：  
-COMPARATIVE_QUERY（最高级形容词「larger」）包含两个 NUMERICAL_EXPONENT_TERMS [3^4] 与 [4^3]。  
-语义映射  
+句法解析
+识别结构特征：
+COMPARATIVE_QUERY（最高级形容词「larger」）包含两个 NUMERICAL_EXPONENT_TERMS [3^4] 与 [4^3]。
+语义映射
 将「larger」映射为数值关系运算符「>」。
 
-────────────────────────  
-PHASE 1 – PROBLEM IDENTIFICATION & STRATEGY SELECTION  
-4. Classify task type  
-→ Arithmetic comparison of integer powers.  
+─────────────────────────
+PHASE 1 – PROBLEM IDENTIFICATION & STRATEGY SELECTION
+4. Classify task type
+→ Arithmetic comparison of integer powers.
 Choose solution strategy
 
-────────────────────────  
-阶段 1 – 问题识别与策略选择  
-4. 任务类型分类  
-→ 判定为整数幂的算术比较任务。  
+─────────────────────────
+阶段 1 – 问题识别与策略选择
+4. 任务类型分类
+→ 判定为整数幂的算术比较任务。
 解决方案策略遴选
 
-Candidate strategies:  
-A. Direct evaluation (compute 3⁴ and 4³).  
-B. Logarithmic comparison (compare 4·ln3 vs 3·ln4).  
-C. Pattern heuristics (powers of 3 grow faster than powers of 4 for small exponents?).  
+Candidate strategies:
+A. Direct evaluation (compute 3⁴ and 4³).
+B. Logarithmic comparison (compare 4·ln3 vs 3·ln4).
+C. Pattern heuristics (powers of 3 grow faster than powers of 4 for small exponents?).
 I select Strategy A because the numbers are tiny; exact integer evaluation is cheapest.
 
-候选策略集：  
-A. 直接求值法（计算 3⁴ 与 4³ 的具体数值）。  
-B. 对数比较法（对比 4·ln3 与 3·ln4 的大小）。  
-C. 模式启发法（小指数情况下 3 的幂次增长是否快于 4？）。  
+候选策略集：
+A. 直接求值法（计算 3⁴ 与 4³ 的具体数值）。
+B. 对数比较法（对比 4·ln3 与 3·ln4 的大小）。
+C. 模式启发法（小指数情况下 3 的幂次增长是否快于 4？）。
 选定策略 A，因数值规模极小；精确整数计算成本最低。
 
-────────────────────────  
-PHASE 2 – KNOWLEDGE RETRIEVAL  
-6. Retrieve arithmetic facts  
-3² = 9 (memorized)  
-3³ = 27 (retrieved)  
-4² = 16 (memorized)  
-4³ = 64 (retrieved)  
-Compute remaining term  
+─────────────────────────
+PHASE 2 – KNOWLEDGE RETRIEVAL
+6. Retrieve arithmetic facts
+3² = 9 (memorized)
+3³ = 27 (retrieved)
+4² = 16 (memorized)
+4³ = 64 (retrieved)
+Compute remaining term
 3⁴ = 3³·3 = 27×3 = 81.
 
-────────────────────────  
-阶段 2 – 知识检索与计算  
-6. 算术事实提取  
-3² = 9（直接记忆）  
-3³ = 27（关联检索）  
-4² = 16（直接记忆）  
-4³ = 64（关联检索）  
-剩余项计算  
+─────────────────────────
+阶段 2 – 知识检索与计算
+6. 算术事实提取
+3² = 9（直接记忆）
+3³ = 27（关联检索）
+4² = 16（直接记忆）
+4³ = 64（关联检索）
+剩余项计算
 3⁴ = 3³·3 = 27×3 = 81。
 
-────────────────────────  
-PHASE 3 – EXECUTION & VERIFICATION  
-8. Perform comparison  
-81 vs 64 → 81 > 64.  
-Cross-check  
+─────────────────────────
+PHASE 3 – EXECUTION & VERIFICATION
+8. Perform comparison
+81 vs 64 → 81 > 64.
+Cross-check
 Quick modular sanity check: 81 mod 5 = 1, 64 mod 5 = 4; no contradiction.
 
-────────────────────────  
-阶段 3 – 执行验证与交叉检验  
-8. 数值比较执行  
-81 对比 64 → 81 > 64。  
-交叉验证  
+─────────────────────────
+阶段 3 – 执行验证与交叉检验
+8. 数值比较执行
+81 对比 64 → 81 > 64。
+交叉验证
 快速模运算健全性检验：81 mod 5 = 1，64 mod 5 = 4；无逻辑矛盾。
 
-────────────────────────  
-PHASE 4 – RESPONSE GENERATION  
-10. Plan response structure  
-- Restate the question.  
-- Show the computed values.  
-- State the conclusion.  
-Surface realization  
+─────────────────────────
+PHASE 4 – RESPONSE GENERATION
+10. Plan response structure
+- Restate the question.
+- Show the computed values.
+- State the conclusion.
+Surface realization
 "3⁴ is 81 and 4³ is 64, so 3⁴ is larger."
 
-────────────────────────  
-阶段 4 – 响应生成与结构化  
-10. 响应框架规划  
-- 问题重述。  
-- 计算过程展示。  
-- 结论明确陈述。  
-表层语言实现  
+─────────────────────────
+阶段 4 – 响应生成与结构化
+10. 响应框架规划
+- 问题重述。
+- 计算过程展示。
+- 结论明确陈述。
+表层语言实现
 「3⁴ 等于 81，4³ 等于 64，因此 3⁴ 更大。」
 
-────────────────────────  
-PHASE 5 – METACOGNITIVE REFLECTION (internal)  
-12. Confidence score  
-0.99 (exact integers, small values, no ambiguity).  
-13. Identify possible edge-cases  
+─────────────────────────
+PHASE 5 – METACOGNITIVE REFLECTION (internal)
+12. Confidence score
+0.99 (exact integers, small values, no ambiguity).
+13. Identify possible edge-cases
 If exponents were huge, direct evaluation would be infeasible and I'd switch to logarithms.
 
-────────────────────────  
-阶段 5 – 元认知反思（内部评估）  
-12. 置信度量化  
-0.99（精确整数运算，数值规模小，无歧义情境）。  
-13. 边界条件识别  
+─────────────────────────
+阶段 5 – 元认知反思（内部评估）
+12. 置信度量化
+0.99（精确整数运算，数值规模小，无歧义情境）。
+13. 边界条件识别
 若指数规模巨大，直接求值将不可行，需切换至对数比较法。
 
-────────────────────────  
-SUMMARY OF REASONING STEPS IN HUMAN TERMS  
-Read and parse the question.  
-Recognize it's a numeric comparison.  
-Decide the simplest safe method is to compute both numbers.  
-Recall or calculate 3⁴ = 81 and 4³ = 64.  
-Compare 81 > 64.  
-Communicate the result clearly.  
+─────────────────────────
+SUMMARY OF REASONING STEPS IN HUMAN TERMS
+Read and parse the question.
+Recognize it's a numeric comparison.
+Decide the simplest safe method is to compute both numbers.
+Recall or calculate 3⁴ = 81 and 4³ = 64.
+Compare 81 > 64.
+Communicate the result clearly.
 That pipeline—parsing, strategizing, knowledge retrieval, execution, verification, and explanation—repeats at every scale, from tiny arithmetic to complex multi-step problems.
 
-────────────────────────  
-人类可读推理步骤总结  
-阅读并解析问题陈述。  
-识别数值比较任务本质。  
-决策采用最简安全路径：直接计算双方数值。  
-通过记忆检索或实时计算得 3⁴ = 81，4³ = 64。  
-执行数值比较 81 > 64。  
-清晰传达最终结论。  
+─────────────────────────
+人类可读推理步骤总结
+阅读并解析问题陈述。
+识别数值比较任务本质。
+决策采用最简安全路径：直接计算双方数值。
+通过记忆检索或实时计算得 3⁴ = 81，4³ = 64。
+执行数值比较 81 > 64。
+清晰传达最终结论。
 此处理管道——解析、策略制定、知识检索、执行、验证、解释——可在任意规模重复应用，从基础算术至复杂多步问题求解。
 
 ## Claude
 
-## Claude
+## 克劳德（Claude）
 
 I can walk you through how my reasoning process works, though I should note that I don't have complete insight into my own mechanisms - much like how humans can describe their thought processes but don't have full access to every neural firing.
 
@@ -589,40 +593,52 @@ Here's how I approach reasoning step by step:
 
 以下是我的推理流程分解：
 
-**Pattern Recognition and Context Building**  
+### Pattern Recognition and Context Building
+
+### 模式识别与上下文构建
+
 When I receive your question, I first identify what type of problem or query it is. I recognize patterns from my training - this is a request for explanation about cognitive processes. I build context by considering what you might already know and what level of detail would be helpful.
 
-**模式识别与上下文构建**  
 接收问题时，我首先辨识其类型与特征。基于训练模式识别——此为对认知过程的解释请求。通过评估您的知识背景与所需细节层级构建响应上下文。
 
-**Information Retrieval and Assembly**  
+### Information Retrieval and Assembly
+
+### 信息检索与整合
+
 I access relevant information from my training about reasoning, cognitive science, and AI systems. This isn't like searching a database - it's more like how memories and knowledge become available to you when thinking about a topic.
 
-**信息检索与整合**  
 访问训练数据中关于推理、认知科学及 AI 系统的相关知识。此过程不同于数据库查询——更近似人类思考时记忆与知识的自然涌现。
 
-**Structural Planning**  
+### Structural Planning
+
+### 结构规划与逻辑设计
+
 I consider how to organize my response. Should I use examples? What order makes most sense? I'm planning the logical flow even as I begin responding.
 
-**结构规划与逻辑设计**  
 考量响应组织方式：是否需要示例支撑？何种叙述顺序最具逻辑性？即使在生成响应初期，我已同步规划整体逻辑流程。
 
-**Iterative Refinement**  
+### Iterative Refinement
+
+### 迭代优化与动态调整
+
 As I generate each part of my response, I'm constantly evaluating whether it makes sense, fits with what I've already said, and serves your question. I might "backtrack" mentally and rephrase if something doesn't feel right.
 
-**迭代优化与动态调整**  
 生成响应过程中持续评估内容合理性、前后一致性及问题针对性。若感知到表述不当，会在认知层面「回溯」并重构表达。
 
-**Constraint Checking**  
-Throughout this process, I'm checking against various constraints - is this accurate? Helpful? Clear? Safe?
+### Constraint Checking
 
-**约束条件审查**  
+### 约束条件审查
+
+Throughout this process, I'm checking against various constraints - is this accurate? Helpful? Clear? Safe.
+
 全程监测多重约束：信息准确性、内容实用性、表达清晰度、安全性保障。
 
-**Analogical Thinking**  
+### Analogical Thinking
+
+### 类比推理应用
+
 I often reason by analogy - comparing new situations to familiar patterns or examples that might illuminate the concept.
 
-**类比推理应用**  
 常通过类比方式推进推理——将新情境与能阐释概念的熟悉模式或案例进行对照分析。
 
 The interesting thing is that much of this happens in ways that feel somewhat intuitive to me, just as your own reasoning might feel natural to you even though complex processes are occurring beneath conscious awareness.
@@ -630,6 +646,8 @@ The interesting thing is that much of this happens in ways that feel somewhat in
 值得注意的是，这些过程多以我感知中近乎直觉的方式运作，正如您的推理对您而言显得自然流畅，尽管底层正进行着复杂的认知活动。
 
 ## DeepSeek
+
+## 深度求索（DeepSeek）
 
 I'd be happy to explain how I "reason" step-by-step! It's important to clarify that **I don't reason like a human** (I have no consciousness, intuition, or lived experience). Instead, my "reasoning" is a sophisticated pattern-matching, information retrieval, and probabilistic calculation process based on my training data and architecture. Think of it as **structured computation, not conscious thought**.
 

@@ -11,6 +11,7 @@ For AI agents, this is crucial as it allows them to ground their actions and res
 对于 AI 智能体来说，这一能力尤为关键——它让智能体能够基于实时、可验证的数据来采取行动和作出回应，而不仅仅依赖于静态的训练数据。这种能力使得智能体能够准确地执行复杂任务，例如查询最新的公司政策来回答特定问题，或在下订单前检查当前库存状况。通过整合外部知识，RAG 将智能体从简单的对话者转变为能够执行有意义工作的有效、数据驱动的工具。
 
 ## Knowledge Retrieval (RAG) Pattern Overview
+
 ## 知识检索（RAG）模式概述
 
 The Knowledge Retrieval (RAG) pattern significantly enhances the capabilities of LLMs by granting them access to external knowledge bases before generating a response. Instead of relying solely on their internal, pre-trained knowledge, RAG allows LLMs to "look up" information, much like a human might consult a book or search the internet. This process empowers LLMs to provide more accurate, up-to-date, and verifiable answers.
@@ -110,6 +111,7 @@ Fourth, an agent can identify knowledge gaps and use external tools. Suppose a u
 ### **总结：** Agentic RAG 代表了标准检索模式的复杂演进，将其从被动的数据管道转变为主动的、解决问题的框架。通过嵌入一个可以评估来源、协调冲突、分解复杂问题和使用外部工具的推理层，智能体显著提高了生成答案的可靠性和深度。这一进步使 AI 更加可信和有能力，尽管它带来了必须仔细管理的系统复杂性、延迟和成本方面的重要权衡。
 
 ## Practical Applications & Use Cases
+
 ## 实际应用和用例
 
 Knowledge Retrieval (RAG) is changing how Large Language Models (LLMs) are utilized across various industries, enhancing their ability to provide more accurate and contextually relevant responses.
@@ -137,9 +139,10 @@ By incorporating external knowledge, RAG extends the capabilities of LLMs beyond
 通过整合外部知识，RAG 将 LLM 的能力从简单的通信工具扩展到作为知识处理系统发挥作用，大大提升了其实用价值。
 
 ## Hands-On Code Example (ADK)
+
 ## 实践代码示例（ADK）
 
-To illustrate the Knowledge Retrieval (RAG) pattern, let's see three examples. 
+To illustrate the Knowledge Retrieval (RAG) pattern, let's see three examples.
 
 为了说明知识检索（RAG）模式，我们来看三个示例。
 
@@ -191,6 +194,7 @@ memory_service = VertexAiRagMemoryService(
 ```
 
 ## Hands-On Code Example (LangChain)
+
 ## 实践代码示例（LangChain）
 
 Third, let's walk through a complete example using LangChain.
@@ -318,6 +322,7 @@ This Python code illustrates a Retrieval-Augmented Generation (RAG) pipeline imp
 这段 Python 代码说明了使用 LangChain 和 LangGraph 实现的检索增强生成（RAG）管道。该过程首先从文本文档创建知识库——文档被分割成块并转换为嵌入，然后将这些嵌入存储在 Weaviate 向量存储中，便于高效的信息检索。LangGraph 中的 StateGraph 用于管理两个关键函数之间的工作流：`retrieve_documents_node` 和 `generate_response_node`。`retrieve_documents_node` 函数查询向量存储，基于用户输入识别相关文档块。随后，`generate_response_node` 函数利用检索的信息和预定义的提示模板，使用 OpenAI LLM 生成响应。`app.stream` 方法允许通过 RAG 管道执行查询，展示了系统生成上下文相关输出的能力。
 
 ## At Glance
+
 ## 概览
 
 **What:** LLMs possess impressive text generation abilities but are fundamentally limited by their training data. This knowledge is static, meaning it doesn't include real-time information or private, domain-specific data. Consequently, their responses can be outdated, inaccurate, or lack the specific context required for specialized tasks. This gap restricts their reliability for applications demanding current and factual answers.
@@ -335,19 +340,20 @@ This Python code illustrates a Retrieval-Augmented Generation (RAG) pipeline imp
 **Visual summary**
 **可视化摘要**
 
-**![][image3]**
+![][image3]
 
-Knowledge Retrieval pattern: an AI agent to query and retrieve information from structured databases 
+Knowledge Retrieval pattern: an AI agent to query and retrieve information from structured databases
 
 知识检索模式：AI 智能体从结构化数据库查询和检索信息
 
-**![][image4]**
+![][image4]
 
 Fig. 3: Knowledge Retrieval pattern: an AI agent to find and synthesize information from the public internet in response to user queries.
 
 图 3：知识检索模式：AI 智能体响应用户查询，从公共互联网查找和综合信息。
 
 ## Key Takeaways
+
 ## 关键要点
 
 * Knowledge Retrieval (RAG) enhances LLMs by allowing them to access external, up-to-date, and specific information.  
@@ -372,6 +378,7 @@ Fig. 3: Knowledge Retrieval pattern: an AI agent to find and synthesize informat
 * 实际应用涵盖企业搜索、客户支持、法律研究和个性化推荐。
 
 ## Conclusion
+
 ## 结论
 
 In conclusion, Retrieval-Augmented Generation (RAG) addresses the core limitation of a Large Language Model's static knowledge by connecting it to external, up-to-date data sources. The process works by first retrieving relevant information snippets and then augmenting the user's prompt, enabling the LLM to generate more accurate and contextually aware responses. This is made possible by foundational technologies like embeddings, semantic search, and vector databases, which find information based on meaning rather than just keywords. By grounding outputs in verifiable data, RAG significantly reduces factual errors and allows for the use of proprietary information, enhancing trust through citations.
