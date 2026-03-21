@@ -46,10 +46,6 @@ include:
   - images
   - original
   - bilingual
-  - README.md
-  - chapters
-  - images
-  - original
 
 exclude:
   - Gemfile
