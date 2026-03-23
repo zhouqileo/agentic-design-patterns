@@ -117,7 +117,7 @@ This code uses the CrewAI library to create an AI agent that plans and writes a 
 
 ## Google DeepResearch
 
-## Google DeepResearch
+## Google 深度研究
 
 Google Gemini DeepResearch (see Fig.1)  is an agent-based system designed for autonomous information retrieval and synthesis. It functions through a multi-step agentic pipeline that dynamically and iteratively queries Google Search to systematically explore complex topics. The system is engineered to process a large corpus of web-based sources, evaluate the collected data for relevance and knowledge gaps, and perform subsequent searches to address them. The final output consolidates the vetted information into a structured, multi-page summary with citations to the original sources.
 
@@ -294,7 +294,7 @@ Subsequently, it attempts to access and display inline citations and metadata fr
 
 **Visual summary**  
 **![][image4]**  
-Fig.4; Planning design pattern
+Fig.4: Planning design pattern
 
 **可视化摘要**  
 图 4：规划设计模式

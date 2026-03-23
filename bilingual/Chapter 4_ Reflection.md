@@ -342,7 +342,7 @@ Before concluding, it's important to consider that while the Reflection pattern 
 
 在结束前，需要考虑的是，虽然反思模式显著提升了输出质量，但也带来了重要的权衡。迭代过程虽然强大，但可能导致更高的成本和延迟，因为每个优化循环都可能需要新的LLM调用，这使其对于时间敏感的应用并非最优选择。此外，该模式内存密集；随着每次迭代，对话历史会扩展，包含初始输出、评审和后续优化。
 
-## At Glance
+## At a Glance
 
 ## 概览
 

@@ -6,7 +6,7 @@ Individual AI agents often face limitations when tackling complex, multifaceted 
 
 尽管单个 AI 智能体具备先进能力，但在处理复杂、多方面问题时仍然常常面临局限性。为了克服这一限制，智能体间通信（A2A）使得不同 AI 智能体（可能基于不同框架构建）能够进行有效协作。这种协作涉及无缝协调、任务委派和信息交换。
 
-Google's A2A protocol is an open  standard designed to facilitate this universal communication. This chapter will explore A2A, its practical applications, and its implementation within the Google ADK.
+Google's A2A protocol is an open standard designed to facilitate this universal communication. This chapter will explore A2A, its practical applications, and its implementation within the Google ADK.
 
 Google A2A 协议是一个旨在促进此类通用通信的开放标准。本章将探讨 A2A 的基本概念、实际应用以及在 Google ADK 中的具体实现。
 

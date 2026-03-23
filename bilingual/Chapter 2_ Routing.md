@@ -229,9 +229,9 @@ The Agent Development Kit (ADK) is a framework for engineering agentic systems, 
 
 智能体开发工具包 (ADK) 是一个用于工程化智能体系统的框架，为定义智能体能力和行为提供了结构化环境。与基于显式计算图的架构相比，ADK 范式中的路由通常通过定义一组离散的"工具"来实现，这些工具代表智能体的功能。响应用户查询选择适当工具由框架的内部逻辑管理，该逻辑利用底层模型将用户意图与正确的功能处理程序匹配。
 
-This Python code demonstrates an example of an Agent Development Kit (ADK) application using Google's ADK library. It sets up a "Coordinator" agent that routes user requests to specialized sub-agents ("Booker" for bookings and "Info" for general information) based on defined instructions. The sub-agents then use specific tools to simulate handling the requests, showcasing a basic delegation pattern within an agent system
+This Python code demonstrates an example of an Agent Development Kit (ADK) application using Google's ADK library. It sets up a "Coordinator" agent that routes user requests to specialized sub-agents ("Booker" for bookings and "Info" for general information) based on defined instructions. The sub-agents then use specific tools to simulate handling the requests, showcasing a basic delegation pattern within an agent system.
 
-此 Python 代码演示了使用 Google ADK 库的智能体开发工具包 (ADK) 应用程序示例。它设置了一个"协调器"智能体，根据定义的指令将用户请求路由到专门的子智能体（"Booker"用于预订，"Info"用于一般信息）。然后子智能体使用特定工具模拟处理请求，展示了智能体系统中的基本委托模式
+此 Python 代码演示了使用 Google ADK 库的智能体开发工具包 (ADK) 应用程序示例。它设置了一个"协调器"智能体，根据定义的指令将用户请求路由到专门的子智能体（"Booker"用于预订，"Info"用于一般信息）。然后子智能体使用特定工具模拟处理请求，展示了智能体系统中的基本委托模式。
 
 ```python
 ## Copyright (c) 2025 Marco Fago

@@ -39,7 +39,7 @@ Practical applications include:
 ## Reasoning techniques
 ## 推理技术
 
-To start, let's delve into the core reasoning techniques used to enhance the problem-solving abilities of AI models..
+To start, let's delve into the core reasoning techniques used to enhance the problem-solving abilities of AI models.
 
 首先，让我们深入了解用于增强 AI 模型问题解决能力的核心推理技术。
 

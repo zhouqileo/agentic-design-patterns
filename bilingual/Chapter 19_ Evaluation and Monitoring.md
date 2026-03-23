@@ -306,7 +306,7 @@ Before we conclude, let's examine various evaluation methods, considering their 
 | LLM-as-a-Judge | 一致、高效且可扩展。 | 可能忽略中间步骤。受 LLM 能力限制。 |
 | 自动化指标 | 可扩展、高效且客观 | 在捕获完整能力方面可能存在限制。 |
 
-## Agents trajectories 
+## Agent Trajectories
 
 ## 智能体轨迹
 

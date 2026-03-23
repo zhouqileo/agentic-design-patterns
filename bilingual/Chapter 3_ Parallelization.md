@@ -72,7 +72,7 @@ Parallelization is a powerful pattern for optimizing agent performance across va
 
 并行化是优化智能体性能的强大模式，适用于多种应用场景：
 
-1\. Information Gathering and Research:  
+1. Information Gathering and Research:
 Collecting information from multiple sources simultaneously is a classic use case.
 
 1. 信息收集与研究：
@@ -86,7 +86,7 @@ Collecting information from multiple sources simultaneously is a classic use cas
   * **并行任务：** 同时搜索新闻文章、获取股票数据、监控社交媒体提及和查询公司数据库
   * **优势：** 相比顺序查询能更快获得全面视图
 
-2\. Data Processing and Analysis:  
+2. Data Processing and Analysis:
 Applying different analysis techniques or processing different data segments concurrently.
 
 2. 数据处理与分析：
@@ -100,7 +100,7 @@ Applying different analysis techniques or processing different data segments con
   * **并行任务：** 对一批反馈条目同时执行情感分析、关键词提取、反馈分类和紧急问题识别
   * **优势：** 快速提供多维度分析结果
 
-3\. Multi-API or Tool Interaction:  
+3. Multi-API or Tool Interaction:
 Calling multiple independent APIs or tools to gather different types of information or perform different actions.
 
 3. 多 API 或工具交互：
@@ -114,7 +114,7 @@ Calling multiple independent APIs or tools to gather different types of informat
   * **并行任务：** 同时查询航班价格、酒店可用性、当地活动和餐厅推荐
   * **优势：** 更快呈现完整的旅行方案
 
-4\. Content Generation with Multiple Components:  
+4. Content Generation with Multiple Components:
 Generating different parts of a complex piece of content in parallel.
 
 4. 多组件内容生成：
@@ -128,7 +128,7 @@ Generating different parts of a complex piece of content in parallel.
   * **并行任务：** 同时生成邮件主题、起草正文内容、查找相关图片和创建行动号召按钮文本
   * **优势：** 更高效地组装最终邮件
 
-5\. Validation and Verification:  
+5. Validation and Verification:
 Performing multiple independent checks or validations concurrently.
 
 5. 验证与核实：
@@ -142,7 +142,7 @@ Performing multiple independent checks or validations concurrently.
   * **并行任务：** 同时验证邮箱格式、手机号码、地址信息数据库匹配和不当内容检测
   * **优势：** 更快提供输入有效性反馈
 
-6\. Multi-Modal Processing:  
+6. Multi-Modal Processing:
 Processing different modalities (text, image, audio) of the same input concurrently.
 
 6. 多模态处理：
@@ -156,7 +156,7 @@ Processing different modalities (text, image, audio) of the same input concurren
   * **并行任务：** 同时分析文本情感与关键词*并*识别图像中的对象和场景描述
   * **优势：** 更快速整合来自不同模态的洞察
 
-7\. A/B Testing or Multiple Options Generation:  
+7. A/B Testing or Multiple Options Generation:
 Generating multiple variations of a response or output in parallel to select the best one.
 
 7. A/B 测试或多选项生成：
