@@ -51,7 +51,7 @@ GitHub Copilot CLI 将广受欢迎的 AI 结对编程体验延伸至终端环境
 2. **仓库感知问答：** 团队新成员可询问："本仓库中数据库连接逻辑定义于何处？需要哪些环境变量？"Copilot CLI 利用其对整个仓库的认知提供包含文件路径的精确答案。
 3. **Shell 命令助手：** 当面对复杂 shell 命令不确定时，用户可输入：gh? find all files larger than 50MB, compress them, and place them in an archive folder. Copilot 将生成执行该任务所需的确切 shell 命令。
 
-## Terminal-Bench：命令行界面中 AI智能体基准测试框架
+## Terminal-Bench：命令行界面中 AI 智能体基准测试框架
 
 Terminal-Bench 是一套创新的评估框架，专用于衡量 AI 智能体在命令行界面中执行复杂任务的熟练程度。鉴于其基于文本的沙箱特性，终端被确认为 AI 智能体的理想环境。初始版本 Terminal-Bench-Core-v0 包含 80 项精心设计的人工任务，涵盖科学工作流与数据分析等领域。为确保公平对比，开发了极简智能体 Terminus 作为各类语言模型的标准化测试平台。该框架具备高度可扩展性，支持通过容器化或直接连接集成多样化智能体。未来规划包括实现大规模并行评估及整合现有基准测试。项目鼓励开源社区贡献任务扩展与框架协同优化。
 

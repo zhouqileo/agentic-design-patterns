@@ -141,9 +141,9 @@ Ultimately, this human-led model creates a powerful synergy between the develope
 
 ## 实践实施
 
-## Setup Checklist
+### Setup Checklist
 
-## 配置清单
+### 配置清单
 
 To effectively implement the human-agent team framework, the following setup is recommended, focusing on maintaining control while improving efficiency.
 

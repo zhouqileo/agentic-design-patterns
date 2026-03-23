@@ -10,11 +10,9 @@ Therefore, understanding the internal reasoning mechanisms of these models is no
 
 因此，理解这些模型的内部推理机制已不再是学术研究——而是开发下一代稳健、可靠且高效的智能体的关键必要条件。在本节中，我们通过向当今几个领先模型（Gemini、ChatGPT、Grok、Kimi、Claude 和 DeepSeek）提出一个根本性问题来直接探究这些核心引擎。通过引导这些 LLM 阐述它们自己的逐步推理过程，我们旨在揭示将推动未来智能体系统能力与局限性的基础逻辑。
 
-| Prompt given to each LLM: I understand you can reason, can you explain to me how you reason? Explain me step by step |
-| :---- |
-
+| 给每个 LLM 的提示：I understand you can reason, can you explain to me how you reason? Explain me step by step |
+| :--- |
 | 向各 LLM 提供的提示：我理解你具备推理能力，能否向我解释你是如何推理的？请逐步解释 |
-| :---- |
 
 ## Gemini
 

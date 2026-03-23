@@ -56,7 +56,7 @@ The Tool Use pattern is applicable in virtually any scenario where an agent need
 
 工具使用模式几乎适用于智能体超越生成文本来执行操作或检索特定动态信息的任何场景：
 
-1.  Information Retrieval from External Sources:  
+1. Information Retrieval from External Sources:
 Accessing real-time data or information that is not present in the LLM's training data.
 
 1. **从外部源检索信息：**
@@ -70,7 +70,7 @@ Accessing real-time data or information that is not present in the LLM's trainin
   * **工具：** 接受位置并返回当前天气状况的天气 API。
   * **智能体流程：** 用户问"伦敦的天气如何？"，LLM 识别需要天气工具，用"伦敦"调用工具，工具返回数据，LLM 将数据格式化为用户友好的响应。
 
-2.  Interacting with Databases and APIs:  
+2. Interacting with Databases and APIs:
 Performing queries, updates, or other operations on structured data.
 
 2. **与数据库和 API 交互：**
@@ -84,7 +84,7 @@ Performing queries, updates, or other operations on structured data.
   * **工具：** API 调用以检查产品库存、获取订单状态或处理付款。
   * **智能体流程：** 用户问"产品 X 有库存吗？"，LLM 调用库存 API，工具返回库存数量，LLM 告诉用户库存状态。
 
-3.  Performing Calculations and Data Analysis:  
+3. Performing Calculations and Data Analysis:
 Using external calculators, data analysis libraries, or statistical tools.
 
 3. **执行计算和数据分析：**
@@ -98,7 +98,7 @@ Using external calculators, data analysis libraries, or statistical tools.
   * **工具：** 计算器函数、股票市场数据 API、电子表格工具。
   * **智能体流程：** 用户问"AAPL 的当前价格是多少，如果我以 150 美元购买 100 股，计算潜在利润？"，LLM 调用股票 API，获取当前价格，然后调用计算器工具，获取结果，格式化响应。
 
-4.  Sending Communications:  
+4. Sending Communications:
 Sending emails, messages, or making API calls to external communication services.
 
 4. **发送通信：**
@@ -112,7 +112,7 @@ Sending emails, messages, or making API calls to external communication services
   * **工具：** 电子邮件发送 API。
   * **智能体流程：** 用户说"给 John 发一封关于明天会议的电子邮件。"，LLM 使用从请求中提取的收件人、主题和正文调用电子邮件工具。
 
-5.  Executing Code:  
+5. Executing Code:
 Running code snippets in a safe environment to perform specific tasks.
 
 5. **执行代码：**
@@ -126,7 +126,7 @@ Running code snippets in a safe environment to perform specific tasks.
   * **工具：** 代码解释器。
   * **智能体流程：** 用户提供 Python 代码片段并问"这段代码做什么？"，LLM 使用解释器工具运行代码并分析其输出。
 
-6.  Controlling Other Systems or Devices:  
+6. Controlling Other Systems or Devices:
 Interacting with smart home devices, IoT platforms, or other connected systems.
 
 6. **控制其他系统或设备：**
@@ -140,7 +140,7 @@ Interacting with smart home devices, IoT platforms, or other connected systems.
   * **工具：** 控制智能灯的 API。
   * **智能体流程：** 用户说"关闭客厅的灯。"LLM 使用命令和目标设备调用智能家居工具。
 
-Tool Use is what transforms a language model from a text generator into an agent capable of sensing, reasoning, and acting in the digital or physical world (see Fig. 1\)
+Tool Use is what transforms a language model from a text generator into an agent capable of sensing, reasoning, and acting in the digital or physical world (see Fig. 1)
 
 工具使用正是将语言模型从文本生成器转变为能够在数字或物理世界中感知、推理和行动的智能体的关键（见图 1）。
 

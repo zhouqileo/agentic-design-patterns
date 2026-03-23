@@ -126,9 +126,7 @@ Fig.1: SICA's self-improvement, learning and adapting based on its past versions
 
  图 1：SICA 的自我改进过程，基于其过去版本进行学习和适应
 
- SICA 经历了显著的自我改进，在代码编辑和导航方面取得了重要进展。最初，SICA 使用基本的文件覆盖方法进行代码更改。随后，它开发了能够进行更智能和上下文相关编辑的"智能编辑器"。这进一步演变为"差异增强智能编辑器"，结合差异进行有针对性的修改和基于模式的编辑，以及"快速覆盖工具"以减少处理需求。 
-
-SICA 经历了显著的自我改进，在代码编辑和导航方面取得了重要进展。最初，SICA 使用基本的文件覆盖方法进行代码更改。随后，它开发了能够进行更智能和上下文相关编辑的"智能编辑器"。这进一步演变为"差异增强智能编辑器"，结合差异进行有针对性的修改和基于模式的编辑，以及"快速覆盖工具"以减少处理需求。
+ SICA 经历了显著的自我改进，在代码编辑和导航方面取得了重要进展。最初，SICA 使用基本的文件覆盖方法进行代码更改。随后，它开发了能够进行更智能和上下文相关编辑的"智能编辑器"。这进一步演变为"差异增强智能编辑器"，结合差异进行有针对性的修改和基于模式的编辑，以及"快速覆盖工具"以减少处理需求。
 
 SICA further implemented "Minimal Diff Output Optimization" and "Context-Sensitive Diff Minimization," using Abstract Syntax Tree (AST) parsing for efficiency. Additionally, a "SmartEditor Input Normalizer" was added. In terms of navigation, SICA independently created an "AST Symbol Locator," using the code's structural map (AST) to identify definitions within the codebase. Later, a "Hybrid Symbol Locator" was developed, combining a quick search with AST checking. This was further optimized via "Optimized AST Parsing in Hybrid Symbol Locator" to focus on relevant code sections, improving search speed.(see Fig. 2\)
 
@@ -265,7 +263,7 @@ Fig.4: Learning and adapting pattern
 * This pattern is vital for agents that need to operate in environments that are always changing, uncertain, or require a personal touch.  
 * Building agents that learn often means hooking them up with machine learning tools and managing how data flows.  
 * An agent system, equipped with basic coding tools, can autonomously edit itself, and thereby improve its performance on benchmark tasks  
-* AlphaEvolve is Google's AI agent that leverages LLMs and an evolutionary framework to autonomously discover and optimize algorithms, significantly enhancing both fundamental research and practical computing applications..
+* AlphaEvolve is Google's AI agent that leverages LLMs and an evolutionary framework to autonomously discover and optimize algorithms, significantly enhancing both fundamental research and practical computing applications.
 
 * 学习和适应是智能体通过经验改进自身行为并处理新情况的过程
 * "适应"是学习导致的智能体行为或知识的可见变化
@@ -297,33 +295,13 @@ These elements contribute to significant advancements, such as Google's AlphaEvo
 
 ## 参考文献
 
- 1. Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction*. MIT Press.   
-
- 1. Sutton, R. S., & Barto, A. G. (2018). *《强化学习：导论》*. MIT Press.   
-
- 2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press.   
-
- 2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *《深度学习》*. MIT Press.   
-
- 3. Mitchell, T. M. (1997). *Machine Learning*. McGraw-Hill.   
-
- 3. Mitchell, T. M. (1997). *《机器学习》*. McGraw-Hill.   
-
- 4. Proximal Policy Optimization Algorithms by John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. You can find it on arXiv: [https://arxiv.org/abs/1707.06347](https://arxiv.org/abs/1707.06347)   
-
- 4. 近端策略优化算法，作者 John Schulman、Filip Wolski、Prafulla Dhariwal、Alec Radford 和 Oleg Klimov。可在 arXiv 上找到：[https://arxiv.org/abs/1707.06347](https://arxiv.org/abs/1707.06347)   
-
- 5. Robeyns, M., Aitchison, L., & Szummer, M. (2025). *A Self-Improving Coding Agent*. arXiv:2504.15228v2. [https://arxiv.org/pdf/2504.15228](https://arxiv.org/pdf/2504.15228)  [https://github.com/MaximeRobeyns/self_improving_coding_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)   
-
- 5. Robeyns, M., Aitchison, L., & Szummer, M. (2025). *《自我改进编码智能体》*. arXiv:2504.15228v2. [https://arxiv.org/pdf/2504.15228](https://arxiv.org/pdf/2504.15228)  [https://github.com/MaximeRobeyns/self_improving_coding_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)   
-
- 6. AlphaEvolve blog, [https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)   
-
- 6. AlphaEvolve 博客，[https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)   
-
- 7. OpenEvolve, [https://github.com/codelion/openevolve](https://github.com/codelion/openevolve) 
-
- 7. OpenEvolve，[https://github.com/codelion/openevolve](https://github.com/codelion/openevolve) 
+ 1. Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction*. MIT Press
+ 2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press
+ 3. Mitchell, T. M. (1997). *Machine Learning*. McGraw-Hill
+ 4. Proximal Policy Optimization Algorithms by John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. You can find it on arXiv: [https://arxiv.org/abs/1707.06347](https://arxiv.org/abs/1707.06347)
+ 5. Robeyns, M., Aitchison, L., & Szummer, M. (2025). *A Self-Improving Coding Agent*. arXiv:2504.15228v2. [https://arxiv.org/pdf/2504.15228](https://arxiv.org/pdf/2504.15228)  [https://github.com/MaximeRobeyns/self_improving_coding_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)
+ 6. AlphaEvolve blog, [https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)
+ 7. OpenEvolve, [https://github.com/codelion/openevolve](https://github.com/codelion/openevolve)
 
 [image1]: ../images/chapter-9/image1.png
 [image2]: ../images/chapter-9/image2.png

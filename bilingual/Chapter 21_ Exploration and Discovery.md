@@ -70,7 +70,9 @@ The system's operational foundation relies on Gemini, which provides language un
 
 该系统的运营基础依赖于 Gemini，它提供语言理解、推理和生成能力。该系统包含"测试时计算扩展"机制，通过分配增加的计算资源来迭代推理和增强输出。该系统处理和综合来自不同来源的信息，包括学术文献、基于网络的数据和数据库。
 
-![][image1]Fig. 1: (Courtesy of the Authors) AI Co-Scientist: Ideation to Validation
+![][image1]
+
+Fig. 1: (Courtesy of the Authors) AI Co-Scientist: Ideation to Validation
 
 图 1：（由作者提供）AI 协同科学家：从构思到验证
 
@@ -94,7 +96,7 @@ Drug Repurposing: For acute myeloid leukemia (AML), the system proposed novel dr
 
 药物再利用：对于急性髓系白血病（AML），该系统提出了新的候选药物。其中一些，如 KIRA6，是完全新颖的建议，之前没有在 AML 中使用的临床前证据。随后的体外实验证实，KIRA6 和其他建议的药物在多个 AML 细胞系中以临床相关浓度抑制肿瘤细胞活力。
 
- Novel Target Discovery: The system identified novel epigenetic targets for liver fibrosis. Laboratory experiments using human hepatic organoids validated these findings, showing that drugs targeting the suggested epigenetic modifiers had significant anti-fibrotic activity. One of the identified drugs is already FDA-approved for another condition, opening an opportunity for repurposing. 
+**Novel Target Discovery:** The system identified novel epigenetic targets for liver fibrosis. Laboratory experiments using human hepatic organoids validated these findings, showing that drugs targeting the suggested epigenetic modifiers had significant anti-fibrotic activity. One of the identified drugs is already FDA-approved for another condition, opening an opportunity for repurposing.
 
 新靶点发现：该系统识别了肝纤维化的新表观遗传靶点。使用人类肝脏类器官的实验室实验验证了这些发现，表明针对建议的表观遗传修饰剂的药物具有显著的抗纤维化活性。其中一种已识别的药物已被 FDA 批准用于另一种疾病，为再利用提供了机会。
 
@@ -349,7 +351,9 @@ In summary, "Agent Laboratory" represents a sophisticated framework for autonomo
 
 **可视化摘要**
 
-![][image2]Fig.2: Exploration and Discovery design pattern
+![][image2]
+
+Fig.2: Exploration and Discovery design pattern
 
 图 2：探索和发现设计模式
 

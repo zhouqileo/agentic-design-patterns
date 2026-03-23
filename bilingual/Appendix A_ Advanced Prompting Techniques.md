@@ -204,7 +204,7 @@ Effective prompting involves clear distinction of instructions, context, example
   [在此插入文章全文]
   </article>
 
-## Contextual Enginnering
+## Contextual Engineering
 
 ## 上下文工程
 

@@ -78,7 +78,7 @@ OpenAI 的 **ChatGPT Agent** 代表了相较于前代产品的重大架构升级
 
 **Seeing AI** 是 Microsoft 推出的一款免费移动应用，它通过实时描述周围环境，为盲人或视力障碍人士赋能。该应用借助设备摄像头运用人工智能技术，识别并描述各类元素，包括物体、文字乃至人物。其核心功能涵盖文档阅读、货币识别、条形码产品辨识以及场景和颜色描述。通过增强对视觉信息的可及性，Seeing AI 最终提升了视障用户的独立生活能力。
 
-**Anthropic's Claude 4 Series** Anthropic's Claude 4 is another alternative with capabilities for advanced reasoning and analysis. Though historically focused on text, Claude 4 includes robust vision capabilities, allowing it to process information from images, charts, and documents. The model is suited for handling complex, multi-step tasks and providing detailed analysis. While the real-time conversational aspect is not its primary focus compared to other models, its underlying intelligence is designed for building highly capable AI agents.
+**Anthropic's Claude 4 Series**: Anthropic's Claude 4 is another alternative with capabilities for advanced reasoning and analysis. Though historically focused on text, Claude 4 includes robust vision capabilities, allowing it to process information from images, charts, and documents. The model is suited for handling complex, multi-step tasks and providing detailed analysis. While the real-time conversational aspect is not its primary focus compared to other models, its underlying intelligence is designed for building highly capable AI agents.
 
 **Anthropic 的 Claude 4 系列**：Anthropic 的 Claude 4 是另一款具备高级推理与分析能力的替代选择。尽管其传统强项在于文本处理，但 Claude 4 也包含了强大的视觉功能，能处理来自图像、图表和文档的信息。该模型适用于处理复杂的多步骤任务并提供详尽分析。虽然其实时对话特性并非主要焦点（相较于其他模型），但其底层智能专为构建高能力 AI 智能体而设计。
 
