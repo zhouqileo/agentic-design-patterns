@@ -333,19 +333,19 @@ In summary, "Agent Laboratory" represents a sophisticated framework for autonomo
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** AI agents often operate within predefined knowledge, limiting their ability to tackle novel situations or open-ended problems. In complex and dynamic environments, this static, pre-programmed information is insufficient for true innovation or discovery. The fundamental challenge is to enable agents to move beyond simple optimization to actively seek out new information and identify "unknown unknowns." This necessitates a paradigm shift from purely reactive behaviors to proactive, Agentic exploration that expands the system's own understanding and capabilities.
 
-**定义（What）：** AI 智能体通常在预定义的知识范围内运行，限制了它们处理新情况或开放式问题的能力。在复杂和动态的环境中，这种静态的、预编程的信息不足以实现真正的创新或发现。根本挑战是使智能体超越简单的优化，主动寻求新信息并识别"未知的未知因素"。这需要从纯粹的被动行为转变为扩展系统自身理解和能力的主动智能体探索。
+**问题背景**：AI 智能体通常在预定义的知识范围内运行，限制了它们处理新情况或开放式问题的能力。在复杂和动态的环境中，这种静态的、预编程的信息不足以实现真正的创新或发现。根本挑战是使智能体超越简单的优化，主动寻求新信息并识别"未知的未知因素"。这需要从纯粹的被动行为转变为扩展系统自身理解和能力的主动智能体探索。
 
 **Why:** The standardized solution is to build Agentic AI systems specifically designed for autonomous exploration and discovery. These systems often utilize a multi-agent framework where specialized LLMs collaborate to emulate processes like the scientific method. For instance, distinct agents can be tasked with generating hypotheses, critically reviewing them, and evolving the most promising concepts. This structured, collaborative methodology allows the system to intelligently navigate vast information landscapes, design and execute experiments, and generate genuinely new knowledge. By automating the labor-intensive aspects of exploration, these systems augment human intellect and significantly accelerate the pace of discovery.
 
-**原因（Why）：** 标准化的解决方案是构建专门用于自主探索和发现的智能体 AI 系统。这些系统通常利用多智能体框架，其中专门的大语言模型协作以模拟科学方法等过程。例如，可以为不同的智能体分配生成假设、批判性审查它们以及发展最有前途的概念的任务。这种结构化的协作方法允许系统智能地导航庞大的信息格局、设计和执行实验并生成真正的新知识。通过自动化探索的劳动密集型方面，这些系统增强了人类智力并显著加速了发现的步伐。
+**解决方案**：标准化的解决方案是构建专门用于自主探索和发现的智能体 AI 系统。这些系统通常利用多智能体框架，其中专门的大语言模型协作以模拟科学方法等过程。例如，可以为不同的智能体分配生成假设、批判性审查它们以及发展最有前途的概念的任务。这种结构化的协作方法允许系统智能地导航庞大的信息格局、设计和执行实验并生成真正的新知识。通过自动化探索的劳动密集型方面，这些系统增强了人类智力并显著加速了发现的步伐。
 
 **Rule of thumb:** Use the Exploration and Discovery pattern when operating in open-ended, complex, or rapidly evolving domains where the solution space is not fully defined. It is ideal for tasks requiring the generation of novel hypotheses, strategies, or insights, such as in scientific research, market analysis, and creative content generation. This pattern is essential when the objective is to uncover "unknown unknowns" rather than merely optimizing a known process.
 
-**经验法则（Rule of thumb）：** 当在开放式、复杂或快速演变的领域中运行时，使用探索和发现模式，在这些领域中解决方案空间没有完全定义。它非常适合需要生成新假设、策略或见解的任务，例如科学研究、市场分析和创意内容生成。当目标是发现"未知的未知因素"而不仅仅是优化已知过程时，此模式至关重要。
+**实践建议**：当在开放式、复杂或快速演变的领域中运行时，使用探索和发现模式，在这些领域中解决方案空间没有完全定义。它非常适合需要生成新假设、策略或见解的任务，例如科学研究、市场分析和创意内容生成。当目标是发现"未知的未知因素"而不仅仅是优化已知过程时，此模式至关重要。
 
 **Visual summary**
 
