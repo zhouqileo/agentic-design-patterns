@@ -432,19 +432,19 @@ Resource-aware optimization is paramount in developing intelligent agent systems
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** Resource-Aware Optimization addresses the challenge of managing the consumption of computational, temporal, and financial resources in intelligent systems. LLM-based applications can be expensive and slow, and selecting the best model or tool for every task is often inefficient. This creates a fundamental trade-off between the quality of a system's output and the resources required to produce it. Without a dynamic management strategy, systems cannot adapt to varying task complexities or operate within budgetary and performance constraints.
 
-**是什么:** 资源感知优化解决了在智能系统中管理计算、时间和财务资源消耗的挑战。基于 LLM 的应用程序可能既昂贵又缓慢，为每项任务选择最佳模型或工具通常效率低下。这在系统输出的质量与产生它所需的资源之间创建了基本权衡。如果没有动态管理策略，系统无法适应不同的任务复杂性或在预算和性能约束内运行。
+**问题背景**：资源感知优化解决了在智能系统中管理计算、时间和财务资源消耗的挑战。基于 LLM 的应用程序可能既昂贵又缓慢，为每项任务选择最佳模型或工具通常效率低下。这在系统输出的质量与产生它所需的资源之间创建了基本权衡。如果没有动态管理策略，系统无法适应不同的任务复杂性或在预算和性能约束内运行。
 
 **Why:** The standardized solution is to build an agentic system that intelligently monitors and allocates resources based on the task at hand. This pattern typically employs a "Router Agent" to first classify the complexity of an incoming request. The request is then forwarded to the most suitable LLM or tool—a fast, inexpensive model for simple queries, and a more powerful one for complex reasoning. A "Critique Agent" can further refine the process by evaluating the quality of the response, providing feedback to improve the routing logic over time. This dynamic, multi-agent approach ensures the system operates efficiently, balancing response quality with cost-effectiveness.
 
-**为什么:** 标准化解决方案是构建一个智能监控和分配资源的智能体系统。此模式通常使用"路由器智能体"首先对传入请求的复杂性进行分类。然后将请求转发到最合适的 LLM 或工具——对于简单查询使用快速、经济的模型，对于复杂推理使用更强大的模型。"批评智能体"可以通过评估响应质量来进一步改进流程，提供反馈以随时间改进路由逻辑。这种动态、多智能体方法确保系统高效运行，在响应质量和成本效益之间取得平衡。
+**解决方案**：标准化解决方案是构建一个智能监控和分配资源的智能体系统。此模式通常使用"路由器智能体"首先对传入请求的复杂性进行分类。然后将请求转发到最合适的 LLM 或工具——对于简单查询使用快速、经济的模型，对于复杂推理使用更强大的模型。"批评智能体"可以通过评估响应质量来进一步改进流程，提供反馈以随时间改进路由逻辑。这种动态、多智能体方法确保系统高效运行，在响应质量和成本效益之间取得平衡。
 
 **Rule of thumb:** Use this pattern when operating under strict financial budgets for API calls or computational power, building latency-sensitive applications where quick response times are critical, deploying agents on resource-constrained hardware such as edge devices with limited battery life, programmatically balancing the trade-off between response quality and operational cost, and managing complex, multi-step workflows where different tasks have varying resource requirements.
 
-**经验法则:** 在以下情况下使用此模式：在 API 调用或计算能力的严格财务预算下运行，构建对延迟敏感的应用程序（其中快速响应时间至关重要），在资源受限的硬件（如电池寿命有限的边缘设备）上部署智能体，以编程方式平衡响应质量和运营成本之间的权衡，以及管理复杂的、多步骤的工作流（其中不同任务具有不同的资源需求）。
+**实践建议**：在以下情况下使用此模式：在 API 调用或计算能力的严格财务预算下运行，构建对延迟敏感的应用程序（其中快速响应时间至关重要），在资源受限的硬件（如电池寿命有限的边缘设备）上部署智能体，以编程方式平衡响应质量和运营成本之间的权衡，以及管理复杂的、多步骤的工作流（其中不同任务具有不同的资源需求）。
 
 **Visual Summary**
 

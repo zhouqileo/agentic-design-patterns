@@ -20,7 +20,7 @@ In practice, HITL can be implemented in diverse ways. One common approach involv
 
 ## Human-in-the-Loop Pattern Overview
 
-## 人机协同模式概述
+## 人机协同速览
 
 The Human-in-the-Loop (HITL) pattern integrates artificial intelligence with human input to enhance Agent capabilities. This approach acknowledges that optimal AI performance frequently requires a combination of automated processing and human insight, especially in scenarios with high complexity or ethical considerations. Rather than replacing human input, HITL aims to augment human abilities by ensuring that critical judgments and decisions are informed by human understanding.
 
@@ -180,21 +180,21 @@ A key feature of this architecture is its capacity for deep personalization, ach
 
 此架构的一个关键特性是其深度个性化能力，通过专用回调函数实现。在联系 LLM 之前，此函数从智能体状态中动态检索客户特定数据——如姓名、等级和购买历史。然后将此上下文作为系统消息注入提示词中，使智能体能够提供高度定制和知情的响应，引用用户历史记录。通过将结构化工作流与基本人类监督和动态个性化相结合，此代码展示了 ADK 如何促进开发复杂且强大的 AI 支持解决方案。
 
-## At Glance
+## At a Glance
 
-## 概览
+## 速览
 
 **What:** AI systems, including advanced LLMs, often struggle with tasks that require nuanced judgment, ethical reasoning, or a deep understanding of complex, ambiguous contexts. Deploying fully autonomous AI in high-stakes environments carries significant risks, as errors can lead to severe safety, financial, or ethical consequences. These systems lack the inherent creativity and common-sense reasoning that humans possess. Consequently, relying solely on automation in critical decision-making processes is often imprudent and can undermine the system's overall effectiveness and trustworthiness.
 
-**是什么**：AI 系统（包括高级 LLM）通常在需要细致入微判断、道德推理或对复杂模糊上下文深刻理解的任务中表现不佳。在高风险环境中部署完全自主的 AI 具有重大风险，因为错误可能导致严重的安全、财务或道德后果。这些系统缺乏人类固有的创造力和常识推理能力。因此，在关键决策过程中仅依赖自动化通常是不明智的，并可能损害系统的整体有效性和可信度。
+**问题背景：** AI 系统（包括高级 LLM）通常在需要细致入微判断、道德推理或对复杂模糊上下文深刻理解的任务中表现不佳。在高风险环境中部署完全自主的 AI 具有重大风险，因为错误可能导致严重的安全、财务或道德后果。这些系统缺乏人类固有的创造力和常识推理能力。因此，在关键决策过程中仅依赖自动化通常是不明智的，并可能损害系统的整体有效性和可信度。
 
 **Why:** The Human-in-the-Loop (HITL) pattern provides a standardized solution by strategically integrating human oversight into AI workflows. This agentic approach creates a symbiotic partnership where AI handles computational heavy-lifting and data processing, while humans provide critical validation, feedback, and intervention. By doing so, HITL ensures that AI actions align with human values and safety protocols. This collaborative framework not only mitigates the risks of full automation but also enhances the system's capabilities through continuous learning from human input. Ultimately, this leads to more robust, accurate, and ethical outcomes that neither human nor AI could achieve alone.
 
-**为什么**：人机协同（HITL）模式通过战略性地将人类监督整合到 AI 工作流中提供了标准化解决方案。这种智能体方法创建了共生伙伴关系，AI 处理计算繁重工作和数据处理，而人类提供关键验证、反馈和干预。通过这样做，HITL 确保 AI 行动与人类价值观和安全协议保持一致。这种协作框架不仅降低了完全自动化的风险，还通过从人类输入中持续学习来增强系统能力。最终，这带来了更强大、准确和道德的结果，这些结果是人类或 AI 单独无法实现的。
+**解决方案：** 人机协同（HITL）模式通过战略性地将人类监督整合到 AI 工作流中提供了标准化解决方案。这种智能体方法创建了共生伙伴关系，AI 处理计算繁重工作和数据处理，而人类提供关键验证、反馈和干预。通过这样做，HITL 确保 AI 行动与人类价值观和安全协议保持一致。这种协作框架不仅降低了完全自动化的风险，还通过从人类输入中持续学习来增强系统能力。最终，这带来了更强大、准确和道德的结果，这些结果是人类或 AI 单独无法实现的。
 
 **Rule of thumb:** Use this pattern when deploying AI in domains where errors have significant safety, ethical, or financial consequences, such as in healthcare, finance, or autonomous systems. It is essential for tasks involving ambiguity and nuance that LLMs cannot reliably handle, like content moderation or complex customer support escalations. Employ HITL when the goal is to continuously improve an AI model with high-quality, human-labeled data or to refine generative AI outputs to meet specific quality standards.
 
-**经验法则**：在部署 AI 到错误会产生重大安全、道德或财务后果的领域时使用此模式，例如医疗保健、金融或自主系统。对于涉及 LLM 无法可靠处理的模糊性和细微差别的任务（如内容审核或复杂客户支持升级），它至关重要。当目标是使用高质量人类标注数据持续改进 AI 模型或完善生成 AI 输出以满足特定质量标准时，采用 HITL。
+**实践建议：** 在部署 AI 到错误会产生重大安全、道德或财务后果的领域时使用此模式，例如医疗保健、金融或自主系统。对于涉及 LLM 无法可靠处理的模糊性和细微差别的任务（如内容审核或复杂客户支持升级），它至关重要。当目标是使用高质量人类标注数据持续改进 AI 模型或完善生成 AI 输出以满足特定质量标准时，采用 HITL。
 
 **Visual summary:**
 

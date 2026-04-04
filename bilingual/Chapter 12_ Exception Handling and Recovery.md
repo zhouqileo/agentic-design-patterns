@@ -20,7 +20,7 @@ This pattern may sometimes be used with reflection. For example, if an initial a
 
 ## Exception Handling and Recovery Pattern Overview
 
-## 异常处理和恢复模式概述
+## 异常处理和恢复模式速览
 
 The Exception Handling and Recovery pattern addresses the need for AI agents to manage operational failures. This pattern involves anticipating potential issues, such as tool errors or service unavailability, and developing strategies to mitigate them. These strategies may include error logging, retries, fallbacks, graceful degradation, and notifications. Additionally, the pattern emphasizes recovery mechanisms like state rollback, diagnosis, self-correction, and escalation, to restore agents to stable operation. Implementing this pattern enhances the reliability and robustness of AI agents, allowing them to function in unpredictable environments. Examples of practical applications include chatbots managing database errors, trading bots handling financial errors, and smart home agents addressing device malfunctions. The pattern ensures that agents can continue to operate effectively despite encountering complexities and failures.
 
@@ -141,19 +141,19 @@ This code defines a robust location retrieval system using a ADK's SequentialAge
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** AI agents operating in real-world environments inevitably encounter unforeseen situations, errors, and system malfunctions. These disruptions can range from tool failures and network issues to invalid data, threatening the agent's ability to complete its tasks. Without a structured way to manage these problems, agents can be fragile, unreliable, and prone to complete failure when faced with unexpected hurdles. This unreliability makes it difficult to deploy them in critical or complex applications where consistent performance is essential.
 
-**是什么**：在现实世界环境中运行的 AI 智能体不可避免地会遇到不可预见的情况、错误和系统故障。这些中断可能从工具故障、网络问题到无效数据不等，威胁着智能体完成任务的能力。如果没有结构化的方法来管理这些问题，智能体可能会变得脆弱、不可靠，并且在面对意外障碍时容易完全失败。这种不可靠性使得难以在一致性能至关重要的关键或复杂应用程序中部署它们。
+**问题背景**：在现实世界环境中运行的 AI 智能体不可避免地会遇到不可预见的情况、错误和系统故障。这些中断可能从工具故障、网络问题到无效数据不等，威胁着智能体完成任务的能力。如果没有结构化的方法来管理这些问题，智能体可能会变得脆弱、不可靠，并且在面对意外障碍时容易完全失败。这种不可靠性使得难以在一致性能至关重要的关键或复杂应用程序中部署它们。
 
 **Why**: The Exception Handling and Recovery pattern provides a standardized solution for building robust and resilient AI agents. It equips them with the agentic capability to anticipate, manage, and recover from operational failures. The pattern involves proactive error detection, such as monitoring tool outputs and API responses, and reactive handling strategies like logging for diagnostics, retrying transient failures, or using fallback mechanisms. For more severe issues, it defines recovery protocols, including reverting to a stable state, self-correction by adjusting its plan, or escalating the problem to a human operator. This systematic approach ensures agents can maintain operational integrity, learn from failures, and function dependably in unpredictable settings.
 
-**为什么**：异常处理和恢复模式为构建强大和有弹性的 AI 智能体提供了标准化的解决方案。它为它们配备了预测、管理和从操作失败中恢复的智能体能力。此模式涉及主动错误检测，例如监控工具输出和 API 响应，以及响应处理策略，如用于诊断的日志记录、重试瞬态故障或使用回退机制。对于更严重的问题，它定义了恢复协议，包括恢复到稳定状态、通过调整其计划进行自我纠正或将问题升级给人类操作员。这种系统方法确保智能体保持操作完整性，从失败中学习，并在不可预测的环境中可靠地运作。
+**解决方案**：异常处理和恢复模式为构建强大和有弹性的 AI 智能体提供了标准化的解决方案。它为它们配备了预测、管理和从操作失败中恢复的智能体能力。此模式涉及主动错误检测，例如监控工具输出和 API 响应，以及响应处理策略，如用于诊断的日志记录、重试瞬态故障或使用回退机制。对于更严重的问题，它定义了恢复协议，包括恢复到稳定状态、通过调整其计划进行自我纠正或将问题升级给人类操作员。这种系统方法确保智能体保持操作完整性，从失败中学习，并在不可预测的环境中可靠地运作。
 
 **Rule of thumb:** Use this pattern for any AI agent deployed in a dynamic, real-world environment where system failures, tool errors, network issues, or unpredictable inputs are possible and operational reliability is a key requirement.
 
-**经验法则**：对于在动态的现实世界环境中部署的任何 AI 智能体，当系统故障、工具错误、网络问题或不可预测的输入可能发生且操作可靠性是关键要求时，使用此模式。
+**实践建议**：对于在动态的现实世界环境中部署的任何 AI 智能体，当系统故障、工具错误、网络问题或不可预测的输入可能发生且操作可靠性是关键要求时，使用此模式。
 
 **Visual summary**
 

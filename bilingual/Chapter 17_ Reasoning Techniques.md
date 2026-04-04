@@ -447,19 +447,19 @@ The frequency of an agent's thoughts can be adjusted depending on the task. For 
 Agent 思考的频率可以根据任务进行调整。对于知识密集型推理任务（如事实核查），思考通常与每个行动交错，以确保信息收集和推理的逻辑流动。相比之下，对于需要许多行动的决策任务（例如在模拟环境中导航），思考可能更谨慎地使用，允许智能体决定何时需要思考。
 
 ## At a Glance
-## 概览
+## 速览
 
 **What**: Complex problem-solving often requires more than a single, direct answer, posing a significant challenge for AI. The core problem is enabling AI agents to tackle multi-step tasks that demand logical inference, decomposition, and strategic planning. Without a structured approach, agents may fail to handle intricacies, leading to inaccurate or incomplete conclusions. These advanced reasoning methodologies aim to make an agent's internal "thought" process explicit, allowing it to systematically work through challenges.
 
-**是什么**：复杂的问题解决通常需要的不仅仅是单一的、直接的答案，这对 AI 构成了重大挑战。核心问题是使 AI 智能体能够处理需要逻辑推理、分解和战略规划的多步骤任务。如果没有结构化的方法，Agent 可能无法处理复杂性，导致不准确或不完整的结论。这些高级推理方法旨在使智能体的内部"思考"过程明确，使其能够系统地处理挑战。
+**问题背景**：复杂的问题解决通常需要的不仅仅是单一的、直接的答案，这对 AI 构成了重大挑战。核心问题是使 AI 智能体能够处理需要逻辑推理、分解和战略规划的多步骤任务。如果没有结构化的方法，Agent 可能无法处理复杂性，导致不准确或不完整的结论。这些高级推理方法旨在使智能体的内部"思考"过程明确，使其能够系统地处理挑战。
 
 **Why:** The standardized solution is a suite of reasoning techniques that provide a structured framework for an agent's problem-solving process. Methodologies like Chain-of-Thought (CoT) and Tree-of-Thought (ToT) guide LLMs to break down problems and explore multiple solution paths. Self-Correction allows for the iterative refinement of answers, ensuring higher accuracy. Agentic frameworks like ReAct integrate reasoning with action, enabling agents to interact with external tools and environments to gather information and adapt their plans. This combination of explicit reasoning, exploration, refinement, and tool use creates more robust, transparent, and capable AI systems.
 
-**为什么**：标准化解决方案是一套为智能体的问题解决过程提供结构化框架的推理技术。像思维链（CoT）和思维树（ToT）这样的方法指导 LLM 分解问题并探索多个解决路径。自我纠正允许答案的迭代改进，确保更高的准确性。像 ReAct 这样的 Agentic 框架将推理与行动集成，使智能体能够与外部工具和环境交互以收集信息并调整其计划。这种明确推理、探索、改进和工具使用的组合创建了更强大、透明和有能力的 AI 系统。
+**解决方案**：标准化解决方案是一套为智能体的问题解决过程提供结构化框架的推理技术。像思维链（CoT）和思维树（ToT）这样的方法指导 LLM 分解问题并探索多个解决路径。自我纠正允许答案的迭代改进，确保更高的准确性。像 ReAct 这样的 Agentic 框架将推理与行动集成，使智能体能够与外部工具和环境交互以收集信息并调整其计划。这种明确推理、探索、改进和工具使用的组合创建了更强大、透明和有能力的 AI 系统。
 
 **Rule of thumb:** Use these reasoning techniques when a problem is too complex for a single-pass answer and requires decomposition, multi-step logic, interaction with external data sources or tools, or strategic planning and adaptation. They are ideal for tasks where showing the "work" or thought process is as important as the final answer.
 
-**经验法则**：当问题对于单次通过的答案过于复杂并需要分解、多步骤逻辑、与外部数据源或工具的交互或战略规划和适应时，使用这些推理技术。它们非常适合展示"工作"或思考过程与最终答案同样重要的任务。
+**实践建议**：当问题对于单次通过的答案过于复杂并需要分解、多步骤逻辑、与外部数据源或工具的交互或战略规划和适应时，使用这些推理技术。它们非常适合展示"工作"或思考过程与最终答案同样重要的任务。
 
 **Visual summary**
 

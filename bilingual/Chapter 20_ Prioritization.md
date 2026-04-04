@@ -252,19 +252,19 @@ The code incorporates a simulation function (run\_simulation) of asynchronous na
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** AI agents operating in complex environments face a multitude of potential actions, conflicting goals, and finite resources. Without a clear method to determine their next move, these agents risk becoming inefficient and ineffective. This can lead to significant operational delays or a complete failure to accomplish primary objectives. The core challenge is to manage this overwhelming number of choices to ensure the agent acts purposefully and logically.
 
-**定义（What）：** 在复杂环境中运行的 AI 智能体面临大量潜在行动、相互冲突的目标和有限的资源。如果没有明确的方法来确定下一步行动，这些智能体可能会变得低效且效果不佳，甚至导致严重的操作延迟或完全无法完成主要目标。核心挑战是管理这一数量庞大的选择，确保智能体有目的地、合乎逻辑地行动。
+**问题背景：** 在复杂环境中运行的 AI 智能体面临大量潜在行动、相互冲突的目标和有限的资源。如果没有明确的方法来确定下一步行动，这些智能体可能会变得低效且效果不佳，甚至导致严重的操作延迟或完全无法完成主要目标。核心挑战是管理这一数量庞大的选择，确保智能体有目的地、合乎逻辑地行动。
 
 **Why:** The Prioritization pattern provides a standardized solution for this problem by enabling agents to rank tasks and goals. This is achieved by establishing clear criteria such as urgency, importance, dependencies, and resource cost. The agent then evaluates each potential action against these criteria to determine the most critical and timely course of action. This Agentic capability allows the system to dynamically adapt to changing circumstances and manage constrained resources effectively. By focusing on the highest-priority items, the agent's behavior becomes more intelligent, robust, and aligned with its strategic goals.
 
-**原因（Why）：** 优先级排序模式通过使智能体对任务和目标进行排序，为这个问题提供了标准化的解决方案。这是通过建立明确的标准（如紧急性、重要性、依赖关系和资源成本）来实现的。然后智能体根据这些标准评估每个潜在行动，以确定最关键、最及时的行动方案。这种智能体能力使系统能够动态适应不断变化的环境，并有效管理受限资源。通过专注于最高优先级的项目，智能体的行为变得更加智能、稳健，并与其战略目标保持一致。
+**解决方案：** 优先级排序模式通过使智能体对任务和目标进行排序，为这个问题提供了标准化的解决方案。这是通过建立明确的标准（如紧急性、重要性、依赖关系和资源成本）来实现的。然后智能体根据这些标准评估每个潜在行动，以确定最关键、最及时的行动方案。这种智能体能力使系统能够动态适应不断变化的环境，并有效管理受限资源。通过专注于最高优先级的项目，智能体的行为变得更加智能、稳健，并与其战略目标保持一致。
 
 **Rule of thumb:** Use the Prioritization pattern when an Agentic system must autonomously manage multiple, often conflicting, tasks or goals under resource constraints to operate effectively in a dynamic environment.
 
-**经验法则（Rule of thumb）：** 当智能体系统必须在资源约束下自主管理多个（通常是相互冲突的）任务或目标，以在动态环境中有效运行时，使用优先级排序模式。
+**实践建议：** 当智能体系统必须在资源约束下自主管理多个（通常是相互冲突的）任务或目标，以在动态环境中有效运行时，使用优先级排序模式。
 
 **Visual summary:**
 

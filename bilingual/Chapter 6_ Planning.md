@@ -278,19 +278,19 @@ Subsequently, it attempts to access and display inline citations and metadata fr
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** Complex problems often cannot be solved with a single action and require foresight to achieve a desired outcome. Without a structured approach, an agentic system struggles to handle multifaceted requests that involve multiple steps and dependencies. This makes it difficult to break down high-level objectives into a manageable series of smaller, executable tasks. Consequently, the system fails to strategize effectively, leading to incomplete or incorrect results when faced with intricate goals.
 
-**是什么：** 复杂问题通常无法通过单一行动解决，需要远见卓识来实现预期结果。如果没有结构化方法，智能体系统难以处理涉及多个步骤和依赖关系的多方面请求。这使得将高层目标分解为一系列可管理的较小可执行任务变得困难。因此，系统无法有效制定策略，在面对复杂目标时会导致结果不完整或不正确。
+**问题背景：** 复杂问题通常无法通过单一行动解决，需要远见卓识来实现预期结果。如果没有结构化方法，智能体系统难以处理涉及多个步骤和依赖关系的多方面请求。这使得将高层目标分解为一系列可管理的较小可执行任务变得困难。因此，系统无法有效制定策略，在面对复杂目标时会导致结果不完整或不正确。
 
 **Why:** The Planning pattern offers a standardized solution by having an agentic system first create a coherent plan to address a goal. It involves decomposing a high-level objective into a sequence of smaller, actionable steps or sub-goals. This allows the system to manage complex workflows, orchestrate various tools, and handle dependencies in a logical order. LLMs are particularly well-suited for this, as they can generate plausible and effective plans based on their vast training data. This structured approach transforms a simple reactive agent into a strategic executor that can proactively work towards a complex objective and even adapt its plan if necessary.
 
-**为什么：** 规划模式通过让智能体系统首先创建一个连贯的计划来解决目标，提供了标准化解决方案。它涉及将高层目标分解为一系列更小的可操作步骤或子目标。这允许系统以逻辑顺序管理复杂工作流、编排各种工具并处理依赖关系。LLM 特别适合这一点，因为它们可以基于庞大的训练数据生成合理且有效的计划。这种结构化方法将简单的反应性智能体转变为战略执行者，可以主动朝着复杂目标努力，甚至在必要时调整其计划。
+**解决方案：** 规划模式通过让智能体系统首先创建一个连贯的计划来解决目标，提供了标准化解决方案。它涉及将高层目标分解为一系列更小的可操作步骤或子目标。这允许系统以逻辑顺序管理复杂工作流、编排各种工具并处理依赖关系。LLM 特别适合这一点，因为它们可以基于庞大的训练数据生成合理且有效的计划。这种结构化方法将简单的反应性智能体转变为战略执行者，可以主动朝着复杂目标努力，甚至在必要时调整其计划。
 
 **Rule of thumb:** Use this pattern when a user's request is too complex to be handled by a single action or tool. It is ideal for automating multi-step processes, such as generating a detailed research report, onboarding a new employee, or executing a competitive analysis. Apply the Planning pattern whenever a task requires a sequence of interdependent operations to reach a final, synthesized outcome.
 
-**经验法则：** 当用户的请求太复杂而无法通过单个操作或工具处理时使用此模式。它非常适合自动化多步流程，例如生成详细的研究报告、新员工入职或执行竞争分析。每当任务需要一系列相互依赖的操作以达到最终的综合结果时，应用规划模式。
+**实践建议：** 当用户的请求太复杂而无法通过单个操作或工具处理时使用此模式。它非常适合自动化多步流程，例如生成详细的研究报告、新员工入职或执行竞争分析。每当任务需要一系列相互依赖的操作以达到最终的综合结果时，应用规划模式。
 
 **Visual summary**  
 **![][image4]**  
