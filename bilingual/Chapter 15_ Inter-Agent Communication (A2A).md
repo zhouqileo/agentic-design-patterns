@@ -12,7 +12,7 @@ Google A2A 协议是一个旨在促进此类通用通信的开放标准。本章
 
 ## Inter-Agent Communication Pattern Overview
 
-## 智能体间通信模式概述
+## 智能体间通信模式速览
 
 The Agent2Agent (A2A) protocol is an open standard designed to enable communication and collaboration between different AI agent frameworks. It ensures interoperability, allowing AI agents developed with technologies like LangGraph, CrewAI, or Google ADK to work together regardless of their origin or framework differences.
 
@@ -391,19 +391,19 @@ Further exploration of A2A is recommended through the code demonstration at [htt
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** Individual AI agents, especially those built on different frameworks, often struggle with complex, multi-faceted problems on their own. The primary challenge is the lack of a common language or protocol that allows them to communicate and collaborate effectively. This isolation prevents the creation of sophisticated systems where multiple specialized agents can combine their unique skills to solve larger tasks. Without a standardized approach, integrating these disparate agents is costly, time-consuming, and hinders the development of more powerful, cohesive AI solutions.
 
-**是什么：** 单个 AI 智能体（特别是基于不同框架构建的智能体）在处理复杂、多方面问题时通常会遇到困难。主要挑战是缺乏允许它们有效通信协作的通用语言或协议。这种隔离阻止了创建复杂系统，其中多个专门智能体结合独特技能解决更大的任务。如果没有标准化方法，集成这些不同的智能体会非常耗时，并阻碍了更强大、更具凝聚力的 AI 解决方案的开发。
+**问题背景：** 单个 AI 智能体（特别是基于不同框架构建的智能体）在处理复杂、多方面问题时通常会遇到困难。主要挑战是缺乏允许它们有效通信协作的通用语言或协议。这种隔离阻止了创建复杂系统，其中多个专门智能体结合独特技能解决更大的任务。如果没有标准化方法，集成这些不同的智能体会非常耗时，并阻碍了更强大、更具凝聚力的 AI 解决方案的开发。
 
 **Why:** The Inter-Agent Communication (A2A) protocol provides an open, standardized solution for this problem. It is an HTTP-based protocol that enables interoperability, allowing distinct AI agents to coordinate, delegate tasks, and share information seamlessly, regardless of their underlying technology. A core component is the Agent Card, a digital identity file that describes an agent's capabilities, skills, and communication endpoints, facilitating discovery and interaction. A2A defines various interaction mechanisms, including synchronous and asynchronous communication, to support diverse use cases. By creating a universal standard for agent collaboration, A2A fosters a modular and scalable ecosystem for building complex, multi-agent Agentic systems.
 
-**为什么**：智能体间通信（A2A）协议为此问题提供了开放、标准化的解决方案。它是基于 HTTP 的协议，能够实现互操作性，允许不同 AI 智能体协调、委派任务和共享信息，无论其底层技术如何。核心组件是智能体卡片，它是描述智能体能力和通信端点的数字身份文件，促进了发现和交互。A2A 定义了各种交互机制，包括同步和异步通信，以支持不同的用例。通过为智能体协作创建标准，A2A 促进了构建复杂、多智能体系统的模块化和可扩展生态系统。
+**解决方案**：智能体间通信（A2A）协议为此问题提供了开放、标准化的解决方案。它是基于 HTTP 的协议，能够实现互操作性，允许不同 AI 智能体协调、委派任务和共享信息，无论其底层技术如何。核心组件是智能体卡片，它是描述智能体能力和通信端点的数字身份文件，促进了发现和交互。A2A 定义了各种交互机制，包括同步和异步通信，以支持不同的用例。通过为智能体协作创建标准，A2A 促进了构建复杂、多智能体系统的模块化和可扩展生态系统。
 
 **Rule of thumb:** Use this pattern when you need to orchestrate collaboration between two or more AI agents, especially if they are built using different frameworks (e.g., Google ADK, LangGraph, CrewAI). It is ideal for building complex, modular applications where specialized agents handle specific parts of a workflow, such as delegating data analysis to one agent and report generation to another. This pattern is also essential when an agent needs to dynamically discover and consume the capabilities of other agents to complete a task.
 
-**经验法则**：当您需要协调两个或多个 AI 智能体协作时使用此模式，特别是如果它们使用不同框架（如 Google ADK、LangGraph、CrewAI）构建。它非常适合构建复杂、模块化应用程序，其中专门智能体处理工作流的特定部分，例如将数据分析委派给一个智能体，将报告生成委派给另一个智能体。当智能体需要发现和使用其他智能体能力完成任务时，此模式也必不可少。
+**实践建议**：当您需要协调两个或多个 AI 智能体协作时使用此模式，特别是如果它们使用不同框架（如 Google ADK、LangGraph、CrewAI）构建。它非常适合构建复杂、模块化应用程序，其中专门智能体处理工作流的特定部分，例如将数据分析委派给一个智能体，将报告生成委派给另一个智能体。当智能体需要发现和使用其他智能体能力完成任务时，此模式也必不可少。
 
 **Visual summary**
 

@@ -6,7 +6,7 @@ For AI agents to be truly effective and purposeful, they need more than just the
 要使 AI 智能体真正有效且有目的性，它们不仅需要处理信息或使用工具的能力，还需要明确的方向感和判断自身是否真正成功的方法。这就是目标设定与监控模式发挥作用的地方。该模式的核心是为智能体设定具体的工作目标，并为其配备跟踪进度和确定这些目标是否已实现的手段。
 
 ## Goal Setting and Monitoring Pattern Overview
-## 目标设定与监控模式概述
+## 目标设定与监控速览
 
 Think about planning a trip. You don't just spontaneously appear at your destination. You decide where you want to go (the goal state), figure out where you are starting from (the initial state), consider available options (transportation, routes, budget), and then map out a sequence of steps: book tickets, pack bags, travel to the airport/station, board the transport, arrive, find accommodation, etc. This step-by-step process, often considering dependencies and constraints, is fundamentally what we mean by planning in agentic systems.
 
@@ -311,19 +311,19 @@ I leave to the interested reader the task of adding these more sophisticated con
 我留给感兴趣的读者添加这些更复杂的控制并使代码更接近生产就绪的任务。
 
 ## At a Glance
-## 概览
+## 速览
 
 **What**: AI agents often lack a clear direction, preventing them from acting with purpose beyond simple, reactive tasks. Without defined objectives, they cannot independently tackle complex, multi-step problems or orchestrate sophisticated workflows. Furthermore, there is no inherent mechanism for them to determine if their actions are leading to a successful outcome. This limits their autonomy and prevents them from being truly effective in dynamic, real-world scenarios where mere task execution is insufficient.
 
-**是什么**：AI 智能体通常缺乏明确的方向，阻碍了它们在简单反应性任务之外采取有目的的行动。如果没有定义的目标，它们无法独立处理复杂的多步骤问题或编排复杂的工作流。此外，它们没有内在的机制来确定其行动是否导致成功的结果。这限制了它们的自主性，并阻止它们在仅执行任务不足的动态现实世界场景中真正有效。
+**问题背景**：AI 智能体通常缺乏明确的方向，阻碍了它们在简单反应性任务之外采取有目的的行动。如果没有定义的目标，它们无法独立处理复杂的多步骤问题或编排复杂的工作流。此外，它们没有内在的机制来确定其行动是否导致成功的结果。这限制了它们的自主性，并阻止它们在仅执行任务不足的动态现实世界场景中真正有效。
 
 **Why**: The Goal Setting and Monitoring pattern provides a standardized solution by embedding a sense of purpose and self-assessment into agentic systems. It involves explicitly defining clear, measurable objectives for the agent to achieve. Concurrently, it establishes a monitoring mechanism that continuously tracks the agent's progress and the state of its environment against these goals. This creates a crucial feedback loop, enabling the agent to assess its performance, correct its course, and adapt its plan if it deviates from the path to success. By implementing this pattern, developers can transform simple reactive agents into proactive, goal-oriented systems capable of autonomous and reliable operation.
 
-**为什么**：目标设定与监控模式通过将目的感和自我评估嵌入智能体系统来提供标准化的解决方案。它涉及为智能体明确定义清晰、可衡量的目标。同时，它建立了一个监控机制，持续跟踪智能体的进度和环境状态，并与这些目标进行对比。这创建了一个关键的反馈循环，使智能体能够评估其表现、纠正其路线，并在偏离成功之路时调整其计划。通过实施此模式，开发人员可以将简单的反应智能体转变为能够自主可靠运行的主动的、以目标为导向的系统。
+**解决方案**：目标设定与监控模式通过将目的感和自我评估嵌入智能体系统来提供标准化的解决方案。它涉及为智能体明确定义清晰、可衡量的目标。同时，它建立了一个监控机制，持续跟踪智能体的进度和环境状态，并与这些目标进行对比。这创建了一个关键的反馈循环，使智能体能够评估其表现、纠正其路线，并在偏离成功之路时调整其计划。通过实施此模式，开发人员可以将简单的反应智能体转变为能够自主可靠运行的主动的、以目标为导向的系统。
 
 **Rule of thumb**: Use this pattern when an AI agent must autonomously execute a multi-step task, adapt to dynamic conditions, and reliably achieve a specific, high-level objective without constant human intervention.
 
-**经验法则**：当 AI 智能体需要自主执行多步骤任务、适应动态条件并在没有持续人工干预的情况下可靠地实现特定的高级目标时，使用此模式。
+**实践建议**：当 AI 智能体需要自主执行多步骤任务、适应动态条件并在没有持续人工干预的情况下可靠地实现特定的高级目标时，使用此模式。
 
 **Visual summary**:
 **可视化摘要**：

@@ -227,19 +227,19 @@ for name, value in best_program.metrics.items():
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** AI agents often operate in dynamic and unpredictable environments where pre-programmed logic is insufficient. Their performance can degrade when faced with novel situations not anticipated during their initial design. Without the ability to learn from experience, agents cannot optimize their strategies or personalize their interactions over time. This rigidity limits their effectiveness and prevents them from achieving true autonomy in complex, real-world scenarios.
 
-**是什么：** AI 智能体通常在动态且不可预测的环境中运行，在这些环境中预编程逻辑是不够的。当面对初始设计期间未预料到的新情况时，它们的性能可能会下降。没有从经验中学习的能力，智能体无法随时间优化其策略或个性化其交互。这种刚性限制了它们的有效性，并阻止它们在复杂的现实世界场景中实现真正的自主性。
+**问题背景：** AI 智能体通常在动态且不可预测的环境中运行，在这些环境中预编程逻辑是不够的。当面对初始设计期间未预料到的新情况时，它们的性能可能会下降。没有从经验中学习的能力，智能体无法随时间优化其策略或个性化其交互。这种刚性限制了它们的有效性，并阻止它们在复杂的现实世界场景中实现真正的自主性。
 
 **Why:** The standardized solution is to integrate learning and adaptation mechanisms, transforming static agents into dynamic, evolving systems. This allows an agent to autonomously refine its knowledge and behaviors based on new data and interactions. Agentic systems can use various methods, from reinforcement learning to more advanced techniques like self-modification, as seen in the Self-Improving Coding Agent (SICA). Advanced systems like Google's AlphaEvolve leverage LLMs and evolutionary algorithms to discover entirely new and more efficient solutions to complex problems. By continuously learning, agents can master new tasks, enhance their performance, and adapt to changing conditions without requiring constant manual reprogramming.
 
-**为什么：** 标准化解决方案是集成学习和适应机制，将静态智能体转变为动态的、演化的系统。这使智能体能够基于新数据和交互自主改进其知识和行为。智能体系统可以使用各种方法，从强化学习到更高级的技术，如自我改进编码智能体（SICA）中所见的自我修改。像 Google 的 AlphaEvolve 这样的高级系统利用 LLM 和进化算法来发现全新的、更高效的复杂问题解决方案。通过持续学习，智能体可以掌握新任务、增强其性能并适应变化的条件，而无需持续的手动重新编程。
+**解决方案：** 标准化解决方案是集成学习和适应机制，将静态智能体转变为动态的、演化的系统。这使智能体能够基于新数据和交互自主改进其知识和行为。智能体系统可以使用各种方法，从强化学习到更高级的技术，如自我改进编码智能体（SICA）中所见的自我修改。像 Google 的 AlphaEvolve 这样的高级系统利用 LLM 和进化算法来发现全新的、更高效的复杂问题解决方案。通过持续学习，智能体可以掌握新任务、增强其性能并适应变化的条件，而无需持续的手动重新编程。
 
 **Rule of thumb:** Use this pattern when building agents that must operate in dynamic, uncertain, or evolving environments. It is essential for applications requiring personalization, continuous performance improvement, and the ability to handle novel situations autonomously.
 
-**经验法则：** 在构建必须在动态、不确定或演化环境中运行的智能体时使用此模式。它对于需要个性化、持续性能改进以及自主处理新情况的能力的应用至关重要。
+**实践建议：** 在构建必须在动态、不确定或演化环境中运行的智能体时使用此模式。它对于需要个性化、持续性能改进以及自主处理新情况的能力的应用至关重要。
 
 **Visual summary**
 

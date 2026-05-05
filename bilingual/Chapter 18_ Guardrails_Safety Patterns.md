@@ -483,19 +483,19 @@ By integrating these core principles—fault tolerance, modular design, deep obs
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** As intelligent agents and LLMs become more autonomous, they might pose risks if left unconstrained, as their behavior can be unpredictable. They can generate harmful, biased, unethical, or factually incorrect outputs, potentially causing real-world damage. These systems are vulnerable to adversarial attacks, such as jailbreaking, which aim to bypass their safety protocols. Without proper controls, agentic systems can act in unintended ways, leading to a loss of user trust and exposing organizations to legal and reputational harm.
 
-**内容：** 随着智能体和 LLM 变得更加自主，如果不加约束，它们可能会带来风险，因为它们的行为可能是不可预测的。它们可能生成有害、有偏见、不道德或事实不正确的输出，可能造成现实世界的损害。这些系统容易受到对抗性攻击，例如越狱，这些攻击旨在绕过其安全协议。没有适当的控制，智能体系统可能会以意想不到的方式行事，导致用户信任的丧失，并使组织面临法律和声誉损害。
+**问题背景：** 随着智能体和 LLM 变得更加自主，如果不加约束，它们可能会带来风险，因为它们的行为可能是不可预测的。它们可能生成有害、有偏见、不道德或事实不正确的输出，可能造成现实世界的损害。这些系统容易受到对抗性攻击，例如越狱，这些攻击旨在绕过其安全协议。没有适当的控制，智能体系统可能会以意想不到的方式行事，导致用户信任的丧失，并使组织面临法律和声誉损害。
 
 **Why:** Guardrails, or safety patterns, provide a standardized solution to manage the risks inherent in agentic systems. They function as a multi-layered defense mechanism to ensure agents operate safely, ethically, and aligned with their intended purpose. These patterns are implemented at various stages, including validating inputs to block malicious content and filtering outputs to catch undesirable responses. Advanced techniques include setting behavioral constraints via prompting, restricting tool usage, and integrating human-in-the-loop oversight for critical decisions. The ultimate goal is not to limit the agent's utility but to guide its behavior, ensuring it is trustworthy, predictable, and beneficial.
 
-**原因：** 防护栏或安全模式提供了一个标准化的解决方案来管理智能体系统固有的风险。它们作为一个多层防御机制，确保智能体安全、符合道德规范地运行，并与其预期目的保持一致。这些模式在各个阶段实施，包括验证输入以阻止恶意内容和过滤输出以捕获不良响应。高级技术包括通过提示词设置行为约束、限制工具使用，以及为关键决策集成人机协同监督。最终目标不是限制智能体的能力，而是引导其行为，确保它值得信赖、可预测且有益。
+**解决方案：** 防护栏或安全模式提供了一个标准化的解决方案来管理智能体系统固有的风险。它们作为一个多层防御机制，确保智能体安全、符合道德规范地运行，并与其预期目的保持一致。这些模式在各个阶段实施，包括验证输入以阻止恶意内容和过滤输出以捕获不良响应。高级技术包括通过提示词设置行为约束、限制工具使用，以及为关键决策集成人机协同监督。最终目标不是限制智能体的能力，而是引导其行为，确保它值得信赖、可预测且有益。
 
 **Rule of thumb:** Guardrails should be implemented in any application where an AI agent's output can impact users, systems, or business reputation. They are critical for autonomous agents in customer-facing roles (e.g., chatbots), content generation platforms, and systems handling sensitive information in fields like finance, healthcare, or legal research. Use them to enforce ethical guidelines, prevent the spread of misinformation, protect brand safety, and ensure legal and regulatory compliance.
 
-**经验法则：** 防护栏应该在任何 AI 智能体输出可能影响用户、系统或业务声誉的应用中实施。对于面向客户的角色（例如聊天机器人）、内容生成平台以及处理金融、医疗保健或法律研究等领域敏感信息的系统中的自主智能体，它们至关重要。使用它们来执行道德准则、防止错误信息的传播、保护品牌安全并确保法律和监管合规。
+**实践建议：** 防护栏应该在任何 AI 智能体输出可能影响用户、系统或业务声誉的应用中实施。对于面向客户的角色（例如聊天机器人）、内容生成平台以及处理金融、医疗保健或法律研究等领域敏感信息的系统中的自主智能体，它们至关重要。使用它们来执行道德准则、防止错误信息的传播、保护品牌安全并确保法律和监管合规。
 
 **Visual summary**
 

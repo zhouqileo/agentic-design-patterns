@@ -344,19 +344,19 @@ Before concluding, it's important to consider that while the Reflection pattern 
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** An agent's initial output is often suboptimal, suffering from inaccuracies, incompleteness, or a failure to meet complex requirements. Basic agentic workflows lack a built-in process for the agent to recognize and fix its own errors. This is solved by having the agent evaluate its own work or, more robustly, by introducing a separate logical agent to act as a critic, preventing the initial response from being the final one regardless of quality.
 
-**是什么：** 智能体的初始输出往往次优，存在不准确、不完整或未能满足复杂要求的问题。基础智能体工作流缺乏让智能体识别和修复自身错误的内置流程。这通过让智能体评估自身工作，或更稳健地引入独立逻辑智能体充当评审者来解决，防止无论质量如何初始响应都成为最终结果。
+**问题背景：** 智能体的初始输出往往次优，存在不准确、不完整或未能满足复杂要求的问题。基础智能体工作流缺乏让智能体识别和修复自身错误的内置流程。这通过让智能体评估自身工作，或更稳健地引入独立逻辑智能体充当评审者来解决，防止无论质量如何初始响应都成为最终结果。
 
 **Why:** The Reflection pattern offers a solution by introducing a mechanism for self-correction and refinement. It establishes a feedback loop where a "producer" agent generates an output, and then a "critic" agent (or the producer itself) evaluates it against predefined criteria. This critique is then used to generate an improved version. This iterative process of generation, evaluation, and refinement progressively enhances the quality of the final result, leading to more accurate, coherent, and reliable outcomes.
 
-**为什么：** 反思模式通过引入自我纠正和优化机制提供了解决方案。它建立反馈循环，其中"生产者"智能体生成输出，然后"评审者"智能体（或生产者自身）根据预定义标准进行评估。随后使用此评审生成改进版本。这种生成、评估和优化的迭代过程逐步提升最终结果的质量，从而产生更准确、连贯和可靠的结果。
+**解决方案：** 反思模式通过引入自我纠正和优化机制提供了解决方案。它建立反馈循环，其中"生产者"智能体生成输出，然后"评审者"智能体（或生产者自身）根据预定义标准进行评估。随后使用此评审生成改进版本。这种生成、评估和优化的迭代过程逐步提升最终结果的质量，从而产生更准确、连贯和可靠的结果。
 
 **Rule of thumb:** Use the Reflection pattern when the quality, accuracy, and detail of the final output are more important than speed and cost. It is particularly effective for tasks like generating polished long-form content, writing and debugging code, and creating detailed plans. Employ a separate critic agent when tasks require high objectivity or specialized evaluation that a generalist producer agent might miss.
 
-**经验法则：** 当最终输出的质量、准确性和细节比速度和成本更重要时使用反思模式。它对生成精炼的长篇内容、编写和调试代码以及创建详细计划等任务特别有效。当任务需要通用生产者智能体可能遗漏的高客观性或专门评估时，使用独立评审者智能体。
+**实践建议：** 当最终输出的质量、准确性和细节比速度和成本更重要时使用反思模式。它对生成精炼的长篇内容、编写和调试代码以及创建详细计划等任务特别有效。当任务需要通用生产者智能体可能遗漏的高客观性或专门评估时，使用独立评审者智能体。
 
 ## Visual summary
 

@@ -408,7 +408,7 @@ The command-line interface facilitates automated evaluation by providing the age
 
 ## At a Glance
 
-## 概览
+## 速览
 
 **What:** Agentic systems and LLMs operate in complex, dynamic environments where their performance can degrade over time. Their probabilistic and non-deterministic nature means that traditional software testing is insufficient for ensuring reliability. Evaluating dynamic multi-agent systems is a significant challenge because their constantly changing nature and that of their environments demand the development of adaptive testing methods and sophisticated metrics that can measure collaborative success beyond individual performance. Problems like data drift, unexpected interactions, tool calling, and deviations from intended goals can arise after deployment. Continuous assessment is therefore necessary to measure an agent's effectiveness, efficiency, and adherence to operational and safety requirements.
 
@@ -420,7 +420,7 @@ The command-line interface facilitates automated evaluation by providing the age
 
 **Rule of thumb:** Use this pattern when deploying agents in live, production environments where real-time performance and reliability are critical. Additionally, use it when needing to systematically compare different versions of an agent or its underlying models to drive improvements, and when operating in regulated or high-stakes domains requiring compliance, safety, and ethical audits. This pattern is also suitable when an agent's performance may degrade over time due to changes in data or the environment (drift), or when evaluating complex agentic behavior, including the sequence of actions (trajectory) and the quality of subjective outputs like helpfulness.
 
-**经验法则：** 在部署智能体到实时性能和可靠性至关重要的生产环境时使用此模式。此外，当需要系统地比较智能体或其底层模型的不同版本以推动改进时，以及在需要合规性、安全性和道德审计的受监管或高风险领域运营时使用它。当智能体的性能可能由于数据或环境变化（漂移）而随时间退化时，或者在评估复杂的智能体行为时（包括操作序列（轨迹）和主观输出（如有用性）的质量），此模式也适用。
+**实践建议：** 在部署智能体到实时性能和可靠性至关重要的生产环境时使用此模式。此外，当需要系统地比较智能体或其底层模型的不同版本以推动改进时，以及在需要合规性、安全性和道德审计的受监管或高风险领域运营时使用它。当智能体的性能可能由于数据或环境变化（漂移）而随时间退化时，或者在评估复杂的智能体行为时（包括操作序列（轨迹）和主观输出（如有用性）的质量），此模式也适用。
 
 **Visual summary** 
 
